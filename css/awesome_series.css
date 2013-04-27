@@ -1,0 +1,64 @@
+html 
+{
+    margin: 0px; height: 100%;
+}
+
+body
+{
+    height: 100%;
+}
+
+#nav {  
+    padding: 0;
+    margin-left: 25px;  
+    text-align: left;
+   
+}  
+
+#nav li 
+{  
+    display: inline;  
+    list-style: none;  
+    
+}  
+
+#nav a 
+{  
+    display:inline-block;  
+    margin: 0 30px;  
+    text-decoration: none;
+}  
+
+article
+{
+    text-align: center;
+}
+
+#suivez_nous p
+{
+    margin-left: 20px;
+    margin-top: 15px;
+    width: 100px;
+    font-size: 13px;
+    display: inline-block;
+    float: left;
+    
+}
+
+a.infobulle
+{
+    position: relative; 
+}
+
+section
+{
+    width: 1024px;
+}
+
+.texte_accueil
+{
+    margin: auto;
+    width: 600px;
+    margin-bottom: 25px;
+}
+

@@ -93,6 +93,10 @@ section
     font-weight: bold;
 }
 
+#ContainerForm form #nom, #ContainerForm form #email {
+    width: 250px;
+}
+
 #ContainerForm input:required {
     background: url(../images/red_asterisk.png) 98% center no-repeat white;
 }

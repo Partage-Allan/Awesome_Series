@@ -117,6 +117,10 @@ section
     background: url(../images/valid.png) 98% center no-repeat white;
 }
 
+#ContainerForm textArea:focus:valid {
+    background: url(../images/valid.png) 98% top no-repeat white;
+}
+
 #ContainerForm textArea:required {
     background: url(../images/red_asterisk.png) 99% 5% no-repeat white; 
 }

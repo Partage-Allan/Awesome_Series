@@ -62,3 +62,84 @@ section
     margin-bottom: 25px;
 }
 
+
+
+
+
+
+
+
+
+
+
+/*****************************************************************************************/
+/****************************** Styles Page de Contact **********************************/
+/***************************************************************************************/
+
+
+#ContainerForm table {
+    width: 100%;
+}
+
+#ContainerForm form label {
+    padding-right: 10px;
+    width: 100px;
+    text-align: right;
+    display: block;
+    float: left;
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#ContainerForm input:required {
+    background: url(../images/red_asterisk.png) 98% center no-repeat white;
+}
+
+#ContainerForm input:focus:invalid, textArea:focus:invalid {
+    background: url(../images/invalid.png) 98% center no-repeat white;
+}
+
+#ContainerForm textArea:focus:invalid {
+    background: url(../images/invalid.png) 98% top no-repeat white;
+}
+
+#ContainerForm input:focus:valid {
+    background: url(../images/valid.png) 98% center no-repeat white;
+}
+
+#ContainerForm #nom:valid {
+    background: url(../images/valid.png) 98% center no-repeat white;
+}
+
+#ContainerForm #email:valid {
+    background: url(../images/valid.png) 98% center no-repeat white;
+}
+
+#ContainerForm textArea:required {
+    background: url(../images/red_asterisk.png) 99% 5% no-repeat white; 
+}
+
+#nom, #email {
+	height: 25px;
+	margin-bottom: 5px;
+        padding-left: 3px;
+        -moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#commentaires {
+        height: 60px;
+        margin-bottom: 3px;
+        width: 406px;
+        margin-left: 2px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+}
+
+#mySubmit {
+        margin-left: 250px;
+}

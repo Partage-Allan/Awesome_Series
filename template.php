@@ -12,6 +12,7 @@ function afficher_header()
                     printf('<li><a href="index.php">Accueil</a></li>');
                     printf('<li><a href="presentation.php">Présentation</a></li>');
                     printf('<li><a href="series.php">Séries</a>');
+                    printf('<li><a href="contact.html">Contact</a>');
                         /*printf('<ul>');
                             printf('<li class="button"><a href="#"></a></li>');
                             printf('<li class="button"><a href="#">Le jardin</a></li>');

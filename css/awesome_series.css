@@ -3,6 +3,11 @@ html
 {
     margin: 0px; height: 100%;
 }
+
+a
+{
+    text-decoration: none;
+}
 /**********Fin Général**********/
 
 
@@ -15,12 +20,19 @@ header
     width: 100%;
     border: 2px solid black;
 }
-nav {  
+
+.texte_titre
+{
+    margin-left: 25px;
+}
+
+nav 
+{  
     padding: 0;
     margin-left: 25px;  
     text-align: left;
     border: 2px solid black;
-    width: 750px;
+    width: 850px;
    
 }  
 
@@ -47,7 +59,14 @@ nav a
 /********************Général********************/
 body
 {
-    height: 100%;
+    background-image: url('../images/degrade-gris.png');
+    background-size: cover;
+    position: absolute;
+    float: left;
+    display: block;
+    height: auto;
+    min-height: 800px; 
+    width: 1024px;
     border: 2px solid black;
 }
 /********************Fin Général********************/
@@ -148,6 +167,10 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
 /****************************** Styles Page de Contact **********************************/
 /***************************************************************************************/
 
+#ContainerForm
+{
+    margin-bottom: 25px;
+}
 
 #ContainerForm table {
     width: 100%;

@@ -6,7 +6,7 @@
          <?php require ('template.php');?>
         <title>Aw3s0me Séries</title>
     </head>
-    <body>
+    <body id="bloc_page">
         <?php afficher_header();?>
         <section>
             <p id="fil_d_ariane"><a href="index.php">Accueil</a></p>
@@ -22,7 +22,7 @@
                 
                 Peut-être que certains seront très déçu de ne pas voir certaine séries, mais sachez que vous pouvez nous faire parvenir vos suggestions via la partie suggestion.
                 Nous nous excusons pour ces abscences si cela irrite quelqu'un mais nous voulons garder notre opinion et partager nos sentiments sur des séries que nous estimons 
-                plus que les autres, en d'autres mots nous cherchons la qualité ^^
+                plus que les autres ^^
                
                 
                 </p>

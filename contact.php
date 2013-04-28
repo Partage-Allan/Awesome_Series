@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="./css/awesome_series.css"/>
+         <?php require ('template.php');?>
+        <title>Aw3s0me Séries</title>
+    </head>
+    <body id="bloc_page">
+<?php afficher_header();?>
+        <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="contact.php">Contact</a></p>      
 <?php
 if(!empty($_POST)){
     extract($_POST);
@@ -67,3 +78,6 @@ if(!empty($_POST)){
     </div>
 </body>
 </html>
+        <?php afficher_footer();?>
+    </body>
+</html> 

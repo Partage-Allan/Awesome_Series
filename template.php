@@ -7,12 +7,12 @@ function afficher_header()
     printf("<header>");
     printf("<h1>Awesome Séries</h1>");    
         printf('<p class="texte_titre">LE Site sur LES Séries</p>');
-            printf('<nav id="nav">');
+            printf('<nav>');
                 printf('<ul>');
                     printf('<li><a href="index.php">Accueil</a></li>');
                     printf('<li><a href="presentation.php">Présentation</a></li>');
                     printf('<li><a href="series.php">Séries</a>');
-                    printf('<li><a href="contact.html">Contact</a>');
+                    printf('<li><a href="contact.php">Contact</a>');
                         /*printf('<ul>');
                             printf('<li class="button"><a href="#"></a></li>');
                             printf('<li class="button"><a href="#">Le jardin</a></li>');
@@ -20,8 +20,9 @@ function afficher_header()
                             printf('<li class="button_spe_1"><a href="#">Confection Originales</a></li>');
                         printf('</ul>');*/
                     printf('</li>');
-                    printf('<li class="button"><a href="test_news.php">News</a></li>');
-                    printf('<li class="button"><a href="#">Dossier</a></li>');
+                    printf('<li class="button"><a href=".php">Actu</a></li>');
+                    printf('<li class="button"><a href="dossiers.php">Dossiers</a></li>');
+                    printf('<li class="button"><a href="a_venir.php">A Venir</a></li>');
                 printf('</ul>');
             printf('</nav>');
     printf('</div>');

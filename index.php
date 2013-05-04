@@ -6,7 +6,7 @@
          <?php require ('template.php');?>
         <title>Aw3s0me Séries</title>
     </head>
-    <body id="bloc_page">
+    <body>
         <?php afficher_header();?>
         <section>
             <p id="fil_d_ariane"><a href="index.php">Accueil</a></p>

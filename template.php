@@ -5,7 +5,7 @@
 function afficher_header() 
 {
     printf("<header>");
-    printf("<h1>Awesome Séries</h1>");    
+    printf("<h1 class=\"titre_site\">Awesome Séries</h1>");    
         printf('<p class="texte_titre">LE Site sur LES Séries</p>');
             printf('<nav>');
                 printf('<ul>');
@@ -25,7 +25,6 @@ function afficher_header()
                     printf('<li class="button"><a href="a_venir.php">A Venir</a></li>');
                 printf('</ul>');
             printf('</nav>');
-    printf('</div>');
 printf('</header>');
 }
 /*********************************************************************************************************************************/

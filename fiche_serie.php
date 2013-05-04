@@ -6,25 +6,29 @@
          <?php require ('template.php');?>
         <title>Aw3s0me Séries</title>
     </head>
-    <body id="bloc_page">
+    <body>
         <?php afficher_header();?>
         <section>
             <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="">Series</a> > <a href="">Drama</a> > <a href="">Breaking Bad</a></p>
             <article>
-                <div id="fiche">
-                    <p id="affiche" ><img src="images/affiche-breaking-bad.jpg" alt="affiche-breaking-bad"/></p>
-                    <h1>Breaking Bad</h1>
-                    <p id="synopsis">Walter White, 50 ans, est professeur de chimie dans un lycée du Nouveau-Mexique. Pour subvenir aux besoins de Skyler,
-                        sa femme enceinte, et de Walt Junior, son fils handicapé, il est obligé de travailler doublement. Son quotidien déjà morose devient carrément noir
-                        lorsqu'il apprend qu'il est atteint d'un incurable cancer des poumons. Les médecins ne lui donnent pas plus de deux ans à vivre. 
-                        Pour réunir rapidement beaucoup d'argent afin de mettre sa famille à l'abri, Walter ne voit plus qu'une solution : mettre ses connaissances en chimie
-                        à profit pour fabriquer et vendre du crystal meth, une drogue de synthèse qui rapporte beaucoup. Il propose à Jesse, un de ses anciens élèves devenu un petit dealer
-                        de seconde zone, de faire équipe avec lui. Le duo improvisé met en place un labo itinérant dans un vieux camping-car. Cette association inattendue va les entraîner dans 
-                        une série de péripéties tant comiques que pathétiques. </p>
-                    <p id="cast">
-                        Casting: </p><p><img class="img-acteur" src="images/bryan-cranston.jpg" alt="bryan-cranston"/>Bryan Crancston</p>
-                    <iframe width="560" height="315" src="http://www.youtube.com/embed/kXPfG8C4wpA" frameborder="0" allowfullscreen></iframe>
-                    <div>
+                <h1 id="affiche">Breaking Bad 
+                    <img src="images/affiche-breaking-bad.jpg" alt="affiche-breaking-bad"/>
+                </h1>
+                <p id="synopsis">Walter White, 50 ans, est professeur de chimie dans un lycée du Nouveau-Mexique. Pour subvenir aux besoins de Skyler,
+                    sa femme enceinte, et de Walt Junior, son fils handicapé, il est obligé de travailler doublement. Son quotidien déjà morose devient carrément noir
+                    lorsqu'il apprend qu'il est atteint d'un incurable cancer des poumons. Les médecins ne lui donnent pas plus de deux ans à vivre. 
+                    Pour réunir rapidement beaucoup d'argent afin de mettre sa famille à l'abri, Walter ne voit plus qu'une solution : mettre ses connaissances en chimie
+                    à profit pour fabriquer et vendre du crystal meth, une drogue de synthèse qui rapporte beaucoup. Il propose à Jesse, un de ses anciens élèves devenu un petit dealer
+                    de seconde zone, de faire équipe avec lui. Le duo improvisé met en place un labo itinérant dans un vieux camping-car. Cette association inattendue va les entraîner dans 
+                    une série de péripéties tant comiques que pathétiques. 
+                </p>
+                
+                <div class="casting">
+                    <p id="cast">Casting: </p>
+                    <img class="img-acteur" src="images/bryan-cranston.jpg" alt="bryan-cranston"/> Bryan Crancston
+                </div>
+                <iframe width="560" height="315" src="http://www.youtube.com/embed/kXPfG8C4wpA" frameborder="0" allowfullscreen></iframe>
+                   
                         
             </article>
         </section>

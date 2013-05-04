@@ -1,9 +1,4 @@
 /**********Général**********/
-html 
-{
-    margin: 0px; height: 100%;
-}
-
 a
 {
     text-decoration: none;
@@ -17,38 +12,38 @@ a
 header
 {
     height: 200px;
-    width: 100%;
     border: 2px solid black;
+}
+
+.titre_site
+{
+    text-align: center;
 }
 
 .texte_titre
 {
-    margin-left: 25px;
+    margin-left: 80px;
 }
 
 nav 
 {  
-    padding: 0;
-    margin-left: 25px;  
-    text-align: left;
+    margin-left: 80px;  
     border: 2px solid black;
     width: 850px;
-   
 }  
 
 nav li 
 {  
     display: inline;  
     list-style: none;  
-    
 }  
 
 nav a 
 {  
-    display:inline-block;  
     margin: 0 30px;  
     text-decoration: none;
 }
+
 /****************************************/
 /**********Fin Header**********/
 /****************************************/
@@ -59,42 +54,39 @@ nav a
 /********************Général********************/
 body
 {
+    margin-left: 18%;
     background-image: url('../images/degrade-gris.png');
     background-size: cover;
-    position: absolute;
-    float: left;
-    display: block;
-    height: auto;
     max-width: 1024px;
     border: 2px solid black;
-    position: absolute;
 }
 
 #fil_d_ariane
 {
-    margin-left: 20px;
+    margin-left: 80px;
 }
 /********************Fin Général********************/
 
 /********************Article********************/
 article
 {
-    text-align: center;
     border: 2px solid black;
+}
+
+article h1
+{
+    text-align: center;
 }
 /********************Fin Article********************/
 
 /********************Section********************/
-section
-{
-    width: 1024px;
-}
 
 .texte_accueil
 {
     margin: auto;
     width: 600px;
     margin-bottom: 25px;
+    text-align: center;
 }
 /********************Fin Section********************/
 
@@ -107,23 +99,16 @@ section
 /****************************************/
 footer
 {
-    height: 200px;
-    width: 100%;
-    margin: 0;
+    height: 100px;
     border: 2px solid black;
-    position: relative;
-    height: 150px;
-    display: block;
 }
 #suivez_nous p
 {
-    margin-left: 20px;
-    margin-top: 15px;
-    width: 100px;
+    margin-left: 80px;
+    margin-top: 25px;
+    width: 120px;
     font-size: 13px;
-    display: inline-block;
     float: left;
-    
 }
 
 a.infobulle
@@ -160,9 +145,9 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
 
 .icone
 {
-    float: left;
     margin-top: 15px;
     margin-left: 50px;
+    float: left;
 }
 /****************************************/
 /********************Footer********************/
@@ -258,19 +243,9 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
 /*****************************************************************************************/
 /****************************** Style Fiche Séries **********************************/
 /***************************************************************************************/
-
-#fiche
+#affiche
 {
-    height: 600px;
-    width: 1024px;
-    text-align: left;
-    margin-left: 50px;
-}
-
-h1
-{
-   
- 
+    width: 800px;
 }
 
 #affiche img
@@ -279,36 +254,44 @@ h1
     max-width: 200px;  
     float: left;
     margin-right: 50px;
+    margin-left: 80px;
+    text-align: center;
 }
 
 #synopsis
 {
-   height: 400px;
-   width: 400px;
+   height: auto;
+   width: 500px;
    float: left;
-   display: block;
-
+   text-align: center;
 }
 
 #cast
 {
-    display: block;
+    margin-left: 80px;
+}
+
+.casting
+{
+    clear: both;
+    display: inline-block;
+    width: 550px;
+    margin-bottom: 30px;
 }
 
 .img-acteur 
 {
     height: auto ;
-    max-width: 100px;  
-    float: left;
+    width: 100px;
     margin-right: 20px;
-    display: block;
+    float: left;
+    margin-left: 80px;
 }
 
 iframe
 {
+    float: right;
     width: 335px;
     height: 230px;
-    display: block;
-    clear: both;
-    
+    margin-right: 80px;
 }

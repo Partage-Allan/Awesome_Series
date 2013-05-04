@@ -6,7 +6,7 @@
          <?php require ('template.php');?>
         <title>Aw3s0me Séries</title>
     </head>
-    <body id="bloc_page">
+    <body>
 <?php afficher_header();?>
         <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="contact.php">Contact</a></p>      
 <?php
@@ -29,11 +29,6 @@ if(!empty($_POST)){
     }
 }
 ?>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<!-- FEULLES DE STYLES -->
-<link rel="stylesheet" type="text/css" href="css/awesome_series.css"/>
 <?php 
     if (isset($erreur)){
         if($erreur == "Votre message a bien ete envoye."){
@@ -44,9 +39,7 @@ if(!empty($_POST)){
         }
     }
 ?>
-</head>
 
-<body>
     <div id="ContainerForm">
         <form method="post" action="contact.php" id="formulaire_contact">
                 <table>
@@ -76,8 +69,6 @@ if(!empty($_POST)){
            </table> 
         </form>
     </div>
-</body>
-</html>
         <?php afficher_footer();?>
     </body>
 </html> 

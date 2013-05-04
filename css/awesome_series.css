@@ -65,9 +65,14 @@ body
     float: left;
     display: block;
     height: auto;
-    min-height: 800px; 
-    width: 1024px;
+    max-width: 1024px;
     border: 2px solid black;
+    position: absolute;
+}
+
+#fil_d_ariane
+{
+    margin-left: 20px;
 }
 /********************Fin Général********************/
 
@@ -108,7 +113,7 @@ footer
     border: 2px solid black;
     position: relative;
     height: 150px;
-    clear: both;
+    display: block;
 }
 #suivez_nous p
 {
@@ -245,4 +250,65 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
 
 #mySubmit {
         margin-left: 250px;
+}
+/*****************************************************************************************/
+/******************************Fin Styles Page de Contact **********************************/
+/***************************************************************************************/
+
+/*****************************************************************************************/
+/****************************** Style Fiche Séries **********************************/
+/***************************************************************************************/
+
+#fiche
+{
+    height: 600px;
+    width: 1024px;
+    text-align: left;
+    margin-left: 50px;
+}
+
+h1
+{
+   
+ 
+}
+
+#affiche img
+{
+    height: auto ;
+    max-width: 200px;  
+    float: left;
+    margin-right: 50px;
+}
+
+#synopsis
+{
+   height: 400px;
+   width: 400px;
+   float: left;
+   display: block;
+
+}
+
+#cast
+{
+    display: block;
+}
+
+.img-acteur 
+{
+    height: auto ;
+    max-width: 100px;  
+    float: left;
+    margin-right: 20px;
+    display: block;
+}
+
+iframe
+{
+    width: 335px;
+    height: 230px;
+    display: block;
+    clear: both;
+    
 }

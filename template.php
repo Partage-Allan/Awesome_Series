@@ -23,6 +23,7 @@ function afficher_header()
                     printf('<li class="button"><a href=".php">Actu</a></li>');
                     printf('<li class="button"><a href="dossiers.php">Dossiers</a></li>');
                     printf('<li class="button"><a href="a_venir.php">A Venir</a></li>');
+                    printf('<li class="button"><form method="POST" action="search.php"><input type="search" placeholder="Entrez votre recherche" name="search" /></form>');
                 printf('</ul>');
             printf('</nav>');
 printf('</header>');

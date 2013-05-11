@@ -27,9 +27,9 @@ header
 
 nav 
 {  
-    margin-left: 80px;  
+    margin-left: 35px;  
     border: 2px solid black;
-    width: 850px;
+    width: 950px;
 }  
 
 nav li 
@@ -40,8 +40,14 @@ nav li
 
 nav a 
 {  
-    margin: 0 30px;  
+    margin: 0 25px;  
     text-decoration: none;
+}
+
+nav form
+{
+    display: inline-block;
+    padding-left: 20px;
 }
 
 /****************************************/
@@ -71,11 +77,23 @@ body
 article
 {
     border: 2px solid black;
+    height: auto;
 }
 
 article h1
 {
     text-align: center;
+}
+
+.search
+{
+    margin-left: 80px;
+    margin-bottom: 50px;
+}
+
+.result_search
+{
+    margin-left: 80px;
 }
 /********************Fin Article********************/
 
@@ -277,6 +295,7 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
     display: inline-block;
     width: 550px;
     margin-bottom: 30px;
+    height: 230px;
 }
 
 .img-acteur 
@@ -290,6 +309,7 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
 
 iframe
 {
+    margin-top: 20px;
     float: right;
     width: 335px;
     height: 230px;

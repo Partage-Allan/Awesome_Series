@@ -13,12 +13,6 @@ function afficher_header()
                     printf('<li><a href="presentation.php">Présentation</a></li>');
                     printf('<li><a href="search.php">Séries</a>');
                     printf('<li><a href="contact.php">Contact</a>');
-                        /*printf('<ul>');
-                            printf('<li class="button"><a href="#"></a></li>');
-                            printf('<li class="button"><a href="#">Le jardin</a></li>');
-                            printf('<li class="button"><a href="#">Dans la poche !</a></li>');
-                            printf('<li class="button_spe_1"><a href="#">Confection Originales</a></li>');
-                        printf('</ul>');*/
                     printf('</li>');
                     printf('<li class="button"><a href=".php">Actu</a></li>');
                     printf('<li class="button"><a href="dossiers.php">Dossiers</a></li>');

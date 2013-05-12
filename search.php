@@ -9,6 +9,7 @@
     <body>
         <?php afficher_header();?>
         <section>
+            <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="search.php">Series</a></p>
             <?php
                 try
                 {
@@ -19,13 +20,21 @@
                         die('Erreur : ' . $e->getMessage());
                 }
                 
-                $search = $_POST['search'];
-                $reponse = $bdd->query('SELECT titre_serie 
-                                        FROM serie
-                                        WHERE titre_serie LIKE \'' .$search . '%\' ');
+                if(isset($_POST['search']))
+                {
+                    $search= $_POST['search'];
+                    $reponse = $bdd->query('SELECT titre_serie 
+                                            FROM serie
+                                            WHERE titre_serie LIKE \'' .$search . '%\' ');
+                }
+                else
+                {
+                    $reponse = $bdd->query('SELECT titre_serie 
+                                            FROM serie');
+                }
                 
             ?>
-            <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="">Series</a></p>
+            
             <article>
                 <p class="result_search">Liste des Séries correspondante à votre recherche:</p>
                 <?php

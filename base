@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Lun 13 Mai 2013 à 13:07
+-- Généré le: Lun 13 Mai 2013 à 13:12
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.3.13
 
@@ -19,6 +19,24 @@ SET time_zone = "+00:00";
 --
 -- Base de données: `awesome_series`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `commentaire`
+--
+
+CREATE TABLE IF NOT EXISTS `commentaire` (
+  `id_comm` int(11) NOT NULL AUTO_INCREMENT,
+  `titre_com` varchar(70) DEFAULT NULL,
+  `contenu_comm` longtext,
+  `resume_comm` longtext,
+  `user_id_user` int(11) NOT NULL,
+  `serie_id_serie` int(11) NOT NULL,
+  PRIMARY KEY (`id_comm`),
+  KEY `fk_commentaire_user1_idx` (`user_id_user`),
+  KEY `fk_commentaire_serie1_idx` (`serie_id_serie`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -62,6 +80,31 @@ INSERT INTO `serie` (`id_serie`, `titre_serie`, `nationalite_serie`, `realisateu
 (13, 'The Big Bang Theory', 'Etats-Unis', 'Chuck Lorre et Bill Prady ', NULL, NULL, 'Sitcom Comédie Geek', 'Septembre 2007 ', 6, 'En production', NULL, '22 min'),
 (14, 'Community', 'Etats-Unis', ' Dan Harmon', NULL, NULL, 'Sitcom Comédie ', 'Septembre 2009', 4, 'En production', NULL, '22 min'),
 (15, 'Suits', 'Etats-Unis', 'Aaron Korsh', NULL, NULL, 'Comédie Judiciaire', 'Juin 2011', 2, 'En production', NULL, '43 min');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
+  `pseudo-user` varchar(70) DEFAULT NULL,
+  `email_user` varchar(70) DEFAULT NULL,
+  `pass_user` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_user`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contraintes pour les tables exportées
+--
+
+--
+-- Contraintes pour la table `commentaire`
+--
+ALTER TABLE `commentaire`
+  ADD CONSTRAINT `fk_commentaire_serie1` FOREIGN KEY (`serie_id_serie`) REFERENCES `serie` (`id_serie`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_commentaire_user1` FOREIGN KEY (`user_id_user`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

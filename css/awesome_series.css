@@ -295,16 +295,25 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
     display: inline-block;
     width: 550px;
     margin-bottom: 30px;
-    height: 230px;
+    height: auto;
 }
 
-.img-acteur 
+.liste_acteur ul
 {
-    height: auto ;
-    width: 100px;
-    margin-right: 20px;
+    list-style: none;
+    text-align: center;
+    padding-left: 65px;
+}
+
+.liste_acteur li
+{
     float: left;
-    margin-left: 80px;
+    width: 126px;
+}
+
+.liste_acteur img
+{
+    width: 100px;
 }
 
 iframe

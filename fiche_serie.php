@@ -25,7 +25,38 @@
                 
                 <div class="casting">
                     <p id="cast">Casting: </p>
-                    <img class="img-acteur" src="images/bryan-cranston.jpg" alt="bryan-cranston"/> Bryan Crancston
+                    <div class="liste_acteur">
+                        <ul>
+                            <li>
+                                <img src="images/bryan-cranston.jpg" alt="bryan-cranston" />
+                                <p>Bryan Cranston</p>
+                            </li>
+                            <li>
+                                <img src="images/bryan-cranston.jpg" alt="bryan-cranston" />
+                                <p>Bryan Cranston</p>
+                            </li>
+                            <li>
+                                <img src="images/bryan-cranston.jpg" alt="bryan-cranston" />
+                                <p>Bryan Cranston</p>
+                            </li>
+                            <li>
+                                <img src="images/bryan-cranston.jpg" alt="bryan-cranston" />
+                                <p>Bryan Cranston</p>
+                            </li>
+                            <li>
+                                <img src="images/bryan-cranston.jpg" alt="bryan-cranston" />
+                                <p>Bryan Cranston</p>
+                            </li>
+                            <li>
+                                <img src="images/bryan-cranston.jpg" alt="bryan-cranston" />
+                                <p>Bryan Cranston</p>
+                            </li>
+                            <li>
+                                <img src="images/bryan-cranston.jpg" alt="bryan-cranston" />
+                                <p>Bryan Cranston</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <iframe width="560" height="315" src="http://www.youtube.com/embed/kXPfG8C4wpA" frameborder="0" allowfullscreen></iframe>
                    

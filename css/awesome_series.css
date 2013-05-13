@@ -3,6 +3,7 @@ a
 {
     text-decoration: none;
 }
+
 html
 {
     margin-left: auto;
@@ -66,7 +67,7 @@ nav form
 /********************Général********************/
 body
 {
-    margin: 0px;
+    margin: auto;
     background-image: url('../images/dégrade-gris.png');
     background-size: cover;
     max-width: 1024px;

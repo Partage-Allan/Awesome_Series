@@ -1,0 +1,68 @@
+-- phpMyAdmin SQL Dump
+-- version 3.5.1
+-- http://www.phpmyadmin.net
+--
+-- Client: localhost
+-- Généré le: Lun 13 Mai 2013 à 13:07
+-- Version du serveur: 5.5.24-log
+-- Version de PHP: 5.3.13
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Base de données: `awesome_series`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `serie`
+--
+
+CREATE TABLE IF NOT EXISTS `serie` (
+  `id_serie` int(11) NOT NULL AUTO_INCREMENT,
+  `titre_serie` varchar(70) DEFAULT NULL,
+  `nationalite_serie` varchar(70) DEFAULT NULL,
+  `realisateur_serie` varchar(70) DEFAULT NULL,
+  `synopsis_serie` longtext,
+  `resume_serie` longtext,
+  `genre_serie` varchar(70) DEFAULT NULL,
+  `annee_serie` varchar(70) DEFAULT NULL,
+  `nbre_saisons_serie` int(11) DEFAULT NULL,
+  `statut_serie` varchar(70) DEFAULT NULL,
+  `casting_serie` longtext,
+  `format_serie` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id_serie`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+
+--
+-- Contenu de la table `serie`
+--
+
+INSERT INTO `serie` (`id_serie`, `titre_serie`, `nationalite_serie`, `realisateur_serie`, `synopsis_serie`, `resume_serie`, `genre_serie`, `annee_serie`, `nbre_saisons_serie`, `statut_serie`, `casting_serie`, `format_serie`) VALUES
+(1, 'Breaking Bad', 'Américaine', 'Vince Gillian', NULL, NULL, 'Drame / Comédie Dramatique', 'Janvier 2008', 5, 'En production', 'Bryan Cranston alias Walt "Walter"  White/Heisenberg\r\nAaron Paul alias Jesse Pinkman\r\nAnna Gunn alias Skyler White\r\nDean Norris alias Hank Schrader\r\nBetsy Brandt alias Marie Schrader\r\nRj Mitte alias Walter White Junior "Junior"\r\nGiancarlo Esposito alias Gustavo "Gus" Fring\r\nJonathan Banks alias Mike Ehrmantraut \r\nBob Odenkirk alias Saul Goodman ', '47 min'),
+(2, 'Sons of Anarchy', 'Américaine', 'Kurt Sutter', NULL, NULL, 'Drame / Comédie Dramatique', 'Septembre 2008', 6, 'En production', 'Charlie Hunnam alias Jax "Jackson" Teller\r\nKatey Sagal alias Gemma Teller-Morrow\r\nRon Perlman alias Clay "Clarence" Morrow\r\nMaggie Siff alias Dr Tara Knowles\r\nKim Coates alias Tig "Alex" Trager\r\nMark Boone Junior alias Bobby "Robert" Munson\r\nTommy Flanagan alias Chibs "Fillip" Telford\r\nTheo Rossi alias Juice "Juan Carlos" Ortiz\r\nDayton Callie alias Wayne Unser', '43 min'),
+(3, 'The Wire', 'Américaine', 'David Simon et Ed Burns', NULL, NULL, 'Drame / Comédie Dramatique, Policier', 'Juin 2002 - Mars 2008', 5, 'Terminée', NULL, '55 min'),
+(4, 'Games of Thrones', 'Américaine', 'David Benioff et D. B. Weiss', NULL, NULL, 'Fantasy', 'Avril 2011', 3, 'En production', 'Sean Bean alias Lord Eddard "Ned" Stark \r\nNikolaj Coster-Waldau alias Jamie Lannister\r\nMichelle Fairley alias Catelyn Stark\r\nLena Headey alias Cersei Lannister\r\nPeter Dinklage alias Tyrion Lannister\r\nEmilia Clarke alias Daenerys Targaryen "Khaleesi"\r\nRichard Madden alias Robb Stark\r\nJack Gleeson alias Prince Joffrey Baratheon\r\nKit Harington alias Jon Snow\r\nSophie Turner alias Sansa Stark\r\nMaisie Williams alias Arya Stark\r\nIsaac Hempstead-Wright alias Bran Stark\r\nAidan Gillen alias: Lord Petyr "Littlefinger" Baelish\r\n', '55 min'),
+(5, 'Vikings', 'Canada Royaume-Uni Irlande', 'Michael Hirst', NULL, NULL, 'Drame Aventure Historique', 'Mars 2013', 1, 'En production', 'Travis Fimmel alias Ragnar Lothbrok\r\nKatheryn Winninck alias Lagertha\r\nClive Standen alias Rollo\r\nGabriel Byrne alias Earl Haraldson\r\nJessalyn Gilsig alias Siggy\r\nGeorge Blagden alias Athelstan\r\nGustaf Skarsgard alias Floki', '44 min'),
+(6, 'Spartacus', 'États-Unis', 'Steven S. DeKnight', NULL, NULL, 'Drame Peplum Historique', 'Janvier 2010 - Avril 2013', 3, 'Terminée', NULL, '42 min (S01) 54 min (S02, S03)'),
+(7, 'Hell on Weels', 'Etats-Unis', 'Joe et Tony Gayton', NULL, NULL, 'Drame Historique Western', 'Novembre 2011', 2, 'En production', NULL, '43 min'),
+(8, 'Rome', 'États-Unis Royaume-Uni ', ' John Milius, William J. MacDonald et Bruno Heller.', NULL, NULL, 'Drame Historique', 'Août 2005 - Mars 2007', 2, 'Terminée', NULL, '52 min'),
+(9, 'Falling Skies', 'États-Unis', ' Robert Rodat, et produit par Steven Spielberg', NULL, 'Noah Wyle alias Tom Mason\r\nMoon Bloodgood alias Anne Glass\r\nDrew Roy alias Hal Mason\r\nWill Patton alias Capitaine Weaver\r\nConnor Jessup alias Ben Mason\r\nSarah Carter alias Margaret\r\nMaxim Knight alias Matt Mason\r\nColin Cunningham alias John Pope', 'Science-Fiction Post-Apocalyptique', 'Juin 2011', 2, 'En production', NULL, '42 min'),
+(10, 'Révolution', 'États-Unis', 'Eric Kripke', NULL, NULL, 'Science-Fiction', 'Septembre 2012', 1, 'En production', NULL, '42 min'),
+(11, 'Fringe', 'États-Unis', ' J.J. Abrams, Alex Kurtzman et Roberto Orci', NULL, NULL, 'Science-Fiction, Fantastique, Policier', 'Septembre 2008 - Janvier 2013', 5, 'Terminée', NULL, '47 min (S01) 42 min (autre saisons)'),
+(12, 'How I met your mother', 'Etats-Unis', ' Carter Bays et Craig Thomas', NULL, NULL, 'Sitcom Comédie', 'Septembre 2005', 8, 'En production', NULL, '22 min'),
+(13, 'The Big Bang Theory', 'Etats-Unis', 'Chuck Lorre et Bill Prady ', NULL, NULL, 'Sitcom Comédie Geek', 'Septembre 2007 ', 6, 'En production', NULL, '22 min'),
+(14, 'Community', 'Etats-Unis', ' Dan Harmon', NULL, NULL, 'Sitcom Comédie ', 'Septembre 2009', 4, 'En production', NULL, '22 min'),
+(15, 'Suits', 'Etats-Unis', 'Aaron Korsh', NULL, NULL, 'Comédie Judiciaire', 'Juin 2011', 2, 'En production', NULL, '43 min');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

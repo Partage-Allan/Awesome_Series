@@ -29,6 +29,7 @@
             </article>
         </section>
         
-        <?php afficher_footer();?>
+        
     </body>
+    <?php afficher_footer();?>
 </html>   

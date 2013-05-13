@@ -3,6 +3,11 @@ a
 {
     text-decoration: none;
 }
+html
+{
+    margin-left: auto;
+    margin-right: auto;
+}
 /**********Fin Général**********/
 
 
@@ -17,7 +22,8 @@ header
 
 .titre_site
 {
-    text-align: center;
+    text-align: left;
+    margin-left: 80px;
 }
 
 .texte_titre
@@ -60,8 +66,8 @@ nav form
 /********************Général********************/
 body
 {
-    margin-left: 18%;
-    background-image: url('../images/degrade-gris.png');
+    margin: 0px;
+    background-image: url('../images/dégrade-gris.png');
     background-size: cover;
     max-width: 1024px;
     border: 2px solid black;
@@ -82,7 +88,7 @@ article
 
 article h1
 {
-    text-align: center;
+    text-align: left;
 }
 
 .search
@@ -104,7 +110,7 @@ article h1
     margin: auto;
     width: 600px;
     margin-bottom: 25px;
-    text-align: center;
+    text-align: left;
 }
 /********************Fin Section********************/
 
@@ -281,7 +287,7 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
    height: auto;
    width: 500px;
    float: left;
-   text-align: center;
+   text-align: left;
 }
 
 #cast

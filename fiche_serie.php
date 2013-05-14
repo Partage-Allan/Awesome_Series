@@ -27,38 +27,49 @@
                     <p id="cast">Casting: </p>
                     <div class="liste_acteur">
                         <ul>
-                            <li>
-                                <img src="images/bryan-cranston.jpg" alt="bryan-cranston" />
+                             <li>
+                                <img src="images/Bryan-Cranston-2.jpg" alt="Bryan Cranston" />
                                 <p>Bryan Cranston</p>
                             </li>
                             <li>
-                                <img src="images/bryan-cranston.jpg" alt="bryan-cranston" />
-                                <p>Bryan Cranston</p>
+                                <img src="images/Aaron-Paul.jpg" alt="Aaron Paul" />
+                                <p>Aaron Paul</p>
                             </li>
                             <li>
-                                <img src="images/bryan-cranston.jpg" alt="bryan-cranston" />
-                                <p>Bryan Cranston</p>
+                                <img src="images/Anna-Gunn.jpg" alt="Anna Gunn" />
+                                <p>Anna Gunn</p>
+                            </li>
+                                <li>
+                                <img src="images/Giancarlo-Esposito.jpg" alt="Giancarlo Esposito" />
+                                <p>Giancarlo Esposito</p>
                             </li>
                             <li>
-                                <img src="images/bryan-cranston.jpg" alt="bryan-cranston" />
-                                <p>Bryan Cranston</p>
+                                <img src="images/Dean-Norris.jpg" alt="Dean Norris" />
+                                <p>Dean Norris</p>
                             </li>
                             <li>
-                                <img src="images/bryan-cranston.jpg" alt="bryan-cranston" />
-                                <p>Bryan Cranston</p>
+                                <img src="images/Betsy-Brandt.jpg" alt="Betsy Brandt" />
+                                <p>Betsy Brandt</p>
                             </li>
                             <li>
-                                <img src="images/bryan-cranston.jpg" alt="bryan-cranston" />
-                                <p>Bryan Cranston</p>
+                                <img src="images/RJ-Mitte.jpg" alt="RJ Mitte" />
+                                <p>RJ Mitte</p>
                             </li>
                             <li>
-                                <img src="images/bryan-cranston.jpg" alt="bryan-cranston" />
-                                <p>Bryan Cranston</p>
+                                <img src="images/Jonathan-Banks.jpg" alt="Jonathan Banks" />
+                                <p>Jonathan Banks</p>
                             </li>
-                        </ul>
+                            <li>
+                                <img src="images/Bob-Odenkirk-3.jpg" alt="Bob Odenkirk" />
+                                <p>Bob Odenkirk</p>
+                            </li>
                     </div>
                 </div>
+                <div class="bloc_trailer">
+                    <p class="texte_trailer">Trailer :</p><br/>
                 <iframe width="560" height="315" src="http://www.youtube.com/embed/kXPfG8C4wpA" frameborder="0" allowfullscreen></iframe>
+                </div>
+                
                    
                         
             </article>

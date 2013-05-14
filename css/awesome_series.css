@@ -8,6 +8,14 @@ html
 {
     margin-left: auto;
     margin-right: auto;
+    background: #000000;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#333333"); /* Pour IE seulement et mode gradient à linear */
+    background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#9b9b9b));
+    background: -webkit-linear-gradient(#000000, #9b9b9b);
+    background: -moz-linear-gradient(#000000, #9b9b9b);
+    background: -o-linear-gradient(#000000, #9b9b9b); 
+    background: -ms-linear-gradient(#000000, #9b9b9b); 
+    background: linear-gradient(#000000, #9b9b9b);
 }
 /**********Fin Général**********/
 
@@ -18,24 +26,28 @@ html
 header
 {
     height: 200px;
-    border: 2px solid black;
+    border: 2px solid #5C5C5C;
 }
 
 .titre_site
 {
     text-align: left;
-    margin-left: 80px;
+    margin-left: 35px;
+    color: #999999;
+    text-shadow: 2px 2px black;
 }
 
 .texte_titre
 {
-    margin-left: 80px;
+    margin-left: 35px;
+    color: #999999;
+    
 }
 
 nav 
 {  
     margin-left: 35px;  
-    border: 2px solid black;
+    border: 2px solid #5C5C5C;
     width: 950px;
 }  
 
@@ -49,6 +61,8 @@ nav a
 {  
     margin: 0 25px;  
     text-decoration: none;
+    color: #999999;
+    text-shadow: 2px 2px black;
 }
 
 nav form
@@ -62,7 +76,6 @@ nav form
 /****************************************/
 
 
-
 /********************Corps********************/
 /********************Général********************/
 body
@@ -71,25 +84,33 @@ body
     background-image: url('../images/dégrade-gris.png');
     background-size: cover;
     max-width: 1024px;
-    border: 2px solid black;
+    border: 2px solid #5C5C5C;
 }
 
 #fil_d_ariane
 {
     margin-left: 80px;
+    color: #999999;
 }
+
+#fil_d_ariane a
+{
+    color: #999999;
+}
+
 /********************Fin Général********************/
 
 /********************Article********************/
 article
 {
-    border: 2px solid black;
+    border: 2px solid #5C5C5C;
     height: auto;
 }
 
 article h1
 {
     text-align: left;
+    color: #999999;
 }
 
 .search
@@ -125,7 +146,7 @@ article h1
 footer
 {
     height: 100px;
-    border: 2px solid black;
+    border: 2px solid #5C5C5C;
 }
 #suivez_nous p
 {
@@ -289,20 +310,24 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
    width: 500px;
    float: left;
    text-align: left;
+   color: #999999;
+   text-shadow: 2px 2px black;
 }
 
 #cast
 {
     margin-left: 80px;
+    color: #ADADAD;
+    text-shadow: 2px 2px black;
 }
 
 .casting
 {
     clear: both;
     display: inline-block;
-    width: 550px;
+    width: 500px;
     margin-bottom: 30px;
-    height: auto;
+    height: 646px;
 }
 
 .liste_acteur ul
@@ -317,17 +342,39 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
     float: left;
     width: 126px;
 }
+.liste_acteur ul li
+{
+    margin: 0px;
+    color: #ADADAD;
+    text-shadow: 2px 2px black;
+    
+}
 
 .liste_acteur img
 {
     width: 100px;
+    height: 141px;
 }
-
+.bloc_trailer
+{
+    float: right;
+    width: 500px;
+    height: 646px;
+    
+}
+.texte_trailer
+{
+    margin: 0px;
+    margin-top: 16px;
+    width: 100px;
+    color: #999999;
+    text-shadow: 2px 2px black;
+}
 iframe
 {
-    margin-top: 20px;
     float: right;
-    width: 335px;
-    height: 230px;
-    margin-right: 80px;
+    width: 440px;
+    height: 260px;
+    margin-right: 40px;
+    margin-left: 40px;
 }

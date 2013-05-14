@@ -9,13 +9,7 @@ html
     margin-left: auto;
     margin-right: auto;
     background: #000000;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#333333"); /* Pour IE seulement et mode gradient à linear */
-    background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#9b9b9b));
-    background: -webkit-linear-gradient(#000000, #9b9b9b);
-    background: -moz-linear-gradient(#000000, #9b9b9b);
-    background: -o-linear-gradient(#000000, #9b9b9b); 
-    background: -ms-linear-gradient(#000000, #9b9b9b); 
-    background: linear-gradient(#000000, #9b9b9b);
+    background-color: #4D4D4D;    
 }
 /**********Fin Général**********/
 
@@ -33,14 +27,15 @@ header
 {
     text-align: left;
     margin-left: 35px;
-    color: #999999;
+    color: #D2D3D0;
     text-shadow: 2px 2px black;
 }
 
 .texte_titre
 {
     margin-left: 35px;
-    color: #999999;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
     
 }
 
@@ -61,7 +56,7 @@ nav a
 {  
     margin: 0 25px;  
     text-decoration: none;
-    color: #999999;
+    color: #D2D3D0;
     text-shadow: 2px 2px black;
 }
 
@@ -90,12 +85,14 @@ body
 #fil_d_ariane
 {
     margin-left: 80px;
-    color: #999999;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
 }
 
 #fil_d_ariane a
 {
-    color: #999999;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
 }
 
 /********************Fin Général********************/
@@ -110,7 +107,8 @@ article
 article h1
 {
     text-align: left;
-    color: #999999;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
 }
 
 .search
@@ -133,6 +131,8 @@ article h1
     width: 600px;
     margin-bottom: 25px;
     text-align: left;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
 }
 /********************Fin Section********************/
 
@@ -154,6 +154,8 @@ footer
     margin-top: 25px;
     width: 120px;
     font-size: 13px;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
     float: left;
 }
 
@@ -310,14 +312,14 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
    width: 500px;
    float: left;
    text-align: left;
-   color: #999999;
+   color: #D2D3D0;
    text-shadow: 2px 2px black;
 }
 
 #cast
 {
     margin-left: 80px;
-    color: #ADADAD;
+    color: #D2D3D0;
     text-shadow: 2px 2px black;
 }
 
@@ -345,7 +347,7 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
 .liste_acteur ul li
 {
     margin: 0px;
-    color: #ADADAD;
+    color: #D2D3D0;
     text-shadow: 2px 2px black;
     
 }
@@ -367,7 +369,24 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
     margin: 0px;
     margin-top: 16px;
     width: 100px;
-    color: #999999;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
+}
+
+.titre_infos
+{
+    float: left;
+    margin-top: 16px;
+    width: 400px;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
+}
+
+.texte_infos
+{
+    margin-top: 16px;
+    width: 400px;
+    color: #D2D3D0;
     text-shadow: 2px 2px black;
 }
 iframe

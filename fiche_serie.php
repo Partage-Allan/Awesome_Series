@@ -81,6 +81,12 @@
                 <div class="bloc_trailer">
                     <p class="texte_trailer">Trailer :</p><br/>
                 <iframe width="560" height="315" src="<?php echo $trailer; ?>" frameborder="0" allowfullscreen></iframe>
+                <p class="titre_infos">Infos supplémentaires :</p><br/>
+                <p class="texte_infos">
+                    Réalisateur : Vince Gillian
+                    Pays        : Etats-Unis    
+                    Genre       : Drame Comédie noire
+                </p>
                 </div>
                 
                    

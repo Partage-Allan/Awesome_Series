@@ -349,7 +349,13 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
     margin-right: 10px;
     color: #D2D3D0;
     text-shadow: 2px 2px black;
-    
+}
+
+.liste_acteur p
+{
+    margin-bottom: 10px;
+    width: 126px;
+    height: 40px;
 }
 
 .liste_acteur img

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
         <link rel="stylesheet" href="./css/awesome_series.css"/>
          <?php 
             require ('template.php');
@@ -24,7 +24,7 @@
                 $id_serie = $donnees['id_serie'];
                 $nom_serie = str_replace(' ', '-',$donnees['titre_serie']);
                 $serie = $donnees['titre_serie'];
-                $nationatile = $donnees['nationalite_serie'];
+                $nationalite = $donnees['nationalite_serie'];
                 $realisateur = $donnees['realisateur_serie'];
                 $synopsis = $donnees['synopsis_serie'];
                 $resume = $donnees['resume_serie'];
@@ -83,14 +83,15 @@
                 <iframe width="560" height="315" src="<?php echo $trailer; ?>" frameborder="0" allowfullscreen></iframe>
                 <p class="titre_infos">Infos supplémentaires :</p><br/>
                 <p class="texte_infos">
-                    Réalisateur : Vince Gillian
-                    Pays        : Etats-Unis    
-                    Genre       : Drame Comédie noire
-                </p>
-                </div>
-                
-                   
-                        
+                  Réalisateur       : <?php echo $realisateur; ?><br/>
+                  Origine           : <?php echo $nationalite; ?><br/>
+                  Genre             : <?php echo $genre; ?><br/>
+                  Format            : <?php echo $format; ?><br/>
+                  Date de sortie    : <?php echo $annee; ?><br/>
+                  Nombre de saisons : <?php echo $nb_saison; ?><br/>
+                  Statut            : <?php echo $statut; ?><br/>  
+                </p> 
+                </div>    
             </article>
         </section>
         <?php afficher_footer();?>

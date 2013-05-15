@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mer 15 Mai 2013 à 10:49
+-- Généré le: Mer 15 Mai 2013 à 18:26
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.3.13
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `casting_serie` (
   `role_acteur` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_casting`),
   KEY `fk_table1_serie1_idx` (`serie_id_serie`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=62 ;
 
 --
 -- Contenu de la table `casting_serie`
@@ -66,7 +66,32 @@ INSERT INTO `casting_serie` (`id_casting`, `serie_id_serie`, `nom_acteur`, `role
 (24, 4, 'Emilia Clarke', 'Daenerys Targaryen'),
 (27, 4, 'Richard Madden', 'Robb Stark'),
 (29, 4, 'Kit Harington', 'Jon Snow'),
-(30, 4, 'Jack Gleeson', 'Geoffrey Bratheon');
+(30, 4, 'Jack Gleeson', 'Geoffrey Bratheon'),
+(31, 5, 'Travis Fimmel', 'Ragnar Lothbrok'),
+(32, 5, 'Katheryn Winnick', 'Lagertha Lothbrok'),
+(33, 5, 'Clive Standen', 'Rollo Lothbrok'),
+(34, 5, 'Gabriel Byrne', 'Earl Haraldson'),
+(35, 5, 'Jessalyn Gilsig', 'Siggy Haraldson'),
+(40, 5, 'George Blagden', 'Athelstan'),
+(41, 5, 'Gustaf Skarsgard', 'Floki'),
+(44, 5, 'Donal Logue', 'Roi Horik'),
+(45, 5, 'Nathan O''Toole', 'Bjorn Lothbrok'),
+(46, 15, 'Patrick J.Adams', 'Michaël "Mike" Ross'),
+(47, 15, 'Gabriel Macht', 'Harvey Specter'),
+(48, 15, 'Gina Torres', 'Jessica Pearson'),
+(49, 15, 'Rick Hoffman', 'Louis Litt'),
+(50, 15, 'Meghan Markle', 'Rachel Zane'),
+(51, 15, 'Sarah Rafferty', 'Donna'),
+(52, 15, 'Tom Lipinski', 'Trevor Evans'),
+(53, 15, 'David Costabile', 'Daniel Hardman'),
+(54, 15, 'Vanessa Ray', 'Jenny Griffith'),
+(55, 13, 'Jim Parsons', 'Sheldon Cooper'),
+(56, 13, 'Johnny Galecki', 'Leonard Hofstadter'),
+(57, 13, 'Kaley Cuoco', 'Penny'),
+(58, 13, 'Simon Helberg', 'Howard Wolowitz'),
+(59, 13, 'Kunal Nayyar', ' Rajesh "Raj" Koothrappali'),
+(60, 13, 'Melissa Rauch', 'Bernadette "Bernie" Maryann Rostenkowski '),
+(61, 13, 'Mayim Bialik', 'Amy Farrah Fowler');
 
 -- --------------------------------------------------------
 
@@ -117,7 +142,7 @@ INSERT INTO `serie` (`id_serie`, `titre_serie`, `nationalite_serie`, `realisateu
 (2, 'Sons of Anarchy', 'Américaine', 'Kurt Sutter', 'L''histoire se déroule à Charming, ville fictive du comté de San Joaquin en Californie. Une lutte de territoires entre dealers et trafiquants d''armes vient perturber les affaires d''un club de bikers (Motorcycle Club, ou MC en anglais). Ce club, nommé Sons of Anarchy Motorcycle Club Redwood Original, couramment abrégé en SAMCRO, fait régner l''ordre dans Charming. Clay Morrow, président de SAMCRO et patron du garage Teller-Morrow, ainsi que Jax Teller, vice-président, mènent le club.\r\nLes Sons of Anarchy sont à la fois craints par la population mais également très respectés et admirés pour leur code d’honneur et leur capacité à maintenir l’ordre et rendre justice dans les situations délicates. \r\nblablablaaaaaaaaaaaa aaaaaaaaaaaaaa aaa aaaaaaaa aaaaaaaaa aaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaa  aaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaa aaaaaaaa aaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaa aaa aaaaa aa aaaaaa   aaaaaaaaaaaaaaaaaaa aaaaaaaaaaa', NULL, 'Drame / Comédie Dramatique', 'Sept 2008', 6, 'En production', '43 min', 'http://www.youtube.com/embed/x3-R7XnfL8U'),
 (3, 'The Wire', 'Américaine', 'David Simon et Ed Burns', NULL, NULL, 'Drame / Comédie Dramatique, Policier', 'Juin 2002 - Mars 2008', 5, 'Terminée', '55 min', ''),
 (4, 'Game of Thrones', 'Américaine', 'David Benioff et D. B. Weiss', 'Sur le continent de Westeros, le roi Robert Baratheon règne sur le Royaume des Sept Couronnes depuis qu''il a mené à la victoire la rébellion contre le roi fou Aerys II Targaryen, dix-sept ans auparavant. Son guide et principal conseiller, Jon Arryn, venant de décéder, il part dans le nord du royaume demander à son vieil ami Eddard Stark, seigneur suzerain du Nord et de la Maison Stark, de remplacer leur regretté mentor au poste de « main du Roi ». Eddard, peu désireux de quitter ses terres, accepte à contrecœur de partir à la Cour avec ses deux filles, alors que Jon Snow, son fils illégitime, se prépare à intégrer la fameuse Garde de Nuit : la confrérie protégeant le royaume depuis des siècles à son septentrion, de toute créature pouvant provenir d''au-delà du Mur protecteur. Mais, juste avant le départ pour le Sud, Bran, un des jeunes fils d''Eddard, fait une découverte en escaladant une tour de Winterfell dont découleront des conséquences inattendues…\r\nDans le même temps, sur le continent Est, Viserys Targaryen, héritier « légitime » en exil des Sept Couronnes et fils d''Aerys, projette de marier sa jeune sœur Daenerys à Drogo, le chef d''une puissante horde de cavaliers nomades, afin de s''en faire des alliés en vue de la reconquête du royaume. Mais Viserys est presque aussi instable mentalement que son père.', NULL, 'Fantasy', 'Avril 2011', 3, 'En production', '55 min', 'http://www.youtube.com/embed/cdpKzgW3UWE'),
-(5, 'Vikings', 'Canada Royaume-Uni Irlande', 'Michael Hirst', NULL, NULL, 'Drame Aventure Historique', 'Mars 2013', 1, 'En production', '44 min', ''),
+(5, 'Vikings', 'Canada Royaume-Uni Irlande', 'Michael Hirst', 'La série suit les exploits d''un groupe de Vikings mené par Ragnar Lodbrok, l''un des plus populaires héros viking de tous les temps au destin semi-légendaire. Ragnar serait d''origine danoise, suédoise ou encore norvégienne selon les sources. Il est supposé avoir unifié les clans vikings en un royaume aux frontières indéterminées à la fin du viiie siècle. Mais il est surtout connu pour avoir été le promoteur des tout premiers raids vikings en terres chrétiennes, saxonnes, franques ou celtiques.\r\nDans la série, ce simple fermier, homme lige du Jarl Haraldson, se rebelle contre les choix stratégiques de son suzerain. Au lieu d''attaquer les païens slaves et baltes de la Baltique, pourquoi ne pas se lancer dans l''attaque des riches terres de l''ouest, là où les monastères regorgent de trésors qui n''attendent que d''être pillés par des guerriers ambitieux ?\r\nClandestinement, Ragnar va monter sa propre expédition et sa réussite changera le destin des Vikings comme celui des royaumes chrétiens du sud, que le simple nom de « Viking » terrorisera pendant près d''un siècle.', NULL, 'Drame Aventure Historique', 'Mars 2013', 1, 'En production', '44 min', 'http://www.youtube.com/embed/XQFQN3-Pm8E'),
 (6, 'Spartacus', 'États-Unis', 'Steven S. DeKnight', NULL, NULL, 'Drame Peplum Historique', 'Janvier 2010 - Avril 2013', 3, 'Terminée', '42 min (S01) 54 min (S02, S03)', ''),
 (7, 'Hell on Weels', 'Etats-Unis', 'Joe et Tony Gayton', NULL, NULL, 'Drame Historique Western', 'Novembre 2011', 2, 'En production', '43 min', ''),
 (8, 'Rome', 'États-Unis Royaume-Uni ', ' John Milius, William J. MacDonald et Bruno Heller.', NULL, NULL, 'Drame Historique', 'Août 2005 - Mars 2007', 2, 'Terminée', '52 min', ''),
@@ -125,11 +150,9 @@ INSERT INTO `serie` (`id_serie`, `titre_serie`, `nationalite_serie`, `realisateu
 (10, 'Révolution', 'États-Unis', 'Eric Kripke', NULL, NULL, 'Science-Fiction', 'Septembre 2012', 1, 'En production', '42 min', ''),
 (11, 'Fringe', 'États-Unis', ' J.J. Abrams, Alex Kurtzman et Roberto Orci', NULL, NULL, 'Science-Fiction, Fantastique, Policier', 'Septembre 2008 - Janvier 2013', 5, 'Terminée', '47 min (S01) 42 min (autre saisons)', ''),
 (12, 'How I met your mother', 'Etats-Unis', ' Carter Bays et Craig Thomas', NULL, NULL, 'Sitcom Comédie', 'Septembre 2005', 8, 'En production', '22 min', ''),
-(13, 'The Big Bang Theory', 'Etats-Unis', 'Chuck Lorre et Bill Prady ', NULL, NULL, 'Sitcom Comédie Geek', 'Septembre 2007 ', 6, 'En production', '22 min', ''),
+(13, 'The Big Bang Theory', 'Etats-Unis', 'Chuck Lorre et Bill Prady ', 'Leonard Hofstadter et Sheldon Cooper vivent en colocation à Pasadena, une ville de l''agglomération de Los Angeles. Ce sont tous deux des physiciens surdoués, « geeks » de surcroît. C''est d''ailleurs autour de cela qu''est axée la majeure partie comique de la série. Ils partagent quasiment tout leur temps libre avec leurs deux amis Howard Wolowitz et Rajesh Koothrappali pour jouer à des jeux vidéo comme Halo, organiser un marathon des films Superman, jouer à des jeux de société ou de rôles comme le Boggle klingon, Donjons et Dragons, voire discuter de théories scientifiques très complexes.\r\nLeur univers routinier est perturbé lorsqu''une jolie jeune femme, Penny, s''installe dans l''appartement d’en face. Leonard a immédiatement des vues sur elle, et va tout faire pour la séduire et l''intégrer au groupe et à leur univers auquel elle ne connaît rien.\r\nTRUUUUUUUUCCCC DEEEE GGGGGGG3333333333333KKKKKKKKKKKKK !!!', NULL, 'Sitcom, Comédie Geek', 'Septembre 2007 ', 6, 'En production', '22 min', 'http://www.youtube.com/embed/WBb3fojgW0Q'),
 (14, 'Community', 'Etats-Unis', ' Dan Harmon', NULL, NULL, 'Sitcom Comédie ', 'Septembre 2009', 4, 'En production', '22 min', ''),
-(15, 'Suits', 'Etats-Unis', 'Aaron Korsh', NULL, NULL, 'Comédie Judiciaire', 'Juin 2011', 2, 'En production', '43 min', ''),
-(16, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
-(17, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://www.youtube.com/embed/x3-R7XnfL8U');
+(15, 'Suits', 'Etats-Unis', 'Aaron Korsh', 'Mike Ross est un jeune homme brillant dont le rêve d''enfant était de devenir avocat, rêve brisé après que des imprévus l''ont poussé à abandonner ses études. Intelligent et doté d''une mémoire eidétique, Mike subvient à ses besoins en passant des examens à la place d''autres personnes, en particulier des examens en droit. Harvey Specter, un des meilleurs avocats de New York, vient d''obtenir une promotion au sein du cabinet d''avocats Pearson Hardman : il est alors tenu d''engager un assistant. Sur la base d''un quiproquo, Harvey fait passer un entretien d''embauche à Mike. Il est particulièrement impressionné par les qualités du jeune homme et l''engage. Comme Mike n''a pas de diplôme en droit et que la société Pearson Hardman embauche exclusivement les diplômés de Harvard, tous deux prétendent que Mike est un ancien de Harvard.\r\nMais Mike est continuellement harcelé par Louis Litt, un rival de Harvey qui doute de ses références. Cependant, il pourra compter sur l''amitié de Rachel Zane, une assistante juridique trop anxieuse pour passer l''examen du Barreau avec laquelle il développe une complicité.', NULL, 'Comédie Judiciaire', 'Juin 2011', 2, 'En production', '43 min', 'http://www.youtube.com/embed/SYUQKm2nZNE');
 
 -- --------------------------------------------------------
 

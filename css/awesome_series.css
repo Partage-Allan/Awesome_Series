@@ -36,7 +36,7 @@ header
     margin-left: 35px;
     color: #D2D3D0;
     text-shadow: 2px 2px black;
-    
+
 }
 
 nav 
@@ -169,7 +169,7 @@ a.infobulle
     position: relative; 
 }
 
- a.infobulle span  
+a.infobulle span  
 {  
     position: absolute;  
     top:-2000em;  
@@ -180,7 +180,7 @@ a.infobulle
     background:#DDEEFF; /* Définition du fond, sinon on a le même que notre lien */ 
     /*border:1px solid #6699FF; /* Définition des bordures */
 } 
-  
+
 a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span  
 {  
     text-align: center;
@@ -262,27 +262,37 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
     background: url(../images/red_asterisk.png) 99% 5% no-repeat white; 
 }
 
-#nom, #email {
-	height: 25px;
-	margin-bottom: 5px;
-        padding-left: 3px;
-        -moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+#nom, #email, #emailConfirm, #login, #dateNaissance, #pass, #passConfirm {
+    height: 25px;
+    margin-bottom: 5px;
+    padding-left: 3px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=submit] {
+    height: 45px;
+    margin-bottom: 5px;
+    padding-left: 3px;
+    border-color: rgb(68,255,15);
+    background-color: rgb(187,253,170);
+    border-radius: 35px;
+    cursor: pointer;
 }
 
 #commentaires {
-        height: 60px;
-        margin-bottom: 3px;
-        width: 406px;
-        margin-left: 2px;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
+    height: 60px;
+    margin-bottom: 3px;
+    width: 406px;
+    margin-left: 2px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
 
 #mySubmit {
-        margin-left: 250px;
+    margin-left: 250px;
 }
 /*****************************************************************************************/
 /******************************Fin Styles Page de Contact **********************************/
@@ -308,12 +318,12 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
 
 #synopsis
 {
-   height: auto;
-   width: 500px;
-   float: left;
-   text-align: left;
-   color: #D2D3D0;
-   text-shadow: 2px 2px black;
+    height: auto;
+    width: 500px;
+    float: left;
+    text-align: left;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
 }
 
 #cast
@@ -327,7 +337,7 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
 {
     clear: both;
     display: inline-block;
-    width: 500px;
+    width: 550px;
     margin-bottom: 30px;
     height: 646px;
 }
@@ -346,10 +356,16 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
 }
 .liste_acteur ul li
 {
-    margin: 0px;
+    margin-right: 10px;
     color: #D2D3D0;
     text-shadow: 2px 2px black;
-    
+}
+
+.liste_acteur p
+{
+    margin-bottom: 10px;
+    width: 126px;
+    height: 40px;
 }
 
 .liste_acteur img
@@ -360,9 +376,9 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
 .bloc_trailer
 {
     float: right;
-    width: 500px;
+    width: 450px;
     height: 646px;
-    
+
 }
 .texte_trailer
 {

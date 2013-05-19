@@ -9,14 +9,19 @@
     <body>
         <?php afficher_header(); ?>
         <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="formulaireInscription.php">Inscription</a></p>
+       <!-- ici  je vis venir inserer mon code php-->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <div id="ContainerForm">
-            <?php
-            if (!isset($_POST['dateNaissance'])) {
-                $_POST['dateNaissance'] = '';
-            } else {
-                echo $_POST['dateNaissance'];
-            }
-            ?>
+            
             <form method="post" action="formulaireInscription.php" id="formulaire_contact">
                 <table>
                     <tr>    

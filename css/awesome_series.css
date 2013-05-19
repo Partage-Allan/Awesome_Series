@@ -262,7 +262,7 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
     background: url(../images/red_asterisk.png) 99% 5% no-repeat white; 
 }
 
-#nom, #email, #emailConfirm, #login, #dateNaissance, #pass, #passConfirm {
+input{ 
     height: 25px;
     margin-bottom: 5px;
     padding-left: 3px;
@@ -280,6 +280,7 @@ input[type=submit] {
     border-radius: 35px;
     cursor: pointer;
 }
+
 
 #commentaires {
     height: 60px;

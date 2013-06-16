@@ -16,10 +16,10 @@
             $email = $_POST['email'];
             $pass = $_POST['pass'];
             $dateNaissance = $_POST['dateNaissance'];
-         
+
             $corps = 'Bonjour, ceci est un message de confirmation suite à la demande de création de votre compte. <br>';
             $corps .= 'Pour valider votre inscription à Awesome Séries cliquez sur le lien ci-dessous <br>';
-            $corps .= "<a href='https://localhost/awesome/confirmationInscription.php?login=";
+            $corps .= "<a href='https://localhost:8080/Awesome_Series/confirmationInscription.php?login=";
             $corps .= $login;
             $corps .= "&email=";
             $corps .= $email;
@@ -28,15 +28,14 @@
             $corps .= "&dateNaissance=";
             $corps .= $dateNaissance;
             $corps .= "'>Cliquez ici!</a> <br>";
-            mail($email, "Awesome Séries - Inscription", $corps, "Content-type: text/html");
-            echo $corps.'<br>';
-            /*echo "Bienvenue sur Awesome Séries,<br>";
-            echo "Votre inscription a bien été prise en compte<br>";
-            echo "Un email de verification vous a été envoyé à l'adresse suivante : " . $email . "<br>";
-            echo "Veuillez consulter votre messagerie afin de valider votre compte.<br>";
-            echo"<a href='https://localhost/awesome/index.php'>Retour acceuil</a>";*/
-        } 
-        else {
+            // mail($email, "Awesome Séries - Inscription", $corps, "Content-type: text/html");
+            echo $corps . '<br>';
+            /* echo "Bienvenue sur Awesome Séries,<br>";
+              echo "Votre inscription a bien été prise en compte<br>";
+              echo "Un email de verification vous a été envoyé à l'adresse suivante : " . $email . "<br>";
+              echo "Veuillez consulter votre messagerie afin de valider votre compte.<br>";
+              echo"<a href='https://localhost/awesome/index.php'>Retour acceuil</a>"; */
+        } else {
             ?>
             <div id="ContainerForm">
 
@@ -72,7 +71,7 @@
                         <tr>
                             <td>
                                 <label for="dateNaissance">Date de naissance : </label>
-                                <input type="date" id="dateNaissance" name="dateNaissance" placeholder="format : aaaajjmm" maxlength='8' pattern=".{8,8}"/>
+                                <input type="date" id="dateNaissance" name="dateNaissance"  required placeholder="format : aaaajjmm" maxlength='8' pattern=".{8,8}"/>
                             </td>
                         </tr>
                         <tr>
@@ -105,8 +104,7 @@
 
                     </script>
                 </form>
-                <?php
-            }
-            ?>
-
-        </div>
+            </div>
+            <?php
+        }
+        ?>

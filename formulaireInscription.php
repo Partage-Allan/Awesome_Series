@@ -28,13 +28,13 @@
             $corps .= "&dateNaissance=";
             $corps .= $dateNaissance;
             $corps .= "'>Cliquez ici!</a> <br>";
-            // mail($email, "Awesome Séries - Inscription", $corps, "Content-type: text/html");
+            mail($email, "Awesome Séries - Inscription", $corps, "Content-type: text/html");
             echo $corps . '<br>';
-            /* echo "Bienvenue sur Awesome Séries,<br>";
+            echo "Bienvenue sur Awesome Séries,<br>";
               echo "Votre inscription a bien été prise en compte<br>";
               echo "Un email de verification vous a été envoyé à l'adresse suivante : " . $email . "<br>";
               echo "Veuillez consulter votre messagerie afin de valider votre compte.<br>";
-              echo"<a href='https://localhost/awesome/index.php'>Retour acceuil</a>"; */
+              echo"<a href='https://localhost/awesome/index.php'>Retour acceuil</a>"; 
         } else {
             ?>
             <div id="ContainerForm">

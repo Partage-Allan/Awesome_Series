@@ -10,7 +10,7 @@
     <body>
         <?php afficher_header();?>
         <h1>Inscription</h1>
-        <form method="post" action="formulaire.php" id="formulaire">
+        <form method="post" action="inscription_terminee.php" id="formulaire">
             <div class="content_form">
                 <div class="content_form">
                 <label>Login</label>
@@ -64,13 +64,40 @@
             }
         </script>
         <?php 
+        
         if(!empty($_POST))
         {
             extract($_POST);
-            $password= md5($password);
-            $requete = "INSERT INTO user VALUES ('','$login','$nom','$prenom','$email','$password')";
-            executer_requete($requete);
-            echo"bienvenue";
+            
+            $verifLogin = ("SELECT COUNT(*) AS nbr1 FROM user WHERE login = '$login'");
+            $rep1 = executer_requete($verifLogin);
+            
+            $verifEmail = ("SELECT COUNT(*) AS nbr2 FROM user WHERE email = '$email'");
+            $rep2 = executer_requete($verifEmail);
+            while ($donnees = $rep1->fetch())
+            {
+                if($donnees['nbr1'] > 0)
+                {
+                    echo "Ce pseudo est déjà utilisé !";
+                }
+                else
+                {
+                    while ($donnees2 = $rep2->fetch())
+                    {
+                        if($donnees2['nbr2'])
+                            echo "Cet eamil est déjà utilisé !";
+                        else
+                        {
+                            $password = md5($password);
+                            $requete = "INSERT INTO user VALUES ('','$login','$nom','$prenom','$email','$password')";
+                            executer_requete($requete);
+                            header("location:inscription_terminee"); 
+                        }
+                    }
+                }
+            }
+            $rep1->closeCursor();
+            $rep2->closeCursor();
         }
         ?>
     </body>

@@ -6,6 +6,6 @@
     
     define("DB_PASS","");
     
-    define("DB_BDD","news");
+    define("DB_BDD","user");
 
 ?>

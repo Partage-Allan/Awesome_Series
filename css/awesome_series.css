@@ -491,13 +491,14 @@ input:focus:valid
     -moz-box-shadow: #56d93f,0,0,5px;
 }
 
-.content_form #email:valid, #nom:valid, #prenom:valid, #pseudo:valid 
+.content_form #email:valid, #confirmemail:valid, #nom:valid, #prenom:valid, #login:valid, #password:valid, #confirmpassword:valid
 {
     background: url(../images/valid.png) 98% center no-repeat white;
 }
 
 input[type=submit] 
 {
+    
     height: 25px;
     width: 100px;
     margin-bottom: 55px;

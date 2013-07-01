@@ -8,19 +8,25 @@
     </head>
     <body>
         <?php afficher_header();?>
+        <?php 
+        extract($_POST);
+        $requete=("INSERT INTO user VALUES ('',$login','$nom','$prenom','$email','$password')");
+        executer_requete($requete);
+        echo"bienvenue";
+        ?>
         <h1>Inscription</h1>
         <form method="post" action="formulaire.php" id="formulaire">
             <div class="content_form">
+                <div class="content_form">
+                <label>Login</label>
+                <input name="pseudo" type="text" id="login" required placeholder="Choisissez votre login" pattern="^[A-Za-z0123456789-_/-]+"/>
+            </div>
                 <label>Nom</label>
                 <input name="nom" type="text" id="nom" required placeholder="Entrez votre nom" pattern="[A-Za-z]+"/>
             </div>
             <div class="content_form">
                 <label>Prénom</label>
                 <input name="prenom" type="text" id="prenom" required placeholder="Entrez votre prénom"pattern="[A-Za-z]+"/>
-            </div>
-            <div class="content_form">
-                <label>Login</label>
-                <input name="pseudo" type="text" id="login" required placeholder="Choisissez votre login" pattern="^[A-Za-z0123456789-_/-]+"/>
             </div>
             <div class="content_form">
                 <label>E-mail</label>

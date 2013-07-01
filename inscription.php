@@ -16,19 +16,31 @@
                 <tr>    
                     <td>
                         <label for="nom">Nom : </label>
-                        <input type="text" id="nom" name="nom" required placeholder="Entrez votre nom" />
+                        <input type="text" id="nom" name="nom" required placeholder="Entrez votre nom..." />
                     </td>
                 </tr>
                  <tr>    
                     <td>
                         <label for="nom">Prénom : </label>
-                        <input type="text" id="prenom" name="prenom" required placeholder="Entrez votre prénom" />
+                        <input type="text" id="prenom" name="prenom" required placeholder="Entrez votre prénom..." />
                     </td>
                 </tr>
                  <tr>    
                     <td>
                         <label for="nom">Pseudo : </label>
-                        <input type="text" id="pseudo" name="pseudo" required placeholder="Entrez votre pseudo" />
+                        <input type="text" id="pseudo" name="pseudo" required placeholder="Entrez votre pseudo..." />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Mot de passe : </label>
+                        <input type="text" id="mot de passe" name="email" required pattern="^@$" placeholder="Entrez un mot de passe"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Valider le mot de passe : </label>
+                        <input type="text" id="email" name="email" required placeholder="Validez votre E-mail"/>
                     </td>
                 </tr>
                 <tr>
@@ -40,13 +52,13 @@
                  <tr>    
                     <td>
                         <label for="nom">Vérification E-mail : </label>
-                        <input type="text" id="" name="" required placeholder="Vérifier E-mail" />
+                        <input type="e-mail" id="" name="" required placeholder="Vérifier E-mail" />
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label for="serie_vues">Séries vues:</label>
-                        <textarea id="commentaires" name="commentaires"  required placeholder="Ex: Breaking Bad - Games of Thrones - Falling Skies..."></textarea>
+                        <textarea id="commentaires" name="commentaires"  required placeholder="Ex: Breaking Bad - Game of Thrones - Falling Skies..."></textarea>
                     </td>
                 </tr>
                 <tr>

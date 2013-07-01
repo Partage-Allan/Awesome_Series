@@ -13,11 +13,12 @@ function afficher_header()
                     printf('<li><a href="index.php">Accueil</a></li>');
                     printf('<li><a href="presentation.php">Présentation</a></li>');
                     printf('<li><a href="search.php">Séries</a>');
-                    printf('<li><a href="contact.php">Contact</a>');
+                    printf('<li><a href="formulaire.php">Inscription</a>');
                     printf('</li>');
                     printf('<li class="button"><a href=".php">Actu</a></li>');
                     printf('<li class="button"><a href="dossiers.php">Dossiers</a></li>');
                     printf('<li class="button"><a href="a_venir.php">A Venir</a></li>');
+                    printf('<li class="button"><a href="cinema.php">Cinéma</a></li>');
                 printf('</ul>');
             printf('</nav>');
 printf('</header>');
@@ -38,4 +39,5 @@ function afficher_footer()
      printf('</footer>');
 } 
 /*********************************************************footer******************************************************************/
+
 ?>

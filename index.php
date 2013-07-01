@@ -10,9 +10,6 @@
         <?php afficher_header();?>
         <section>
             <p id="fil_d_ariane"><a href="index.php">Accueil</a></p>
-            
-        
-        
     </body>
     <?php afficher_footer();?>
 </html>   

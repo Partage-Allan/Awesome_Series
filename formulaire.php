@@ -9,44 +9,60 @@
     <body>
         <?php afficher_header();?>
         <h1>Inscription</h1>
-        <form method="post" action="formulaireInscription.php" id="formulaire_contact">
+        <form method="post" action="formulaire.php" id="formulaire">
             <div class="content_form">
                 <label>Nom</label>
-                <input name="nom" type="text" id="nom" required pattern="[A-Za-z]{1,25}"/>
-                <span>Entrez un nom</span>
+                <input name="nom" type="text" id="nom" required placeholder="Entrez votre nom" pattern="[A-Za-z]+"/>
             </div>
             <div class="content_form">
                 <label>Prénom</label>
-                <input name="prenom" title="Veuillez saisir votre prénom" type="text" id="prenom" required pattern="[A-Za-z]{1,25}"/>
-                <span>Entrez votre prénom</span>
+                <input name="prenom" type="text" id="prenom" required placeholder="Entrez votre prénom"pattern="[A-Za-z]+"/>
             </div>
             <div class="content_form">
-                <label class="labeli">Pseudo</label>
-                <input name="pseudo" type="text" id="pseudo" required pattern="^[A-Za-z0123456789-_/-]+"/>
-                <span>Choisissez un pseudo</span>
+                <label>Login</label>
+                <input name="pseudo" type="text" id="login" required placeholder="Choisissez votre login" pattern="^[A-Za-z0123456789-_/-]+"/>
             </div>
             <div class="content_form">
-                <label class="labeli">E-mail</label>
-                <input name="email" type="email" id="email" required />
-                <span>Entrez votre adresse e-mail</span>
+                <label>E-mail</label>
+                <input name="email" type="email" id="email" required oninput='verifMail()' placeholder="adresse@mail.com"/>
             </div>
             <div class="content_form">
-                <label class="labeli">Vérification e-mail</label>
-                <input name="email" type="email" id="email" required/>
-                <span>Vérifiez votre e-mail</span>
+                <label>Vérification e-mail</label>
+                <input name="confirmemail" type="email" id="confirmemail" required oninput='verifMail()' placeholder="Confirmez votre e-mail"/>
             </div>
             <div class="content_form">
-                <label class="labeli">Mot de passe</label>
-                <input name="password" type="text" id="password" required/>
-                <span>Choisissez un mot de passe</span>
+                <label>Mot de passe</label>
+                <input name="password" type="password" id="password" required oninput='verifPass()' placeholder="Entrez un mot de passe"/>
             </div>
             <div class="content_form">
-                <label class="labeli">Vérification mot de passe</label>
-                <input name="confirmpassword" type="password" id="confirmpassword" required/>
-                <span>Vérifiez votre mot de passe</span>
-            </div>  
-        </form>
+                <label>Vérification mot de passe</label>
+                <input name="confirmpassword" type="password" id="confirmpassword" required oninput='verifPass()' placeholder="Validez mot de passe"/>
+            </div>
             <input type="submit" value="Valider" id="submit" class="boutton"/>
+        </form>
+        <script>
+                        function verifMail() {
+                            var email = document.getElementById('email');
+                            var emailConfirm = document.getElementById('confirmemail');
+                            if (email.value !== emailConfirm.value) {
+                                emailConfirm.setCustomValidity('Les adresses mail ne correspondent pas.');
+                            }
+                            else {
+                                emailConfirm.setCustomValidity('');
+                            }
+                        }
+                        function verifPass() {
+                            var pass = document.getElementById('password');
+                            var passConfirm = document.getElementById('confirmpassword');
+                            if (pass.value !== passConfirm.value) {
+                                passConfirm.setCustomValidity('Les mots de passe de correspondent pas.');
+                            }
+                            else {
+                                passConfirm.setCustomValidity('');
+                            }
+                        }
+
+        </script>
     </body>
     <?php afficher_footer();?>
 </html>        

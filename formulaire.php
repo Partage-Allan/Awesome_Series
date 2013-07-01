@@ -4,22 +4,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
         <link rel="stylesheet" href="./css/awesome_series.css"/>
          <?php require ('template.php');?>
+         <?php require ('commun/sql.inc.php');?>
         <title>Aw3s0me Séries</title>
     </head>
     <body>
         <?php afficher_header();?>
-        <?php 
-        extract($_POST);
-        $requete=("INSERT INTO user VALUES ('',$login','$nom','$prenom','$email','$password')");
-        executer_requete($requete);
-        echo"bienvenue";
-        ?>
         <h1>Inscription</h1>
         <form method="post" action="formulaire.php" id="formulaire">
             <div class="content_form">
                 <div class="content_form">
                 <label>Login</label>
-                <input name="pseudo" type="text" id="login" required placeholder="Choisissez votre login" pattern="^[A-Za-z0123456789-_/-]+"/>
+                <input name="login" type="text" id="login" required placeholder="Choisissez votre login" pattern="^[A-Za-z0123456789-_/-]+"/>
             </div>
                 <label>Nom</label>
                 <input name="nom" type="text" id="nom" required placeholder="Entrez votre nom" pattern="[A-Za-z]+"/>
@@ -47,28 +42,37 @@
             <input type="submit" value="Valider" id="submit" class="boutton"/>
         </form>
         <script>
-                        function verifMail() {
-                            var email = document.getElementById('email');
-                            var emailConfirm = document.getElementById('confirmemail');
-                            if (email.value !== emailConfirm.value) {
-                                emailConfirm.setCustomValidity('Les adresses mail ne correspondent pas.');
-                            }
-                            else {
-                                emailConfirm.setCustomValidity('');
-                            }
-                        }
-                        function verifPass() {
-                            var pass = document.getElementById('password');
-                            var passConfirm = document.getElementById('confirmpassword');
-                            if (pass.value !== passConfirm.value) {
-                                passConfirm.setCustomValidity('Les mots de passe de correspondent pas.');
-                            }
-                            else {
-                                passConfirm.setCustomValidity('');
-                            }
-                        }
-
+            function verifMail() {
+                var email = document.getElementById('email');
+                var emailConfirm = document.getElementById('confirmemail');
+                if (email.value !== emailConfirm.value) {
+                    emailConfirm.setCustomValidity('Les adresses mail ne correspondent pas.');
+                }
+                else {
+                    emailConfirm.setCustomValidity('');
+                }
+            }
+            function verifPass() {
+                var pass = document.getElementById('password');
+                var passConfirm = document.getElementById('confirmpassword');
+                if (pass.value !== passConfirm.value) {
+                    passConfirm.setCustomValidity('Les mots de passe de correspondent pas.');
+                }
+                else {
+                    passConfirm.setCustomValidity('');
+                }
+            }
         </script>
+        <?php 
+        if(!empty($_POST))
+        {
+            extract($_POST);
+            $password= md5($password);
+            $requete = "INSERT INTO user VALUES ('','$login','$nom','$prenom','$email','$password')";
+            executer_requete($requete);
+            echo"bienvenue";
+        }
+        ?>
     </body>
     <?php afficher_footer();?>
 </html>        

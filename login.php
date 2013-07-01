@@ -25,8 +25,7 @@
                 {
                 echo"Bienvenue";    
                 }else echo"Login ou mot de passe incorrect";
-                
-                
+  
                 }
         }
         ?>

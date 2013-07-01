@@ -3,14 +3,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
         <link rel="stylesheet" href="./css/awesome_series.css"/>
-         <?php require ('template.php');?>
-         <?php require ('commun/sql.inc.php');?>
+         <?php 
+            require ('template.php');
+            require ('commun/sql.inc.php');
+         ?>
         <title>Aw3s0me Séries</title>
     </head>
     <body>
         <?php afficher_header();?>
         <h1>Inscription</h1>
-        <form method="post" action="inscription_terminee.php" id="formulaire">
+        <form method="post" action="formulaire.php" id="formulaire">
             <div class="content_form">
                 <div class="content_form">
                 <label>Login</label>
@@ -64,7 +66,6 @@
             }
         </script>
         <?php 
-        
         if(!empty($_POST))
         {
             extract($_POST);
@@ -78,20 +79,38 @@
             {
                 if($donnees['nbr1'] > 0)
                 {
-                    echo "Ce pseudo est déjà utilisé !";
+                    echo '<script type="text/javascript">alert("Ce Login est déjà utilisé!")</script>';
                 }
                 else
                 {
                     while ($donnees2 = $rep2->fetch())
                     {
                         if($donnees2['nbr2'])
-                            echo "Cet eamil est déjà utilisé !";
+                            echo '<script type="text/javascript">alert("Cet Email est déjà utilisé!")</script>';
                         else
                         {
                             $password = md5($password);
-                            $requete = "INSERT INTO user VALUES ('','$login','$nom','$prenom','$email','$password')";
-                            executer_requete($requete);
-                            header("location:inscription_terminee"); 
+                            
+                            $to = $email;
+                            $sujet = "Demande d'inscription Awesome Series";
+                            $entete = "Email de: Awesome Serie : <br>";
+                            $entete .= "Votre inscription a bien été prise en compte <br>";
+                            $entete .= 'Pour valider votre inscription à Awesome Séries cliquez sur le lien ci-dessous <br>';
+                            $entete .= "<a href='http://localhost:8080/Awesome_Series/inscription_terminee.php?login=";
+                            $entete .= $login;
+                            $entete .= "&email=";
+                            $entete .= $email;
+                            $entete .= "&nom=";
+                            $entete .= $nom;
+                            $entete .= "&prenom=";
+                            $entete .= $prenom;
+                            $entete .= "&password=";
+                            $entete .= $password;
+                            $entete .= "'>Cliquez ici!</a> <br>";
+                            
+                            mail($to, $sujet, $entete, "Content-type: text/html");
+                            
+                            echo '<script type="text/javascript">alert("Votre compte est en attente de validation. \n Cliquez sur le lien dans votre email pour valider celui-ci.")</script>';
                         }
                     }
                 }

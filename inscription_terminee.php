@@ -9,13 +9,18 @@
     </head>
     <body>
         <?php afficher_header();
-
-        echo "Bienvenue sur Awesome Séries,<br>";
-              echo "Votre inscription a bien été prise en compte<br>";
-              echo "Un email de verification vous a été envoyé à l'adresse suivante : " . $email . "<br>";
-              echo "Veuillez consulter votre messagerie afin de valider votre compte.<br>";
-              echo"<a href='https://localhost/awesome/index.php'>Retour acceuil</a>"; 
+            $login = $_GET['login'];
+            $nom = $_GET['nom'];
+            $prenom = $_GET['prenom'];
+            $email = $_GET['email'];
+            $password = $_GET['password'];
+            
+            $requete = "INSERT INTO user VALUES ('','$login','$nom','$prenom','$email','$password')";
+            executer_requete($requete);
+            echo "Bienvenue sur Awesome Séries!<br>";
+            echo "Nous vous remercions pour la validation de votre compte.<br>";
+            echo"<a href='https://localhost/awesome/index.php'>Retour acceuil</a>"; 
         ?>      
-        </body>
+    </body>
     <?php afficher_footer();?>
 </html>        

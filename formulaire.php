@@ -11,35 +11,35 @@
     </head>
     <body>
         <?php afficher_header();?>
-        <h1>Inscription</h1>
+        <h1 class="inscription">Inscription</h1>
         <form method="post" action="formulaire.php" id="formulaire">
             <div class="content_form">
-                <div class="content_form">
                 <label>Login</label>
-                <input name="login" type="text" id="login" required placeholder="Choisissez votre login" pattern="^[A-Za-z0123456789-_/-]+"/>
+                <input name="login" type="text" id="login" required placeholder="Choisissez votre login" pattern="^[A-Za-z0123456789-_/-]+" value ="<?php if (isset($_POST['login'])) echo ($_POST['login']); ?>"/>
             </div>
+            <div class="content_form">
                 <label>Nom</label>
-                <input name="nom" type="text" id="nom" required placeholder="Entrez votre nom" pattern="[A-Za-z]+"/>
+                <input name="nom" type="text" id="nom" required placeholder="Entrez votre nom" pattern="[A-Za-z]+" value ="<?php if (isset($_POST['nom'])) echo ($_POST['nom']); ?>"/>
             </div>
             <div class="content_form">
                 <label>Prénom</label>
-                <input name="prenom" type="text" id="prenom" required placeholder="Entrez votre prénom"pattern="[A-Za-z]+"/>
+                <input name="prenom" type="text" id="prenom" required placeholder="Entrez votre prénom"pattern="[A-Za-z]+" value ="<?php if (isset($_POST['prenom'])) echo ($_POST['prenom']); ?>"/>
             </div>
             <div class="content_form">
                 <label>E-mail</label>
-                <input name="email" type="email" id="email" required oninput='verifMail()' placeholder="adresse@mail.com"/>
+                <input name="email" type="email" id="email" required oninput='verifMail()' placeholder="adresse@mail.com" value ="<?php if (isset($_POST['email'])) echo ($_POST['email']); ?>"/>
             </div>
             <div class="content_form">
                 <label>Vérification e-mail</label>
-                <input name="confirmemail" type="email" id="confirmemail" required oninput='verifMail()' placeholder="Confirmez votre e-mail"/>
+                <input name="confirmemail" type="email" id="confirmemail" required oninput='verifMail()' placeholder="Confirmez votre e-mail" value ="<?php if (isset($_POST['confirmemail'])) echo ($_POST['confirmemail']); ?>"/>
             </div>
             <div class="content_form">
                 <label>Mot de passe</label>
-                <input name="password" type="password" id="password" required oninput='verifPass()' placeholder="Entrez un mot de passe"/>
+                <input name="password" type="password" id="password" required oninput='verifPass()' placeholder="Entrez un mot de passe" value ="<?php if (isset($_POST['password'])) echo ($_POST['password']); ?>"/>
             </div>
             <div class="content_form">
                 <label>Vérification mot de passe</label>
-                <input name="confirmpassword" type="password" id="confirmpassword" required oninput='verifPass()' placeholder="Validez mot de passe"/>
+                <input name="confirmpassword" type="password" id="confirmpassword" required oninput='verifPass()' placeholder="Validez mot de passe" value ="<?php if (isset($_POST['confirmpassword'])) echo ($_POST['confirmpassword']); ?>"/>
             </div>
             <input type="submit" value="Valider" id="submit" class="boutton"/>
         </form>

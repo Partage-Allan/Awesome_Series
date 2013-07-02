@@ -40,20 +40,22 @@ header
     margin-left: 35px;
     color: #D2D3D0;
     text-shadow: 2px 2px black;
+    float: left;
 }
 
 .texte_titre
 {
-    display: inline-block;
     margin: 0;
     width: 300px;
     margin-left: 35px;
     color: #D2D3D0;
     text-shadow: 2px 2px black;
-
+    clear: both;
+    display: block;
 }
 
-input{ 
+input
+{ 
     height: 25px;
     width:  170px;
     margin-left: 35px;
@@ -62,8 +64,8 @@ input{
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    
 }
+
 nav 
 {  
     margin-left: 35px;  
@@ -91,6 +93,15 @@ nav form
     padding-left: 20px;
 }
 
+.login
+{
+    float: right;
+    margin-right: 25px;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #DDEEFF;
+    text-shadow: 2px 2px black;
+}
 
 /****************************************/
 /**********Fin Header**********/
@@ -208,8 +219,7 @@ a.infobulle span
     width:1px;  
     height:1px;  
     overflow:hidden;  
-    background:#DDEEFF; /* Définition du fond, sinon on a le même que notre lien */ 
-    /*border:1px solid #6699FF; /* Définition des bordures */
+    background:#DDEEFF;
 } 
 
 a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span  
@@ -392,7 +402,6 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
     float: right;
     width: 450px;
     height: 646px;
-
 }
 .texte_trailer
 {
@@ -419,6 +428,7 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
     color: #D2D3D0;
     text-shadow: 2px 2px black;
 }
+
 iframe
 {
     float: right;
@@ -434,11 +444,16 @@ iframe
 /*****************************************************************************************/
 /****************************** formulaire **********************************/
 /***************************************************************************************/
+.inscription
+{
+    margin-left: 450px;
+}
+
 .content_form
 {
+    margin-left: 200px;
     margin-top: 20px;
-    margin-bottom: 30px;
-    
+    margin-bottom: 30px;   
 }
 
 .content_form label
@@ -451,8 +466,7 @@ iframe
     color: #D2D3D0;
     font-size: 14px;
     text-align: left;
-    margin-left: 55px;
-    
+    margin-left: 55px;   
 }
 
 input
@@ -498,11 +512,10 @@ input:focus:valid
 
 input[type=submit] 
 {
-    
     height: 25px;
     width: 100px;
     margin-bottom: 55px;
-    margin-left: 285px;
+    margin-left: 450px;
     text-align: center;
     cursor: pointer;
 }
@@ -510,35 +523,12 @@ input[type=submit]
 span
 {
     display: none;
-
 }
 
-/*url(../images/invalid.png)
-url(../images/red_asterisk.png)*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.register
+{
+    text-decoration: none;
+    color: #DDEEFF;
+    text-shadow: 2px 2px black;
+    margin-left: 450px;
+}

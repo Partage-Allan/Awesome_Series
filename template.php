@@ -4,10 +4,19 @@
 /********************************************************************************************************************************/
 function afficher_header() 
 {
+    if (!isset($_SESSION)) { 
+        session_start(); 
+    }
     printf("<header>");
-    printf("<h1 class=\"titre_site\">Awesome Séries</h1>");    
-        printf('<p class="texte_titre">LE Site sur LES Séries</p>');
-        printf('<p class="button"><form method="POST" action="search.php"><input type="search" placeholder="Entrez votre recherche" name="search" /></form></p>'); 
+    printf("<h1 class=\"titre_site\">Awesome Séries</h1>"); 
+        if (!isset($_SESSION['login'])){
+                printf('<a class="login" href="login.php">Se Connecter</a>');
+            }
+        else{
+            printf('<a class="login" href="cmpt_membre.php">Acceder à mon compte</a>');
+        }
+        printf('<div class="texte_titre">LE Site sur LES Séries</div>');
+        printf('<div class="recherche"><form method="POST" action="search.php"><input type="search" placeholder="Entrez votre recherche" name="search" /></form></div>'); 
             printf('<nav>');
                 printf('<ul>');
                     printf('<li><a href="index.php">Accueil</a></li>');

@@ -16,18 +16,18 @@ function afficher_header()
             printf('<a class="login" href="cmpt_membre.php">Acceder à mon compte</a>');
         }
         printf('<div class="texte_titre">LE Site sur LES Séries</div>');
-        printf('<div class="recherche"><form method="POST" action="search.php"><input type="search" placeholder="Entrez votre recherche" name="search" /></form></div>'); 
+        
             printf('<nav>');
                 printf('<ul>');
                     printf('<li><a href="index.php">Accueil</a></li>');
                     printf('<li><a href="presentation.php">Présentation</a></li>');
-                    printf('<li><a href="search.php">Séries</a>');
-                    printf('<li><a href="formulaire.php">Inscription</a>');
-                    printf('</li>');
-                    printf('<li class="button"><a href="actu.php">Actu</a></li>');
-                    printf('<li class="button"><a href="dossiers.php">Dossiers</a></li>');
-                    printf('<li class="button"><a href="a_venir.php">A Venir</a></li>');
-                    printf('<li class="button"><a href="cinema.php">Cinéma</a></li>');
+                    printf('<li><a href="search.php">Séries</a></li>');
+                    printf('<li><a href="formulaire.php">Inscription</a></li>');
+                    printf('<li><a href="actu.php">Actu</a></li>');
+                    printf('<li><a href="dossiers.php">Dossiers</a></li>');
+                    printf('<li><a href="a_venir.php">A Venir</a></li>');
+                    printf('<li><a href="contact.php">Contact</a></li>');
+                    printf('<li><form method="POST" action="search.php"><input class="test" type="search" placeholder="Entrez votre recherche" name="search" /></form></li>');
                 printf('</ul>');
             printf('</nav>');
 printf('</header>');

@@ -63,7 +63,7 @@ if(!empty($_POST)){
                 </tr>
                 <tr>
                     <td>
-                        <input type="submit" value="Envoyer le Formulaire" id="mySubmit" class="boutton"/>
+                        <input type="submit" value="Envoyer" id="mySubmit"/>
                     </td>
                 </tr>
            </table> 

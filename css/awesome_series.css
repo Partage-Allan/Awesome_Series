@@ -58,9 +58,6 @@ input
 { 
     height: 25px;
     width:  170px;
-    margin-left: 35px;
-    margin-bottom: 5px;
-    padding-left: 3px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -81,7 +78,7 @@ nav li
 
 nav a 
 {  
-    margin: 0 25px;  
+    margin-right: 40px;
     text-decoration: none;
     color: #D2D3D0;
     text-shadow: 2px 2px black;
@@ -90,7 +87,6 @@ nav a
 nav form
 {
     display: inline-block;
-    padding-left: 20px;
 }
 
 .login
@@ -245,79 +241,95 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
 /*****************************************************************************************/
 /****************************** Styles Page de Contact **********************************/
 /***************************************************************************************/
-/*
+
 #ContainerForm
 {
     margin-bottom: 25px;
 }
 
-#ContainerForm table {
+#ContainerForm table 
+{
     width: 100%;
 }
 
-#ContainerForm form label {
+#ContainerForm form label 
+{
     padding-right: 10px;
     width: 170px;
     text-align: right;
     display: block;
     float: left;
-    color: black;
-    font-family: "Times New Roman", Times, serif;
+    color: #D2D3D0;
     font-size: 14px;
     font-weight: bold;
     text-align: left;
-    margin-left: 55px;
+    margin-left: 80px;
+    margin-top: 20px;
 }
 
-#ContainerForm form include {
-    width: 500px;
-}
-
-#ContainerForm input:required  textarea:required {
-    background: url(../images/red_asterisk.png) 98% center no-repeat white;
-}
-
-#ContainerForm input:focus:invalid, textArea:focus:invalid {
-    background: url(../images/invalid.png) 98% center no-repeat white;
-}
-
-#ContainerForm input:focus:valid {
-    background: url(../images/valid.png) 98% center no-repeat white;
-}
-
-#ContainerForm #nom:valid {
-    background: url(../images/valid.png) 98% center no-repeat white;
-}
-
-#ContainerForm #email:valid {
-    background: url(../images/valid.png) 98% center no-repeat white;
-}
-
-#ContainerForm textArea:focus:valid {
-    background: url(../images/valid.png) 98% top no-repeat white;
-}
-
-#ContainerForm textArea:required {
-    background: url(../images/red_asterisk.png) 99% 5% no-repeat white; 
-}
-
-
-
-
-
-#commentaires {
-    height: 60px;
-    margin-bottom: 3px;
-    width: 406px;
-    margin-left: 2px;
+#ContainerForm input, #ContainerForm textArea
+{
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
+    padding-left: 5px;
+    transition-duration: 0.5s;
+    border-color: #D2D3D0;
+    margin-top: 20px;
 }
 
-#mySubmit {
-    margin-left: 250px;
-}*/
+#ContainerForm form include 
+{
+    width: 500px;
+}
+
+#ContainerForm input:required  textarea:required 
+{
+    background: url(../images/red_asterisk.png) 98% center no-repeat white;
+}
+
+#ContainerForm input:focus:invalid, textArea:focus:invalid 
+{
+    background: url(../images/invalid.png) 98% center no-repeat white;
+}
+
+#ContainerForm input:focus:valid 
+{
+    background: url(../images/valid.png) 98% center no-repeat white;
+}
+
+#ContainerForm #nom:valid 
+{
+    background: url(../images/valid.png) 98% center no-repeat white;
+}
+
+#ContainerForm #email:valid 
+{
+    background: url(../images/valid.png) 98% center no-repeat white;
+}
+
+#ContainerForm textArea:focus:valid 
+{
+    background: url(../images/valid.png) 98% top no-repeat white;
+}
+
+#ContainerForm textArea:required 
+{
+    background: url(../images/red_asterisk.png) 99% 5% no-repeat white; 
+}
+
+#commentaires 
+{
+    height: 60px;
+    width: 406px;
+}
+
+#mySubmit 
+{
+    margin-top: 50px;
+    margin-left: 400px;
+}
+
 /*****************************************************************************************/
 /******************************Fin Styles Page de Contact **********************************/
 /***************************************************************************************/
@@ -458,23 +470,21 @@ iframe
 
 .content_form label
 {
-    padding-right: 10px;
     width: 170px;
-    text-align: right;
-    display: block;
     float: left;
     color: #D2D3D0;
     font-size: 14px;
     text-align: left;
-    margin-left: 55px;   
+    margin-left: 55px;  
+    line-height: 30px;
 }
 
-input
+.content_form input
 {
     transition-duration: 0.5s;
     border-color: #D2D3D0;
     text-align: left;
-    margin-left: 15px;
+    padding-left: 5px;
 }
 
 input:required
@@ -518,11 +528,6 @@ input[type=submit]
     margin-left: 450px;
     text-align: center;
     cursor: pointer;
-}
-
-span
-{
-    display: none;
 }
 
 .register

@@ -24,7 +24,7 @@ function afficher_header()
                     printf('<li><a href="search.php">Séries</a>');
                     printf('<li><a href="formulaire.php">Inscription</a>');
                     printf('</li>');
-                    printf('<li class="button"><a href=".php">Actu</a></li>');
+                    printf('<li class="button"><a href="actu.php">Actu</a></li>');
                     printf('<li class="button"><a href="dossiers.php">Dossiers</a></li>');
                     printf('<li class="button"><a href="a_venir.php">A Venir</a></li>');
                     printf('<li class="button"><a href="cinema.php">Cinéma</a></li>');

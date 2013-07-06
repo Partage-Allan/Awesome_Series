@@ -85,7 +85,7 @@
                 {
                     while ($donnees2 = $rep2->fetch())
                     {
-                        if($donnees2['nbr2'])
+                        if($donnees2['nbr2'] > 0)
                             echo '<script type="text/javascript">alert("Cet Email est déjà utilisé!")</script>';
                         else
                         {
@@ -95,7 +95,7 @@
                             $sujet = "Demande d'inscription Awesome Series";
                             $entete = "Email de: Awesome Serie : <br>";
                             $entete .= "Votre inscription a bien été prise en compte <br>";
-                            $entete .= 'Pour valider votre inscription à Awesome Séries cliquez sur le lien ci-dessous <br>';
+                            $entete .= 'Pour valider votre inscription à Awesome Séries cliquez sur le lien ci-dessous <br><br>';
                             $entete .= "<a href='http://localhost:8080/Awesome_Series/inscription_terminee.php?login=";
                             $entete .= $login;
                             $entete .= "&email=";

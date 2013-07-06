@@ -10,7 +10,7 @@ function executer_requete ($requete)
             die('Erreur : ' . $e->getMessage());
     }
 
-    $reponse = $bdd->query($requete);
+    $reponse = $bdd->query($requete) or die(mysql_error());
     return $reponse;
 }
 ?>

@@ -16,7 +16,8 @@
             
             $serie_select = str_replace('-', ' ', $_GET['serie']);
             
-            $requete = "SELECT * FROM user WHERE user='$login' AND password='$password'";
+            $requete = 'SELECT * FROM serie
+                        WHERE titre_serie = \'' . $serie_select . '\' ';
 
             $reponse = executer_requete($requete);
             

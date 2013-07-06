@@ -21,24 +21,41 @@
                                         WHERE titre_serie LIKE \'' .$search . '%\' ';
                     
                     $reponse = executer_requete($requete_precise);
+                    
+                    $nb_serie = 'SELECT COUNT(*) AS nbr FROM serie
+                                        WHERE titre_serie LIKE \'' .$search . '%\' ';
                 }
+                
                 else
                 {
                     $requete_general = 'SELECT titre_serie FROM serie';
                     $reponse = executer_requete($requete_general);
+                    
+                    $nb_serie = 'SELECT COUNT(*) AS nbr FROM serie';
                 }
+                $reponse2 = executer_requete($nb_serie);
                 
             ?>
             
             <article>
-                <p class="result_search">Liste des Séries correspondante à votre recherche:</p>
                 <?php
-                    while ($donnees = $reponse->fetch())
-                    { 
-                        $nom_serie = str_replace(' ', '-',$donnees['titre_serie']);
-                        echo '<a class="search" href="fiche_serie.php?serie=' . $nom_serie . '">' . '- ' . $donnees['titre_serie'] . '</a>' . '<br /><br />';
+                    while ($donnees2 = $reponse2->fetch())
+                    {
+                        if($donnees2['nbr'] == 0 )
+                        {
+                            printf('<p class="result_search">Aucune série ne correspond à votre recherche, désolé.</p>');
+                        }
+                        else
+                        {
+                            printf('<p class="result_search">Liste des Séries correspondante à votre recherche:</p>');
+                            while ($donnees = $reponse->fetch())
+                            {
+                                $nom_serie = str_replace(' ', '-',$donnees['titre_serie']);
+                                echo '<a class="search" href="fiche_serie.php?serie=' . $nom_serie . '">' . '- ' . $donnees['titre_serie'] . '</a>' . '<br /><br />';
+                            }
+                        }
                     }
-
+                    $reponse2->closeCursor();
                     $reponse->closeCursor();
                 ?>
                 

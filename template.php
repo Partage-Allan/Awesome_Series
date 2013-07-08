@@ -14,6 +14,7 @@ function afficher_header()
             }
         else{
             printf('<a class="login" href="cmpt_membre.php">Acceder à mon compte</a>');
+            printf('<a class="disconnect" href="deconnection.php">Déconnection</a>');
         }
         printf('<div class="texte_titre">LE Site sur LES Séries</div>');
         

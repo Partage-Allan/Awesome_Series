@@ -19,7 +19,7 @@ if (!isset($_SESSION['login'])) {
         
         Bienvenue <b><?php echo htmlentities(trim($_SESSION['login'])); ?>!</b><br /><br />
         
-        <a href="deconnexion.php">Déconnexion</a>
+        <a href="deconnection.php">Déconnection</a>
         <?php afficher_footer();?>
     </body>
 </html>

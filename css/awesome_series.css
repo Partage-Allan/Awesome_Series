@@ -99,6 +99,16 @@ nav form
     text-shadow: 2px 2px black;
 }
 
+.disconnect
+{
+    float: right;
+    clear: right;
+    margin-right: 25px;
+    text-decoration: none;
+    color: #d45252;
+    text-shadow: 2px 2px black;
+}
+
 /****************************************/
 /**********Fin Header**********/
 /****************************************/

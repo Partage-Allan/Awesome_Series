@@ -14,7 +14,7 @@
         <?php afficher_header();?>
         <form method="POST" action="login.php">
             <div class="content_form">
-            <label>Login</label>
+                <label>Login</label>
                 <input name="login" type="text" id="login" value ="<?php if (isset($_POST['login'])) echo ($_POST['login']); ?>" required placeholder="Entrez votre login" pattern="^[A-Za-z0123456789-_/-]+"/>
             </div>
             <div class="content_form">

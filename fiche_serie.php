@@ -59,11 +59,10 @@
             <article>
                 <h1 id="affiche"><?php echo $serie; ?> 
                     <img src="images/<?php echo $nom_serie; ?>.jpg" alt="affiche-<?php echo $nom_serie; ?>"/>
-                    <form action="">
-                        <input type="checkbox" name="serie" value="serie"/>Tagger<?php echo str_replace(' ', '-',$serie) ?><br>
-                    </form>
                 </h1>
-                <p id="synopsis"><?php echo $synopsis; ?></p> 
+                <p id="synopsis"><?php echo $synopsis; ?><form class="espace_checkbox" action="">
+                                                            <input class="serie_check" type="checkbox" name="serie" value="serie"/>Tagger<?php echo str_replace(' ', '-',$serie) ?><br>
+                                                        </form></p> 
                 <div class="casting">
                     <p id="cast">Casting: </p>
                     <div class="liste_acteur">

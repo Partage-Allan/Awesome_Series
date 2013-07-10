@@ -46,6 +46,7 @@ header
 .texte_titre
 {
     margin: 0;
+    margin-bottom: 15px;
     width: 300px;
     margin-left: 35px;
     color: #D2D3D0;
@@ -371,6 +372,21 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
     text-align: left;
     color: #D2D3D0;
     text-shadow: 2px 2px black;
+}
+
+#synopsis .espace_box
+{
+    height: 20px;
+    width: 300px;
+    margin: 0;
+}
+
+.serie_check
+{
+    height: 20px;
+    width: 20px;
+    margin-left: 135px;
+        
 }
 
 #cast

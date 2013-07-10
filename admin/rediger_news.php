@@ -4,47 +4,40 @@
        <title>Rédiger une news</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <link rel="stylesheet" href="../css/awesome_series.css"/>
-        <?php require ('template.php');?>
+        <?php 
+            require ('./template.php');
+            require ('../commun/sql.inc.php');
+         ?>
     </head>
-     
     <body>
         <?php afficher_header();?>
             <h3><a href="liste_news.php">Retour à la liste des news</a></h3>
-            <?php
-            mysql_connect(DB_HOST,DB_LOGIN,DB_PASS);
-            mysql_select_db(DB_BDD);
-            if (isset($_GET['modifier_news'])) // Si on demande de modifier une news.
+            <?php if (isset($_GET['modifier_news']))
             {
-                // On protège la variable « modifier_news » pour éviter une faille SQL.
-                $_GET['modifier_news'] = mysql_real_escape_string(htmlspecialchars($_GET['modifier_news']));
-                // On récupère les informations de la news correspondante.
-                $retour = mysql_query('SELECT * FROM news WHERE id=\'' . $_GET['modifier_news'] . '\'');
-                $donnees = mysql_fetch_array($retour);
-
-                // On place le titre et le contenu dans des variables simples.
-                $titre = stripslashes($donnees['titre']);
-                $contenu = stripslashes($donnees['contenu']);
-                $id_news = $donnees['id']; // Cette variable va servir pour se souvenir que c'est une modification.
+                $reponse= mysql_query('SELECT * FROM news WHERE id=\' ' . $_GET['modifier_news'] . '\'');
+                $donnees = mysql_fetch_array($reponse);
+                $titre_news = $donnees['titre'];
+                $contenu_news = $donnees['contenu'];
+                $id_news = $donnees['id'];
             }
-            else // C'est qu'on rédige une nouvelle news.
+            else
             {
-                // Les variables $titre et $contenu sont vides, puisque c'est une nouvelle news.
-                $titre = '';
-                $contenu = '';
-                $id_news = 0; // La variable vaut 0, donc on se souviendra que ce n'est pas une modification.
+                $titre_news = '';
+                $contenu_news = '';
+                $id_news = 0;
             }
-            ?>
+        ?>    
             <form action="liste_news.php" method="post">
-            <p>Titre : <input type="text" size="30" name="titre" value="<?php echo $titre; ?>" /></p>
-            <p>
-                Contenu :<br />
-                <textarea name="contenu" cols="50" rows="10">
-                <?php echo $contenu; ?>
-                </textarea><br />
+                <p>Titre : <input type="text" size="30" name="titre" value="<?php echo $titre_news; ?>" /></p>
+                <p>
+                    Contenu :<br />
+                    <textarea name="contenu" cols="50" rows="10">
+                    <?php echo $contenu_news; ?>
+                    </textarea><br />
 
-    <input type="hidden" name="id_news" value="<?php echo $id_news; ?>" />
-    <input type="submit" value="Envoyer" />
-</p>
-</form>
-</body>
+                    <input type="hidden" name="id_news" value="<?php echo $id_news; ?>" />
+                    <input type="submit" value="Envoyer" />
+                </p>
+            </form>
+    </body>
 </html>

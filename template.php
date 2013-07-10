@@ -28,7 +28,7 @@ function afficher_header()
                     printf('<li><a href="dossiers.php">Dossiers</a></li>');
                     printf('<li><a href="a_venir.php">A Venir</a></li>');
                     printf('<li><a href="contact.php">Contact</a></li>');
-                    printf('<li><form method="POST" action="search.php"><input class="test" type="search" placeholder="Entrez votre recherche" name="search" /></form></li>');
+                    printf('<li><form method="POST" action="search.php"><input class="test" type="search" placeholder="Chercher une série" name="search" /></form></li>');
                 printf('</ul>');
             printf('</nav>');
 printf('</header>');

@@ -3,7 +3,7 @@
    <head>
        <meta charset="UTF-8"/>
        <link rel="stylesheet" href="../css/awesome_series.css"/>
-       <?php require ('template.php');?>
+       <?php require ('../template.php');?>
     </head>
     <body>
     <?php afficher_header();?>
@@ -11,10 +11,9 @@
         <p>Voici les dernières news :</p>
 
         <?php
-        mysql_connect(DB_HOST,DB_LOGIN,DB_PASS);
-        mysql_select_db(DB_BDD);   
+        
         // On récupère les cinq dernières news.
-        $retour = mysql_query('SELECT * FROM news ORDER BY id DESC LIMIT 0, 5');
+        $retour = executer_requete('SELECT * FROM news ORDER BY id DESC LIMIT 0, 5');
         while ($donnees = mysql_fetch_array($retour))
         {
         ?>

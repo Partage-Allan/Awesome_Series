@@ -23,7 +23,7 @@
             </div>
             <input type="submit" value="valider" name="submit"/>
         </form>
-        <a class="register" href="formulaire.php">Créer un Compte?</a>
+        <a class="register" href="inscription.php">Créer un Compte?</a>
     </body>
         <?php 
         afficher_footer();

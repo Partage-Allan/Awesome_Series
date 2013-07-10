@@ -11,6 +11,7 @@ function afficher_header()
     printf("<h1 class=\"titre_site\">Awesome Séries</h1>"); 
         if (!isset($_SESSION['login'])){
                 printf('<a class="login" href="login.php">Se Connecter</a>');
+                printf('<a class="login" href="inscription.php">Créer un compte</a>');
             }
         else{
             printf('<a class="login" href="cmpt_membre.php">Acceder à mon compte</a>');
@@ -23,7 +24,7 @@ function afficher_header()
                     printf('<li><a href="index.php">Accueil</a></li>');
                     printf('<li><a href="presentation.php">Présentation</a></li>');
                     printf('<li><a href="search.php">Séries</a></li>');
-                    printf('<li><a href="formulaire.php">Inscription</a></li>');
+                    printf('<li><a href="cinema.php">Cinéma</a></li>');
                     printf('<li><a href="actu.php">Actu</a></li>');
                     printf('<li><a href="dossiers.php">Dossiers</a></li>');
                     printf('<li><a href="a_venir.php">A Venir</a></li>');

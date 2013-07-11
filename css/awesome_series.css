@@ -372,13 +372,16 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
     text-align: left;
     color: #D2D3D0;
     text-shadow: 2px 2px black;
+    margin-right: 100px;
 }
 
 .serie_check
 {
 	display: block;
 	cursor: pointer;
-        margin-left: 135px;
+        margin-left: 145px;
+        width: auto;
+        height: auto;
 	font-size: 14px;
         padding-bottom: 3px;
 	text-shadow: 0 1px 1px rgba(0,0,0,.3);
@@ -388,12 +391,6 @@ a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span
 	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 	box-shadow: 0 1px 2px rgba(0,0,0,.2);
-}
-
-.serie_check:active
-{
-	position: relative;
-	top: 1px;
 }
 
 #cast

@@ -4,8 +4,8 @@
         <meta charset="UTF-8"/>
         <link rel="stylesheet" href="./css/awesome_series.css"/>
          <?php 
-            require ('template.php');
-            require ('commun/sql.inc.php');
+            require ('./commun/include/template.php');
+            require ('./commun/include/sql.inc.php');;
          ?>
         <title>Aw3s0me Séries</title>
     </head>

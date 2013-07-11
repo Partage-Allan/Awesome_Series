@@ -4,9 +4,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
         <link rel="stylesheet" href="./css/awesome_series.css"/>
+        <script type="text/javascript" src="./commun/javascript/function.js"></script>
          <?php 
-            require ('template.php');
-            require ('commun/sql.inc.php');
+            require ('./commun/include/template.php');
+            require ('./commun/include/sql.inc.php');
          ?>
         <title>Aw3s0me Séries</title>
     </head>
@@ -62,8 +63,12 @@
                 </h1>
                 <p id="synopsis"><?php echo $synopsis; ?></p>
                 <?php
+                    $logout = "Connectez-vous \n pour tagg $serie";
+                    $tagg = "$serie \n déjà Tagg";
+                    $tagguer = "Tagguer \n $serie";
+                    
                     if (!isset($_SESSION['login']))
-                        printf('<input class="serie_check" type="button" name="serie" value="se log ' . $serie . '"/>');
+                        printf('<input class="serie_check" type="button" name="serie" value="' . $logout . '" onclick="login()" />');
                     else    
                     {
                         $requeteID = "SELECT id_user FROM user WHERE login = '" . $_SESSION['login'] . "'";
@@ -86,16 +91,24 @@
                         
                         if($check > 0)
                         {
-                            printf('<input class="serie_check" type="button" name="serie" value="deja tag ' . $serie . '"/>');
+                            printf('<input class="serie_check" type="button" name="serie" value="' . $tagg . '"/>');
                         }
                         else
                         {
-                            printf('<input class="serie_check" type="button" name="serie" value="Tagger ' . $serie . '"/>');
-                            $tagger = "INSERT INTO series_vues VALUES ('', '$id_user', '$id_serie')";
-                            $executer = executer_requete($tagger);
+                            if (isset($_GET['tagg']) && $_GET['tagg'] == "true")
+                            {
+                                $tagger = "INSERT INTO series_vues VALUES ('', '$id_user', '$id_serie')";
+                                $executer = executer_requete($tagger);
+                                printf('<input class="serie_check" type="button" name="serie" value="' . $tagg . '"/>');
+                           }
+                            else
+                            {
+                                printf('<input class="serie_check" type="button" name="serie" value="' . $tagguer . '" onclick="setTagg()" />');
+                            }
                         }
                     }
                 ?>
+                
                 <div class="casting">
                     <p id="cast">Casting: </p>
                     <div class="liste_acteur">

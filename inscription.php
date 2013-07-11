@@ -3,9 +3,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
         <link rel="stylesheet" href="./css/awesome_series.css"/>
+        <script type="text/javascript" src="./commun/javascript/function.js"></script>
          <?php 
-            require ('template.php');
-            require ('commun/sql.inc.php');
+            require ('commun/include/template.php');
+            require ('commun/include/sql.inc.php');
          ?>
         <title>Aw3s0me Séries</title>
     </head>
@@ -43,28 +44,6 @@
             </div>
             <input type="submit" value="Valider" id="submit" class="boutton"/>
         </form>
-        <script>
-            function verifMail() {
-                var email = document.getElementById('email');
-                var emailConfirm = document.getElementById('confirmemail');
-                if (email.value !== emailConfirm.value) {
-                    emailConfirm.setCustomValidity('Les adresses mail ne correspondent pas.');
-                }
-                else {
-                    emailConfirm.setCustomValidity('');
-                }
-            }
-            function verifPass() {
-                var pass = document.getElementById('password');
-                var passConfirm = document.getElementById('confirmpassword');
-                if (pass.value !== passConfirm.value) {
-                    passConfirm.setCustomValidity('Les mots de passe de correspondent pas.');
-                }
-                else {
-                    passConfirm.setCustomValidity('');
-                }
-            }
-        </script>
         <?php 
         if(!empty($_POST))
         {

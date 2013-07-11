@@ -3,7 +3,10 @@
    <head>
        <meta charset="UTF-8"/>
        <link rel="stylesheet" href="../css/awesome_series.css"/>
-       <?php require ('../template.php');?>
+       <?php 
+            require ('../commun/include/template.php');
+            require ('../commun/include/sql.inc.php');
+       ?>
     </head>
     <body>
     <?php afficher_header();?>

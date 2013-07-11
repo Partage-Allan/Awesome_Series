@@ -3,8 +3,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
         <link rel="stylesheet" href="./css/awesome_series.css"/>
-         <?php require ('template.php');?>
-         <?php require ('commun/sql.inc.php');?>
+         <?php 
+            require ('./commun/include/template.php');
+            require ('./commun/include/sql.inc.php');
+         ?>
         <title>Aw3s0me Séries</title>
     </head>
     <body>

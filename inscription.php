@@ -48,24 +48,29 @@
         if(!empty($_POST))
         {
             extract($_POST);
-            
+            // On vérifie s'il y a déjà un utilisateur avec le meme login en base
             $verifLogin = ("SELECT COUNT(*) AS nbr1 FROM user WHERE login = '$login'");
             $rep1 = executer_requete($verifLogin);
             
+            // On vérifie s'il y a déjà une utilisateur avec le meme email en base
             $verifEmail = ("SELECT COUNT(*) AS nbr2 FROM user WHERE email = '$email'");
             $rep2 = executer_requete($verifEmail);
             while ($donnees = $rep1->fetch())
             {
+                // Si login déjà pris, affichage d'erreur
                 if($donnees['nbr1'] > 0)
                 {
                     echo '<script type="text/javascript">alert("Ce Login est déjà utilisé!")</script>';
                 }
+                // Sinon on continue pour check l'email
                 else
                 {
                     while ($donnees2 = $rep2->fetch())
                     {
+                        // Si email déjà pris, affichage d'erreur
                         if($donnees2['nbr2'] > 0)
                             echo '<script type="text/javascript">alert("Cet Email est déjà utilisé!")</script>';
+                        // Sinon, tout est bon, on creer le mail de validation, avec le lien comportant les variables de l'utilisateur
                         else
                         {
                             $password = md5($password);

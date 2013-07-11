@@ -11,12 +11,14 @@
     </head>
     <body>
         <?php afficher_header();
+            // On reçoit via le lien cliqué dans le mail les variables de compte 
             $login = $_GET['login'];
             $nom = $_GET['nom'];
             $prenom = $_GET['prenom'];
             $email = $_GET['email'];
             $password = $_GET['password'];
             
+            // On créer l'utilisateur en base de données
             $requete = "INSERT INTO user VALUES ('','$login','$nom','$prenom','$email','$password')";
             executer_requete($requete);
             echo "Bienvenue sur Awesome Séries!<br>";

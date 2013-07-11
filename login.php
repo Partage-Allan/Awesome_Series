@@ -30,15 +30,21 @@
         
         if(!empty($_POST))
         {
+            // On récupère le login et le passe entré par l'utilisateur
             extract($_POST);
-            $password = md5($password); 
+            // On chiffre le mot de passe
+            $password = md5($password);
+            // On cherche le mot de passe correspondant au login en base
             $requete =("SELECT password FROM user WHERE login ='$login'");
             $reponse = executer_requete($requete);
             while ($donnees = $reponse->fetch())
             {
+                // On vérifie si le mot de passe entrée et celui en base sont identique
                 $verifPassword = $donnees['password'];
+                // Si différent, on affiche l'erreur
                 if ($password != $verifPassword)
                     echo '<script type="text/javascript">alert("Login ou mot de passe incorrect!")</script>';
+                // Sinon, on démarre une session avec le login, et on redirige l'utilisateur vers la page d'accueil connecté.
                 else
                 {
                     session_start();

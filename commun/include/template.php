@@ -4,16 +4,21 @@
 /********************************************************************************************************************************/
 function afficher_header() 
 {
+    //Vérification d'une session présente, sinon en démarre une
     if (!isset($_SESSION)) { 
         session_start(); 
     }
     printf("<header>");
     printf("<h1 class=\"titre_site\">Awesome Séries</h1>"); 
-        if (!isset($_SESSION['login'])){
-                printf('<a class="login" href="login.php">Se Connecter</a>');
-                printf('<a class="login" href="inscription.php">Créer un compte</a>');
-            }
-        else{
+        // Si on ne trouve pas de login en session, on affiche l'etat de création de compte ou de connection
+        if (!isset($_SESSION['login']))
+        {
+            printf('<a class="login" href="login.php">Se Connecter</a>');
+            printf('<a class="login" href="inscription.php">Créer un compte</a>');
+        }
+        // Sinon, c'ets qu'il est déjà connecté, donc on affiche la déconnection et l'accès au compte
+        else
+        {
             printf('<a class="login" href="cmpt_membre.php">Acceder à mon compte</a>');
             printf('<a class="disconnect" href="deconnection.php">Déconnection</a>');
         }

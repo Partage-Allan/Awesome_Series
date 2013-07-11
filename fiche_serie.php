@@ -15,13 +15,16 @@
         <?php 
             afficher_header();
             
+            // On récupère le nom de la série choisie en remplaçant les espaces par des tirets
             $serie_select = str_replace('-', ' ', $_GET['serie']);
             
+            // On récupère toutes les infos sur cette série
             $requete = 'SELECT * FROM serie
                         WHERE titre_serie = \'' . $serie_select . '\' ';
 
             $reponse = executer_requete($requete);
             
+            // On stock toutes les infos dans des variables
             while ($donnees = $reponse->fetch())
             { 
                 $id_serie = $donnees['id_serie'];
@@ -39,6 +42,7 @@
                 $trailer = $donnees['trailer_serie'];
             }
             
+            // De meme pour le casting
             $requete2 = 'SELECT nom_acteur, role_acteur FROM casting_serie
                              WHERE serie_id_serie = \'' . $id_serie . '\' ';
             $reponse2 = executer_requete($requete2);
@@ -67,8 +71,10 @@
                     $tagg = "$serie \n déjà Tagg";
                     $tagguer = "Tagguer \n $serie";
                     
+                    // Si on ne trouve pas de session connecté, on affiche le bouton de connection pour Tagguer la série
                     if (!isset($_SESSION['login']))
                         printf('<input class="serie_check" type="button" name="serie" value="' . $logout . '" onclick="login()" />');
+                    // Sinon on va récupérer l'ID de l'utilisateur
                     else    
                     {
                         $requeteID = "SELECT id_user FROM user WHERE login = '" . $_SESSION['login'] . "'";
@@ -78,7 +84,8 @@
                             $id_user = $donnees3['id_user'];
                         }
                         $reponse3->closeCursor();
-
+                        
+                        // On vérifie avec l'ID de l'utilisateur s'il à déjà Taggué la série en cours
                         $verifCheck = "SELECT COUNT(*) as nbr FROM series_vues 
                                        WHERE serie_id_serie = $id_serie 
                                        AND user_id_user = $id_user";
@@ -89,22 +96,28 @@
                         }
                         $reponse4->closeCursor();
                         
+                        // Si on trouve qu'elle est déjà Taggué, on affiche le bouton déjà taggué
                         if($check > 0)
                         {
                             printf('<input class="serie_check" type="button" name="serie" value="' . $tagg . '"/>');
                         }
+                        // Sinon, on vérifie s'il a appuyer sur le bouton de Tagg
                         else
                         {
-                            if (isset($_GET['tagg']) && $_GET['tagg'] == "true")
-                            {
+                            // Si il vient d'appuyer sur le bouton
+                            // (récupération de la variable URL transmise par la fonction javascript lors de l'appuie sur le bouton),
+                            //  on insère en base le tagg
+                           if (isset($_GET['tagg']) && $_GET['tagg'] == "true")
+                           {
                                 $tagger = "INSERT INTO series_vues VALUES ('', '$id_user', '$id_serie')";
                                 $executer = executer_requete($tagger);
                                 printf('<input class="serie_check" type="button" name="serie" value="' . $tagg . '"/>');
                            }
-                            else
-                            {
+                           // Sinon on affiche le bouton de Tagg série avec le listenner javascript
+                           else
+                           {
                                 printf('<input class="serie_check" type="button" name="serie" value="' . $tagguer . '" onclick="setTagg()" />');
-                            }
+                           }
                         }
                     }
                 ?>
@@ -115,7 +128,7 @@
                         <ul>
                             <?php
                                 $j = 0;
-                                
+                                // Affichage des photos casting + noms
                                 while($j != count($role))
                                 {
                                     printf('<li>');

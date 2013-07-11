@@ -41,3 +41,8 @@ function setTagg()
     window.location = 'fiche_serie.php?serie=' + serie + '&tagg=true';
 }
 
+function deleteTagg(idTagg)
+{
+    window.location = 'cmpt_membre.php?id_tagg=' + idTagg;
+}
+

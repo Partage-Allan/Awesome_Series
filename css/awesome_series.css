@@ -499,7 +499,67 @@ iframe
     margin-bottom: 30px;   
 }
 
-.content_form label
+.form_gauche
+{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#cmpt_membre_gauche
+{
+    float: left;
+}
+
+#cmpt_membre_gauche #submit
+{
+    margin-left: 260px;
+}
+
+#cmpt_membre_droite
+{
+    float: right;
+}
+
+.form_droite
+{
+    margin-right: 200px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.form_droite label
+{
+    color: #D2D3D0;
+    font-size: 14px;
+    line-height: 30px; 
+}
+
+.form_droite .titre_serie
+{
+    color: midnightblue;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.delete_tag
+{
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+    margin-bottom: -2px;
+    margin-left: 5px;
+}
+
+.etoile
+{
+    color: #d45252;
+    clear: both;
+    text-align: center;
+    text-shadow: 2px 2px black;
+}
+
+.content_form label, .form_gauche label
 {
     width: 170px;
     float: left;
@@ -510,7 +570,7 @@ iframe
     line-height: 30px;
 }
 
-.content_form input
+.content_form input, .form_gauche input
 {
     transition-duration: 0.5s;
     border-color: #D2D3D0;
@@ -565,7 +625,6 @@ input[type=submit]
 {
     text-decoration: none;
     color: #DDEEFF;
-    
     margin-left: 44%;
 }
 /*****************************************************************************************/

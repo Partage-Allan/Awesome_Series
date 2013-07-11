@@ -60,9 +60,42 @@
                 <h1 id="affiche"><?php echo $serie; ?> 
                     <img src="images/<?php echo $nom_serie; ?>.jpg" alt="affiche-<?php echo $nom_serie; ?>"/>
                 </h1>
-                <p id="synopsis"><?php echo $synopsis; ?><form class="espace_checkbox" action="">
-                                                            <input class="serie_check" type="checkbox" name="serie" value="serie"/>Tagger<?php echo str_replace(' ', '-',$serie) ?><br>
-                                                        </form></p> 
+                <p id="synopsis"><?php echo $synopsis; ?></p>
+                <?php
+                    if (!isset($_SESSION['login']))
+                        printf('<input class="serie_check" type="button" name="serie" value="se log ' . $serie . '"/>');
+                    else    
+                    {
+                        $requeteID = "SELECT id_user FROM user WHERE login = '" . $_SESSION['login'] . "'";
+                        $reponse3 = executer_requete($requeteID);
+                        while($donnees3 = $reponse3->fetch())
+                        {
+                            $id_user = $donnees3['id_user'];
+                        }
+                        $reponse3->closeCursor();
+
+                        $verifCheck = "SELECT COUNT(*) as nbr FROM series_vues 
+                                       WHERE serie_id_serie = $id_serie 
+                                       AND user_id_user = $id_user";
+                        $reponse4 = executer_requete($verifCheck);
+                        while($donnees4 = $reponse4->fetch())
+                        {
+                            $check = $donnees4['nbr'];
+                        }
+                        $reponse4->closeCursor();
+                        
+                        if($check > 0)
+                        {
+                            printf('<input class="serie_check" type="button" name="serie" value="deja tag ' . $serie . '"/>');
+                        }
+                        else
+                        {
+                            printf('<input class="serie_check" type="button" name="serie" value="Tagger ' . $serie . '"/>');
+                            $tagger = "INSERT INTO series_vues VALUES ('', '$id_user', '$id_serie')";
+                            $executer = executer_requete($tagger);
+                        }
+                    }
+                ?>
                 <div class="casting">
                     <p id="cast">Casting: </p>
                     <div class="liste_acteur">

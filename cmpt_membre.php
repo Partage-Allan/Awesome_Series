@@ -77,7 +77,9 @@ if (!isset($_SESSION['login'])) {
                     echo '<script type="text/javascript">alert("Mot de passe mis à jour!")</script>';
                 }
             }
-            
+        ?>
+          
+        <?php
             // On récupère l'ID de l'utilisateur afin d'ensuite aller chercher les séries qu'il a tagg
             $recupIdUser = "SELECT id_user FROM user WHERE login = '" . $_SESSION['login'] . "'";
             $execRequeteId = executer_requete($recupIdUser);

@@ -1,0 +1,42 @@
+*********************************
+*	  			*
+*	  27 Avril 2013		*
+*				*
+*********************************
+- Création du projet																-> Allan
+- Modif et correction contact 															-> JD
+
+.
+.
+.
+.
+.
+.
+.
+
+*********************************
+*	  			*
+*	  11 Juillet 2013	*
+*				*
+*********************************
+- test de tag																	-> JD
+- refonte de l'arborescence															-> JD
+- création de la table series_vues														-> JD
+- ajout de commentaires																-> JD
+- avancement de l'espace compte (malgré des questions que je me pose sur les perfs de mon code ...)							
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									-> JD

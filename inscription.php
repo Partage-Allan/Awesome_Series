@@ -13,7 +13,7 @@
     <body>
         <?php afficher_header();?>
         <h1 class="inscription">Inscription</h1>
-        <form method="post" action="formulaire.php" id="formulaire">
+        <form method="post" action="" id="formulaire">
             <div class="content_form">
                 <label>Login</label>
                 <input name="login" type="text" id="login" required placeholder="Choisissez votre login" pattern="^[A-Za-z0123456789-_/-]+" value ="<?php if (isset($_POST['login'])) echo ($_POST['login']); ?>"/>

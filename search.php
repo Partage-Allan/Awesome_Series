@@ -12,7 +12,7 @@
     <body>
         <?php afficher_header();?>
         <section>
-            <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="search.php">Series</a></p>
+            <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="search.php">Séries</a></p>
             <?php
                 // Si on trouve une série entrée par l'utilisateur dans le champ recherche
                 if(isset($_POST['search']))

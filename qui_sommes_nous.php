@@ -8,7 +8,7 @@
     </head>
     <body>
         <?php afficher_header();?>
-            <p id="fil_d_ariane"><a href="index.php">Accueil > Présentation</a></p>
+            <p id="fil_d_ariane"><a href="presentation.php">Accueil > Présentation</a></p>
           <article>
                 <h1>Bienvenue Sur Le Site sur Les Séries !</h1>
                 <p class="texte_accueil">

@@ -20,9 +20,11 @@ if (!isset($_SESSION['login'])) {
 
     <body>
         <?php afficher_header();?>
-        
+        <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="cmpt_membre.php">Mon compte</a></p>
         <p class="bienvenue">Bienvenue <b><?php echo trim($_SESSION['login']); ?>!</b></p>
+        <p>Infos compte: pseudo, date d'inscription, last action, avatar... </p><br/>
         <h1 class="inscription">Mon compte</h1>
+        <p>Gestion du compte</p>
         <form method="post" action="cmpt_membre.php" id="cmpt_membre_gauche">
             <div class="form_gauche">
                 <label>Mot de passe actuel:</label>
@@ -36,19 +38,12 @@ if (!isset($_SESSION['login'])) {
                 <label>Retaper mot de passe:</label>
                 <input name="checkNewPass" type="password" id="checkNewPass" oninput="verifPass()" required />
             </div>
+            <div class="form_gauche">
+                <label>Modifier avatar:</label>
+                <input name="avatar" type="text" id="avatar"  />
+            </div>
             <input type="submit" value="Valider" id="submit" class="boutton"/>
-        </form>
-        <!--
-        <div class="content_form">
-            <label>Les séries vues:</label>
-            <textarea placeholder="Ex: Game of Thrones - Breaking Bad - Falling Skies... etc"></textarea>
-        </div>
-        <div class="content_form">
-            <label>Avis postés:</label>
-            <p>Liste des avis posté sur les séries</p> 
-        </div>
-        -->
-        
+        </form> 
         <?php
             // Formulaire de mise à jour du mot de passe
             if(!empty($_POST))
@@ -78,7 +73,7 @@ if (!isset($_SESSION['login'])) {
                 }
             }
         ?>
-          
+          <p class="profil">Profil</p>
         <?php
             // On récupère l'ID de l'utilisateur afin d'ensuite aller chercher les séries qu'il a tagg
             $recupIdUser = "SELECT id_user FROM user WHERE login = '" . $_SESSION['login'] . "'";

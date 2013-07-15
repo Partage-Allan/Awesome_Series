@@ -9,7 +9,7 @@
     <body>
         <?php afficher_header();?>
         <section>
-            <p id="fil_d_ariane"><a href="index.php">Actu</a></p>
+            <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="ac.php">Series</a></p>
     </body>
     <?php afficher_footer();?>
 </html>   

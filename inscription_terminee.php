@@ -10,7 +10,9 @@
         <title>Aw3s0me Séries</title>
     </head>
     <body>
-        <?php afficher_header();
+        <?php afficher_header();?>
+            <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="search.php">Inscription validée</a></p>
+        <?php
             // On reçoit via le lien cliqué dans le mail les variables de compte 
             $login = $_GET['login'];
             $nom = $_GET['nom'];

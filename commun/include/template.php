@@ -27,13 +27,12 @@ function afficher_header()
             printf('<nav>');
                 printf('<ul>');
                     printf('<li><a href="index.php">Accueil</a></li>');
-                    printf('<li><a href="presentation.php">Présentation</a></li>');
                     printf('<li><a href="search.php">Séries</a></li>');
-                    printf('<li><a href="cinema.php">Cinéma</a></li>');
-                    printf('<li><a href="actu.php">Actu</a></li>');
                     printf('<li><a href="dossiers.php">Dossiers</a></li>');
                     printf('<li><a href="a_venir.php">A Venir</a></li>');
+                    printf('<li><a href="cinema.php">Cinéma</a></li>');
                     printf('<li><a href="contact.php">Contact</a></li>');
+                    printf('<li><a href="qui_sommes_nous.php">Qui sommes nous?</a></li>');
                     printf('<li><form method="POST" action="search.php"><input class="test" type="search" placeholder="Chercher une série" name="search" /></form></li>');
                 printf('</ul>');
             printf('</nav>');

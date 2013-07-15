@@ -12,6 +12,7 @@
     </head>
     <body>
         <?php afficher_header();?>
+        <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="login.php">Connexion</a></p>
         <form method="POST" action="login.php">
             <div class="content_form">
                 <label>Login</label>
@@ -23,7 +24,7 @@
             </div>
             <input type="submit" value="valider" name="submit"/>
         </form>
-        <a class="register" href="inscription.php">Créer un Compte?</a>
+        <p>Vous n'avez pas encore de compte?<a class="register" href="inscription.php">Créer un Compte?</a></p>
     </body>
         <?php 
         afficher_footer();

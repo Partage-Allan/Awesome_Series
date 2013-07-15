@@ -12,10 +12,9 @@
         <title>Aw3s0me Séries</title>
     </head>
     <body>
-        <?php afficher_header(); ?>
-           <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="search.php">Séries</a></p> 
-            
-        <?php
+        <?php 
+            afficher_header();
+
             // On récupère le nom de la série choisie en remplaçant les espaces par des tirets
             $serie_select = str_replace('-', ' ', $_GET['serie']);
             

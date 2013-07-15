@@ -24,7 +24,7 @@
             </div>
             <input type="submit" value="valider" name="submit"/>
         </form>
-        <p>Vous n'avez pas encore de compte?<a class="register" href="inscription.php">Créer un Compte?</a></p>
+        <a href="inscription.php"><p class="register_yet">Vous n'avez pas encore de compte?</p><p class="register"> Créer un Compte?</p></a>
     </body>
         <?php 
         afficher_footer();

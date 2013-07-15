@@ -16,7 +16,7 @@ function afficher_header()
             printf('<a class="login" href="login.php">Se Connecter</a>');
             printf('<a class="login" href="inscription.php">Créer un compte</a>');
         }
-        // Sinon, c'ets qu'il est déjà connecté, donc on affiche la déconnection et l'accès au compte
+        // Sinon, c'est qu'il est déjà connecté, donc on affiche la déconnection et l'accès au compte
         else
         {
             printf('<a class="login" href="cmpt_membre.php">Acceder à mon compte</a>');

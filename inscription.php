@@ -14,7 +14,7 @@
         <?php afficher_header();?>
         <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="inscription.php">Series</a></p>
         <h1 class="inscription">Inscription</h1>
-        <form method="post" action="inscription.php" id="inscription">
+        <form method="post" action="" id="formulaire">
             <div class="content_form">
                 <label>Login</label>
                 <input name="login" type="text" id="login" required placeholder="Choisissez votre login" pattern="^[A-Za-z0123456789-_/-]+" value ="<?php if (isset($_POST['login'])) echo ($_POST['login']); ?>"/>

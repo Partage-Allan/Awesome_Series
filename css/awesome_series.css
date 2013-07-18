@@ -487,11 +487,6 @@ iframe
 /*****************************************************************************************/
 /****************************** formulaire **********************************/
 /***************************************************************************************/
-.inscription
-{
-    margin-left: 450px;
-}
-
 .content_form
 {
     margin-left: 200px;
@@ -507,17 +502,20 @@ iframe
 
 #cmpt_membre_gauche
 {
-    float: left;
+    margin-left: 50px;
+}
+
+#cmpt_membre_gauche p
+{
+    padding-left: 220px;
+    font-weight: bold;
+    color: #d45252;
+    text-shadow: 2px 2px black;
 }
 
 #cmpt_membre_gauche #submit
 {
     margin-left: 260px;
-}
-
-#cmpt_membre_droite
-{
-    float: right;
 }
 
 .form_droite
@@ -549,14 +547,6 @@ iframe
     cursor: pointer;
     margin-bottom: -2px;
     margin-left: 5px;
-}
-
-.etoile
-{
-    color: #d45252;
-    clear: both;
-    text-align: center;
-    text-shadow: 2px 2px black;
 }
 
 .content_form label, .form_gauche label
@@ -652,13 +642,90 @@ input[type=submit]
     text-shadow: 2px 2px black;
 }
 
-.profil
+.inscription
 {
-    margin-right: 300px;
-    text-align: right;
+    margin-left: 450px;
 }
 
+#wrapper 
+{
+	width: 710px;
+        margin-left: 18%;
+}
 
+#nav 
+{
+	list-style: none;
+	padding: 0;
+	margin: 10px 0 20px 0;
+	display: block;
+	overflow: hidden;
+}
+
+#nav li 
+{
+	display: inline;
+}
+
+#nav li a 
+{
+	display: block;
+	float: left;
+	text-decoration: none;
+        width: 150px; 
+        height: 43px;
+        text-align: center;
+        padding: 0;
+        padding-top: 17px;
+        color: #000; 
+        background: #444;
+        background: -webkit-linear-gradient( #555, #2C2C2C); 
+        background: -moz-linear-gradient( #555, #2C2C2C); 
+        background: -ms-linear-gradient( #555, #2C2C2C); 
+        background: -o-linear-gradient( #555, #2C2C2C); 
+        background: linear-gradient( #555, #2C2C2C);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        font-size: 18px;
+        box-shadow: 0 0 5px rgba( 0, 0, 0, 0.5), 0 -1px 0 rgba( 255, 255, 255, 0.4);
+        margin-right: 20px;
+}
+
+#nav li a:hover
+{ 
+    color: #222; 
+    background: #555; 
+    background: -webkit-linear-gradient( #777, #333); 
+    background: -moz-linear-gradient( #777, #333); 
+    background: -ms-linear-gradient( #777, #333); 
+    background: -o-linear-gradient( #777, #333); 
+    background: linear-gradient( #777, #333); 
+}
+
+#nav li a:active
+{ 
+    color: #000; 
+    background: #444; 
+    background: -webkit-linear-gradient( #555, #2C2C2C); 
+    background: -moz-linear-gradient( #555, #2C2C2C); 
+    background: -ms-linear-gradient( #555, #2C2C2C); 
+    background: -o-linear-gradient( #555, #2C2C2C); 
+    background: linear-gradient( #555, #2C2C2C); 
+    box-shadow: 1px 1px 10px black inset, 0 1px 0 rgba( 255, 255, 255, 0.4); 
+}
+
+#contenu p
+{
+    margin-left: 20px;
+}
+
+.etoile
+{
+    color: #d45252;
+    clear: both;
+    padding-left: 270px;
+    text-shadow: 2px 2px black;
+}
 /*****************************************************************************************/
 /****************************** Mon compte **********************************/
 /***************************************************************************************/

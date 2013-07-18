@@ -60,12 +60,12 @@ if (!isset($_SESSION['login'])) {
                             printf('<img src="./images/croix_annulation.png" name="delete_tag" class="delete_tag" onclick="deleteTagg(' . $id_tagg[$i] . ')" /><br />');
                         }
                         ++$i;
+                        $execRequete2->closeCursor();
                     }
                         printf('</div>');
                     printf('</form>');
 
                     $execRequete->closeCursor();
-                    $execRequete2->closeCursor();
 
                     // On regarde si le bouton javascript a été appuyé et renvoie donc l'ID de la série tagguée à supprimer
                     if (isset($_GET['id_tagg']))

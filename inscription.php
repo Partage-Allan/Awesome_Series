@@ -14,38 +14,39 @@
         <?php afficher_header();?>
         <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="inscription.php">Series</a></p>
         <h1 class="inscription">Inscription</h1>
-        <form method="post" action="" id="formulaire">
+        <form method="post" action="" id="formulaire" enctype="multipart/form-data">
             <div class="content_form">
-                <label>Login</label>
+                <label for="login">Login</label>
                 <input name="login" type="text" id="login" required placeholder="Choisissez votre login" pattern="^[A-Za-z0123456789-_/-]+" value ="<?php if (isset($_POST['login'])) echo ($_POST['login']); ?>"/>
             </div>
             <div class="content_form">
-                <label>Nom</label>
+                <label for ="nom">Nom</label>
                 <input name="nom" type="text" id="nom" required placeholder="Entrez votre nom" pattern="[A-Za-z]+" value ="<?php if (isset($_POST['nom'])) echo ($_POST['nom']); ?>"/>
             </div>
             <div class="content_form">
-                <label>Prénom</label>
+                <label for="prenom">Prénom</label>
                 <input name="prenom" type="text" id="prenom" required placeholder="Entrez votre prénom"pattern="[A-Za-z]+" value ="<?php if (isset($_POST['prenom'])) echo ($_POST['prenom']); ?>"/>
             </div>
             <div class="content_form">
-                <label>E-mail</label>
+                <label for="email">E-mail</label>
                 <input name="email" type="email" id="email" required oninput='verifMail()' placeholder="adresse@mail.com" value ="<?php if (isset($_POST['email'])) echo ($_POST['email']); ?>"/>
             </div>
             <div class="content_form">
-                <label>Vérification e-mail</label>
+                <label for="confiremail">Vérification e-mail</label>
                 <input name="confirmemail" type="email" id="confirmemail" required oninput='verifMail()' placeholder="Confirmez votre e-mail" value ="<?php if (isset($_POST['confirmemail'])) echo ($_POST['confirmemail']); ?>"/>
             </div>
             <div class="content_form">
-                <label>Mot de passe</label>
+                <label for="password">Mot de passe</label>
                 <input name="password" type="password" id="password" required oninput='verifPass()' placeholder="Entrez un mot de passe" value ="<?php if (isset($_POST['password'])) echo ($_POST['password']); ?>"/>
             </div>
             <div class="content_form">
-                <label>Vérification mot de passe</label>
+                <label for="confirmpassword">Vérification mot de passe</label>
                 <input name="confirmpassword" type="password" id="confirmpassword" required oninput='verifPass()' placeholder="Validez mot de passe" value ="<?php if (isset($_POST['confirmpassword'])) echo ($_POST['confirmpassword']); ?>"/>
             </div>
             <div class="content_form">
-                <label>Avatar</label>
-                <input name="avatar" type="text" id="avatar" required />
+                <label for="avatar">Avatar (max 1 Mo)</label>
+                <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+                <input name="avatar" type="file" id="avatar" />
             </div>
             <input type="submit" value="Valider" id="submit" class="boutton"/>
         </form>
@@ -78,6 +79,26 @@
                         // Sinon, tout est bon, on creer le mail de validation, avec le lien comportant les variables de l'utilisateur
                         else
                         {
+                            if ($_FILES['avatar']['error'] > 0)
+                                $erreur = true;
+                            else
+                                $erreur = false;
+                            
+                            $tailleMax = UPLOAD_ERR_FORM_SIZE;
+                            if ($_FILES['avatar']['size'] > $tailleMax) 
+                                $erreur2 = true;
+                            else
+                                $erreur2 = false;
+                            
+                            $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
+                            $extension_upload = strtolower(  substr(  strrchr($_FILES['avatar']['name'], '.')  ,1)  );
+                            if ( in_array($extension_upload,$extensions_valides) )
+                                $erreur3 = true;
+                            
+                            $nameAvatar = strstr($_FILES['avatar']['name'], '.', true);
+                            if ($erreur == false && !$erreur2 == false && $erreur3 == true)
+                                $avatarName = $nameAvatar . "-" . $login . "." . $extension_upload; 
+                            $avatar = $nameAvatar . "-" . $login;
                             $password = md5($password);
                             
                             $to = $email;
@@ -95,9 +116,14 @@
                             $entete .= $prenom;
                             $entete .= "&password=";
                             $entete .= $password;
+                            $entete .= "&avatar=";
+                            $entete .= $avatar;
                             $entete .= "'>Cliquez ici!</a> <br>";
                             
                             mail($to, $sujet, $entete, "Content-type: text/html");
+                            
+                            $destination = "./avatar/$avatarName";
+                            $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $destination);
                             
                             echo '<script type="text/javascript">alert("Votre compte est en attente de validation. \n Cliquez sur le lien dans votre email pour valider celui-ci.")</script>';
                         }

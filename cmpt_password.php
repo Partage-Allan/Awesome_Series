@@ -24,7 +24,7 @@ if (!isset($_SESSION['login'])) {
         <?php afficher_header();?>
             <div id="contenu">          
                 <form method="post" action="cmpt_membre.php" id="cmpt_membre_gauche">
-                    <p>Gestion du compte :</p>
+                    <p>Gestion du Password :</p>
                     <div class="form_gauche">
                         <label>Mot de passe actuel:</label>
                         <input name="passActuel" type="password" id="pass" required />
@@ -36,10 +36,6 @@ if (!isset($_SESSION['login'])) {
                     <div class="form_gauche">
                         <label>Retaper mot de passe:</label>
                         <input name="checkNewPass" type="password" id="checkNewPass" oninput="verifPass()" required />
-                    </div>
-                    <div class="form_gauche">
-                        <label>Modifier avatar:</label>
-                        <input name="avatar" type="text" id="avatar"  />
                     </div>
                     <input type="submit" value="Valider" id="submit" class="boutton"/>
                 </form> 

@@ -19,10 +19,11 @@
             $prenom = $_GET['prenom'];
             $email = $_GET['email'];
             $password = $_GET['password'];
+            $avatar = $_GET['avatar'];
             
             // On créer l'utilisateur en base de données
-            $requete = "INSERT INTO user VALUES ('','$login','$nom','$prenom','$email','$password')";
-            executer_requete($requete);
+            $requete = "INSERT INTO user VALUES ('','$login','$nom','$prenom','$email','$password', '$avatar')";
+            $resultat = executer_requete($requete);
             echo "Bienvenue sur Awesome Séries!<br>";
             echo "Nous vous remercions pour la validation de votre compte.<br>";
             echo"<a href='https://localhost:8080/awesome/index.php'>Retour acceuil</a>"; 

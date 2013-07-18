@@ -21,19 +21,116 @@ if (!isset($_SESSION['login'])) {
     </head>
 
     <body>
-        <?php afficher_header();?>
+        <?php 
+            afficher_header();
+            $requeteInfo = "SELECT * FROM user WHERE login = '" . $_SESSION['login'] . "'";
+            $repRequeteInfo = executer_requete($requeteInfo);
+            while ($donneesInfo = $repRequeteInfo->fetch())
+            {
+                $nom = $donneesInfo['nom'];
+                $prenom = $donneesInfo['prenom'];
+                $email = $donneesInfo['email'];
+                $avatar = $donneesInfo['avatar'];
+            }
+            $repRequeteInfo->closeCursor();
+            
+        ?>
         <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="cmpt_membre.php">Mon compte</a></p>
         <p class="bienvenue">Bienvenue <b><?php echo trim($_SESSION['login']); ?>!</b></p>
         <h1 class="inscription">Mon compte</h1>
         <div id="wrapper">  
             <ul id="nav">  
-                <li><a href="cmpt_membre_test.php">Mes Infos</a></li>  
+                <li><a href="cmpt_membre.php">Mes Infos</a></li>  
                 <li><a href="cmpt_password.php">Mon Password</a></li>  
                 <li><a href="cmpt_mes_series.php">Mes Séries</a></li>  
                 <li><a href="cmpt_commentaires.php">Mes Commentaires</a></li>   
             </ul>  
             <div id="contenu">          
-                <p>Infos compte: pseudo, date d'inscription, last action, avatar... </p><br/>  
+                <form method="post" action="" id="formulaire_mon_compte" enctype="multipart/form-data">
+                    <div class="content_form">
+                        <label for ="nom">Nom</label>
+                        <input name="nom" type="text" id="nom" required placeholder="Entrez votre nom" pattern="[A-Za-z]+" value ="<?php echo ($nom); ?>"/>
+                    </div>
+                    <div class="content_form">
+                        <label for="prenom">Prénom</label>
+                        <input name="prenom" type="text" id="prenom" required placeholder="Entrez votre prénom"pattern="[A-Za-z]+" value ="<?php echo ($prenom); ?>"/>
+                    </div>
+                    <div class="content_form">
+                        <label for="email">E-mail</label>
+                        <input name="email" type="email" id="email" required oninput='verifMail()' placeholder="adresse@mail.com" value ="<?php echo ($email); ?>"/>
+                    </div>
+                    <div class="content_form">
+                        <label for="confiremail">Vérification e-mail</label>
+                        <input name="confirmemail" type="email" id="confirmemail" required oninput='verifMail()' placeholder="Confirmez votre e-mail" value =""/>
+                    </div>
+                    <div class="content_form">
+                        <label for="avatar">Avatar (max 1 Mo)</label>
+                        <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+                        <input name="avatar" type="file" id="avatar" />
+                    </div>
+                    <input type="submit" value="Valider" id="submit" class="boutton"/>
+                </form>
+                
+                <?php 
+                    if(!empty($_POST))
+                    {
+                        extract($_POST);
+                        $login = $_SESSION['login'];
+                        // On vérifie s'il y a déjà une utilisateur avec le meme email en base
+                        $verifEmail = ("SELECT COUNT(*) AS nbr2 FROM user WHERE email = '$email'");
+                        $rep2 = executer_requete($verifEmail);
+                        while ($donnees2 = $rep2->fetch())
+                        {
+                            // Si email déjà pris, affichage d'erreur
+                            if($donnees2['nbr2'] > 0)
+                                echo '<script type="text/javascript">alert("Cet Email est déjà utilisé!")</script>';
+                            // Sinon, tout est bon, on modifie les infos utilisateurs
+                            else
+                            {
+                                if ($_FILES['avatar']['error'] > 0)
+                                    $erreur = true;
+                                else
+                                    $erreur = false;
+
+                                $tailleMax = UPLOAD_ERR_FORM_SIZE;
+                                if ($_FILES['avatar']['size'] > $tailleMax) 
+                                    $erreur2 = true;
+                                else
+                                    $erreur2 = false;
+
+                                $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
+                                $extension_upload = strtolower(  substr(  strrchr($_FILES['avatar']['name'], '.')  ,1)  );
+                                if ( in_array($extension_upload,$extensions_valides) )
+                                {
+                                    $erreur3 = true;
+
+                                    $nameAvatar = strstr($_FILES['avatar']['name'], '.', true);
+                                    if ($erreur == false && !$erreur2 == false && $erreur3 == true)
+                                        $avatarName = $nameAvatar . "-" . $login . "." . $extension_upload; 
+                                    $avatar = $nameAvatar . "-" . $login;
+
+                                    $destination = "./avatar/$avatarName";
+                                    $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $destination);
+                                }
+                                else
+                                    $erreur3 = false;
+
+                                $requeteMaj = "UPDATE user SET nom = '$nom', prenom = '$prenom', email = '$email'";
+                                if ($erreur3 == true)
+                                    $requeteMaj.= ", avatar = '$avatar'";
+                                $requeteMaj .= " WHERE login = '$login'";
+                                $resultatMaj = executer_requete($requeteMaj);
+                                
+                                
+                                
+                                
+                                
+                                echo '<script type="text/javascript">alert("Mise à jour de votre Compte effectuée.")</script>';
+                            }
+                        }
+                        $rep2->closeCursor();
+                    }
+                    ?>
             </div>
         </div>
         <?php afficher_footer();?>

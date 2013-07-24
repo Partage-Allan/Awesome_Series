@@ -40,36 +40,28 @@ if (!isset($_SESSION['login'])) {
         <h1 class="inscription">Mon compte</h1>
         <div id="wrapper">  
             <ul id="nav">  
-                <li><a href="cmpt_membre.php">Mes Infos</a></li>  
-                <li><a href="cmpt_password.php">Mon Password</a></li>  
+                <li><a href="cmpt_membre.php">Mon profil</a></li>  
+                <li><a href="cmpt_password.php">Mes paramètres</a></li>  
                 <li><a href="cmpt_mes_series.php">Mes Séries</a></li>  
                 <li><a href="cmpt_commentaires.php">Mes Commentaires</a></li>   
             </ul>  
-            <div id="contenu">          
-                <form method="post" action="" id="formulaire_mon_compte" enctype="multipart/form-data">
-                    <div class="content_form">
-                        <label for ="nom">Nom</label>
-                        <input name="nom" type="text" id="nom" required placeholder="Entrez votre nom" pattern="[A-Za-z]+" value ="<?php echo ($nom); ?>"/>
-                    </div>
-                    <div class="content_form">
-                        <label for="prenom">Prénom</label>
-                        <input name="prenom" type="text" id="prenom" required placeholder="Entrez votre prénom"pattern="[A-Za-z]+" value ="<?php echo ($prenom); ?>"/>
-                    </div>
-                    <div class="content_form">
-                        <label for="email">E-mail</label>
-                        <input name="email" type="email" id="email" required oninput='verifMail()' placeholder="adresse@mail.com" value ="<?php echo ($email); ?>"/>
-                    </div>
-                    <div class="content_form">
-                        <label for="confiremail">Vérification e-mail</label>
-                        <input name="confirmemail" type="email" id="confirmemail" required oninput='verifMail()' placeholder="Confirmez votre e-mail" value =""/>
-                    </div>
-                    <div class="content_form">
+            <div id="contenu">  
+                Affichage Pseudo, Prénom, E-mail, Avatar, nbre séries/nbre comms ... pas de champs puisque c'est juste une page d'infos générales sur le compte.<br/>
+                Nom            <?php echo ($nom); ?><br/>
+                Prénom         <?php echo ($prenom); ?><br/>
+                Adresse e-mail <?php echo ($email); ?><br/>
+                Avatar         <?php echo ($avatar); ?><br/>
+                Nombre de séries marquées :  X séries marquées<br/>
+                Nombre de commentaires : X commentaires<br/>  
+                
+                   
+                <!-- <div class="content_form">
                         <label for="avatar">Avatar (max 1 Mo)</label>
                         <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
                         <input name="avatar" type="file" id="avatar" />
                     </div>
                     <input type="submit" value="Valider" id="submit" class="boutton"/>
-                </form>
+                -->
                 
                 <?php 
                     if(!empty($_POST))

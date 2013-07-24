@@ -40,6 +40,7 @@
                 $statut = $donnees['statut_serie'];
                 $format = $donnees['format_serie'];
                 $trailer = $donnees['trailer_serie'];
+                $chaine = $donnees['chaine'];
             }
             
             // De meme pour le casting
@@ -147,6 +148,7 @@
                 <p class="texte_infos">
                   Réalisateur       : <?php echo $realisateur; ?><br/>
                   Origine           : <?php echo $nationalite; ?><br/>
+                  Chaine            : <?php echo $chaine; ?><br/>
                   Genre             : <?php echo $genre; ?><br/>
                   Format            : <?php echo $format; ?><br/>
                   Date de sortie    : <?php echo $annee; ?><br/>
@@ -155,6 +157,14 @@
                 </p> 
                 </div>    
             </article>
+            <p>
+                Critique de la rédac : 
+                
+                Revolution est une série prometteuse, la 1ere saison commence très doucement, avec des acteurs pas très convainquant de prime abord mais qui gagne au fil des épisode<br/> 
+                de plus en plus le spectateur. Ceux qui restent septique je ne peux que leur faire par de mon opinion : regarder la saison jusqu'à la fin. Nous avon ici un vrai scénario qui<br/>
+                feront rappeller une certaine série avec des naufragés, je parle bien évidement de LOST. Les flash-back sont intéressant et nous apporte des réponses sur les histoires des personnages<br/>
+                avant la coupure du courant.
+            </p>
         </section>
         <?php afficher_footer();?>
     </body>

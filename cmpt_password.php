@@ -37,6 +37,14 @@ if (!isset($_SESSION['login'])) {
                         <label>Retaper mot de passe:</label>
                         <input name="checkNewPass" type="password" id="checkNewPass" oninput="verifPass()" required />
                     </div>
+                    <div class="form_gauche">
+                        <label>Modifier mon adresse e-mail :</label>
+                        <input name="" type="" id="" oninput="" required />
+                    </div>
+                    <div class="form_gauche">
+                        <label>Retaper adresse mail :</label>
+                        <input name="" type="" id="" oninput="" required />
+                    </div>
                     <input type="submit" value="Valider" id="submit" class="boutton"/>
                 </form> 
                 <p class="etoile">* Champs obligatoire</p>

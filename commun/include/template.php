@@ -9,7 +9,9 @@ function afficher_header()
         session_start(); 
     }
     printf("<header>");
-    printf("<h1 class=\"titre_site\">Awesome Séries</h1>"); 
+    printf("<h1 class=\"titre_site\">Awesome Séries</h1>");
+   
+    /*printf('<a><img class="logo" src="images/logo.png" alt="logo"/></a>');*/
         // Si on ne trouve pas de login en session, on affiche l'etat de création de compte ou de connection
         if (!isset($_SESSION['login']))
         {
@@ -33,7 +35,7 @@ function afficher_header()
                     printf('<li><a href="cinema.php">Cinéma</a></li>');
                     printf('<li><a href="contact.php">Contact</a></li>');
                     printf('<li><a href="qui_sommes_nous.php">Qui sommes nous?</a></li>');
-                    printf('<li><form method="POST" action="search.php"><input class="test" type="search" placeholder="Chercher une série" name="search" /></form></li>');
+                    printf('<li><form method="POST" action="search.php"><img src="images/icone-recherche.jpg"/><input class="recherche_serie" type="search" placeholder="Chercher une série" name="search" /></form></li>');
                 printf('</ul>');
             printf('</nav>');
 printf('</header>');

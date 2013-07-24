@@ -31,6 +31,7 @@ if (!isset($_SESSION['login'])) {
                 $prenom = $donneesInfo['prenom'];
                 $email = $donneesInfo['email'];
                 $avatar = $donneesInfo['avatar'];
+                $pseudo = $_SESSION['login'];
             }
             $repRequeteInfo->closeCursor();
             
@@ -46,13 +47,14 @@ if (!isset($_SESSION['login'])) {
                 <li><a href="cmpt_commentaires.php">Mes Commentaires</a></li>   
             </ul>  
             <div id="contenu">  
-                Affichage Pseudo, Prénom, E-mail, Avatar, nbre séries/nbre comms ... pas de champs puisque c'est juste une page d'infos générales sur le compte.<br/>
-                Nom            <?php echo ($nom); ?><br/>
-                Prénom         <?php echo ($prenom); ?><br/>
-                Adresse e-mail <?php echo ($email); ?><br/>
-                Avatar         <?php echo ($avatar); ?><br/>
-                Nombre de séries marquées :  X séries marquées<br/>
-                Nombre de commentaires : X commentaires<br/>  
+                <p class="texte_mon_compte">Affichage Pseudo, Prénom, E-mail, Avatar, nbre séries/nbre comms ... pas de champs puisque c'est juste une page d'infos générales sur le compte.<br/><br/>
+                Nom            : <?php echo ($nom); ?><br/><br/>
+                Prénom         : <?php echo ($prenom); ?><br/><br/>
+                Pseudo         : <?php echo ($pseudo); ?><br/><br/>
+                Adresse e-mail : <?php echo ($email); ?><br/><br/>
+                Avatar         : <?php echo ($avatar); ?><br/><br/>
+                Nombre de séries marquées :  X séries marquées<br/><br/>
+                Nombre de commentaires : X commentaires<br/></p> 
                 
                    
                 <!-- <div class="content_form">

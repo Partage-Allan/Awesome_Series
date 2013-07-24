@@ -12,7 +12,7 @@
     <body>
         <?php afficher_header();?>
         <section>
-            <p id="fil_d_ariane"><a href="index.php">Accueil</a></p>
+            <p id="fil_d_ariane"><a href="index.php">Accueil ></a></p>
             <?php
                 $requete = "SELECT * FROM news";
                 $reponse =  executer_requete($requete);
@@ -20,7 +20,8 @@
                 {
                       $titre_news =  $donnees['titre_news'];
                       $contenu_news =  $donnees['contenu_news'];
-                      echo  $titre_news . '<br>' . $contenu_news .'<br><br/>';
+                      printf("<div class='titre_news'> $titre_news </div>");
+                      printf("<div class='contenu_news'> $contenu_news</div>");
                 }  
          ?> 
         </section>    

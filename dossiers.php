@@ -10,6 +10,7 @@
         <?php afficher_header();?>
         <section>
             <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="">Dossiers</a></p>
+            <p class="dossiers">Cette partie du site est en cours de développement.</p>
             <article>
                 
             </article>

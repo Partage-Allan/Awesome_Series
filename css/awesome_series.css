@@ -156,7 +156,8 @@ section
 {
     margin-top: 10px;
     padding-top: 25px;
-    height: complex;
+    min-height: 500px;
+    height: auto;
 }
 
 /********************Fin Général********************/
@@ -524,22 +525,31 @@ iframe
     margin-bottom: 30px;
 }
 
-#cmpt_membre_gauche
+.cmpt_param_gauche
 {
-    margin-left: 50px;
+    margin-left: 150px;
 }
 
-#cmpt_membre_gauche p
+.cmpt_param_gauche p
 {
-    padding-left: 220px;
     font-weight: bold;
     color: #d45252;
     text-shadow: 2px 2px black;
+    margin-left: 180px;
 }
 
-#cmpt_membre_gauche #submit
+.form_gauche label
 {
-    margin-left: 260px;
+    width: 170px;
+    float: left;
+    color: #D2D3D0;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.cmpt_param_gauche #submit_pass, .cmpt_param_gauche #submit_email
+{
+    margin-left: 200px;
 }
 
 .form_droite
@@ -573,7 +583,7 @@ iframe
     margin-left: 5px;
 }
 
-.content_form label, .form_gauche label
+.content_form label
 {
     width: 170px;
     float: left;
@@ -584,7 +594,7 @@ iframe
     line-height: 30px;
 }
 
-.content_form input, .form_gauche input
+.content_form input
 {
     transition-duration: 0.5s;
     border-color: #D2D3D0;
@@ -678,8 +688,8 @@ input[type=submit]
 
 #wrapper 
 {
-	width: 710px;
-        margin-left: 18%;
+	width: 800px;
+        margin-left: 10%;
 }
 
 #nav 
@@ -717,7 +727,7 @@ input[type=submit]
         border-top-right-radius: 20px;
         font-size: 18px;
         box-shadow: 0 0 5px rgba( 0, 0, 0, 0.5), 0 -1px 0 rgba( 255, 255, 255, 0.4);
-        margin-right: 20px;
+        margin-right: 10px;
 }
 
 #nav li a:hover
@@ -743,16 +753,11 @@ input[type=submit]
     box-shadow: 1px 1px 10px black inset, 0 1px 0 rgba( 255, 255, 255, 0.4); 
 }
 
-#contenu p
-{
-    margin-left: 20px;
-}
-
 .etoile
 {
     color: #d45252;
     clear: both;
-    padding-left: 270px;
+    padding-left: 320px;
     text-shadow: 2px 2px black;
 }
 

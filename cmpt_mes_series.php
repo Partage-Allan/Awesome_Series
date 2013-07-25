@@ -25,13 +25,7 @@ if (!isset($_SESSION['login'])) {
             <div id="contenu">          
                 <?php
                     // On récupère l'ID de l'utilisateur afin d'ensuite aller chercher les séries qu'il a tagg
-                    $recupIdUser = "SELECT id_user FROM user WHERE login = '" . $_SESSION['login'] . "'";
-                    $execRequeteId = executer_requete($recupIdUser);
-                    while ($donnees = $execRequeteId->fetch())
-                    {
-                        $id_user = $donnees['id_user'];
-                    }
-                    $execRequeteId->closeCursor();
+                    $id_user = $_SESSION['id_user'];
 
                     // On récupère ses séries tagguées
                     $recupSerie = "SELECT * FROM series_vues WHERE user_id_user = '" . $id_user . "'";
@@ -66,17 +60,6 @@ if (!isset($_SESSION['login'])) {
                     printf('</form>');
 
                     $execRequete->closeCursor();
-
-                    // On regarde si le bouton javascript a été appuyé et renvoie donc l'ID de la série tagguée à supprimer
-                    if (isset($_GET['id_tagg']))
-                    {
-                        $id_serie_tagg = $_GET['id_tagg'];
-                        // On delete le tagg de la série cliquée
-                        $requeteDeleteTagg = "DELETE FROM series_vues WHERE id_series_vues = '" . $id_serie_tagg . "'"; 
-                        $execRequeteDelete = executer_requete($requeteDeleteTagg);
-                        // On redirige sur la page de compte sans variable URL
-                        header ('Location: cmpt_membre.php');
-                    }
                 ?>
             </div>
     </body>

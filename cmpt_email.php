@@ -24,20 +24,16 @@ if (!isset($_SESSION['login'])) {
         <?php afficher_header();?>
             <div id="contenu">          
                 <form method="post" action="cmpt_membre.php" class="cmpt_param_gauche">
-                    <p>Gestion du Password :</p>
+                    <p>Gestion de l'email :</p>
                     <div class="form_gauche">
-                        <label>Mot de passe actuel:</label>
-                        <input name="passActuel" type="password" id="pass" required />
+                        <label>Nouvelle adresse mail :</label>
+                        <input name="newEmail" type="email" id="newEmail" required />
                     </div>
                     <div class="form_gauche">
-                        <label>Nouveau mot de passe:</label>
-                        <input name="newPass" type="password" id="newPass" required />
+                        <label>Retaper adresse mail :</label>
+                        <input name="checkNewEmail" type="email" id="checkNewEmail" required />
                     </div>
-                    <div class="form_gauche">
-                        <label>Retaper mot de passe:</label>
-                        <input name="checkNewPass" type="password" id="checkNewPass" required />
-                    </div>
-                    <input type="submit" value="Valider" id="submit_pass" class="boutton"/>
+                    <input type="submit" value="Valider" id="submit_email" class="boutton"/>
                 </form>
                 <p class="etoile">* Champs obligatoire</p>
             </div>

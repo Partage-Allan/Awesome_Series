@@ -62,29 +62,49 @@ if (!isset($_SESSION['login'])) {
                 <li><a href="cmpt_mes_series.php">Mes Séries</a></li>  
                 <li><a href="cmpt_commentaires.php">Mes Commentaires</a></li>   
             </ul>  
-            <div id="contenu">  
-                <p class="texte_mon_compte">Affichage Pseudo, Prénom, E-mail, Avatar, nbre séries/nbre comms ... pas de champs puisque c'est juste une page d'infos générales sur le compte.<br/><br/>
-                Nom            : <?php echo ($nom); ?><br/><br/>
-                Prénom         : <?php echo ($prenom); ?><br/><br/>
-                Pseudo         : <?php echo ($pseudo); ?><br/><br/>
-                Adresse e-mail : <?php echo ($email); ?><br/><br/>
-                Avatar         : <?php echo ($avatar); ?><br/><br/>
-                Nombre de séries marquées :  X séries marquées<br/><br/>
-                Nombre de commentaires : X commentaires<br/></p> 
-                
-                   
-                <!-- <div class="content_form">
-                        <label for="avatar">Avatar (max 1 Mo)</label>
-                        <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-                        <input name="avatar" type="file" id="avatar" />
-                    </div>
-                    <input type="submit" value="Valider" id="submit" class="boutton"/>
-                -->
-                
-                <?php 
+            <div id="contenu">
+                <?php
+                    // On vérifie si la page appelante contient la variable "modif" et qu'elle vaut la valeur "true"
+                    // Si oui, c'est qu'on a cliqué sur le lien de modification des Infos Utilisateur, on affiche le formulaire
+                    if(isset($_GET['modif']) && $_GET['modif'] == "true")
+                    {
+                        printf('<form method="post" action="cmpt_membre.php" class="cmpt_param_gauche">');
+                           printf('<p>Gestion dde vos Informations :</p>');
+                            printf('<div class="form_gauche">');
+                                printf('<label>Nom :</label>');
+                                printf('<input name="nom" type="text" id="nom" />');
+                            printf('</div>');
+                            printf('<div class="form_gauche">');
+                                printf('<label>Prénom :</label>');
+                                printf('<input name="prenom" type="text" id="prenom" />');
+                            printf('</div>');
+                            printf('<div class="form_gauche">');
+                                printf('<label for="avatar">Avatar (max 1 Mo)</label>');
+                                printf('<input type="hidden" name="MAX_FILE_SIZE" value="1048576" />');
+                                printf('<input name="avatar" type="file" id="avatar" />');
+                            printf('</div>');
+                            printf('<input type="submit" value="Valider" id="submit_infos" class="boutton"/>');
+                        printf('</form>');
+                    }
+                    
+                    // Sinon, on affiche la page d'infos standard du compte
+                    else
+                    {
+                        printf('<p class="texte_mon_compte">');
+                        printf("Affichage Pseudo, Prénom, E-mail, Avatar, nbre séries/nbre comms ... pas de champs puisque c'est juste une page d'infos générales sur le compte.<br/><br/>");
+                        printf("Nom            : $nom <br/><br/>");
+                        printf("Prénom         : $prenom <br/><br/>");
+                        printf("Pseudo         : $pseudo <br/><br/>");
+                        printf("Adresse e-mail : $email <br/><br/>");
+                        printf("Avatar         : $avatar <br/><br/>");
+                        printf("Nombre de séries marquées :  X séries marquées<br/><br/>");
+                        printf("Nombre de commentaires : X commentaires<br/></p>");
+                        printf('<a href="cmpt_membre.php?modif=true">Modifier mes Infos</a>');
+                    }
+
                     if(!empty($_POST))
                     {
-                        // On récupère les variable POST
+                        // On récupère les variables POST
                         extract($_POST);
                         
                         // Si on arrive de la page de changement du mot de Pass
@@ -115,39 +135,38 @@ if (!isset($_SESSION['login'])) {
                         }
                         
                         // Sinon, on vérifie si on vient de la page de changement de l'email
-                        else
+                        if (isset($newEmail))
                         {
-                            // Si on arrive de la page de changement de l'email
-                            if (isset($newEmail))
+                            // Si les 2 mail ne correspondent pas
+                            if ($newEmail != $checkNewEmail)
+                                echo '<script type="text/javascript">alert("Les adresses Mail ne correspondent pas")</script>';
+                            else
                             {
-                                // Si les 2 mail ne correspondent pas
-                                if ($newEmail != $checkNewEmail)
-                                    echo '<script type="text/javascript">alert("Les adresses Mail ne correspondent pas")</script>';
-                                else
+                                $login = $_SESSION['login'];
+                                // On vérifie s'il y a déjà une utilisateur avec le meme email en base
+                                $verifEmail = ("SELECT COUNT(*) AS nbr2 FROM user WHERE email = '$newEmail'");
+                                $rep2 = executer_requete($verifEmail);
+                                while ($donnees2 = $rep2->fetch())
                                 {
-                                    $login = $_SESSION['login'];
-                                    // On vérifie s'il y a déjà une utilisateur avec le meme email en base
-                                    $verifEmail = ("SELECT COUNT(*) AS nbr2 FROM user WHERE email = '$newEmail'");
-                                    $rep2 = executer_requete($verifEmail);
-                                    while ($donnees2 = $rep2->fetch())
+                                    // Si email déjà pris, affichage d'erreur
+                                    if($donnees2['nbr2'] > 0)
+                                        echo '<script type="text/javascript">alert("Cet Email est déjà utilisé!")</script>';
+                                    // Sinon, tout est bon, on modifie l'email
+                                    else
                                     {
-                                        // Si email déjà pris, affichage d'erreur
-                                        if($donnees2['nbr2'] > 0)
-                                            echo '<script type="text/javascript">alert("Cet Email est déjà utilisé!")</script>';
-                                        // Sinon, tout est bon, on modifie l'email
-                                        else
-                                        {
-                                            $requeteMaj = "UPDATE user SET email = '$newEmail' WHERE login = '$login'";
-                                            $resultatMaj = executer_requete($requeteMaj);
-                                            $_SESSION['email'] = $newEmail;
+                                        $requeteMaj = "UPDATE user SET email = '$newEmail' WHERE login = '$login'";
+                                        $resultatMaj = executer_requete($requeteMaj);
+                                        $_SESSION['email'] = $newEmail;
 
-                                            echo '<script type="text/javascript">alert("Mise à jour de votre Compte effectuée.")</script>';
-                                        }
+                                        echo '<script type="text/javascript">alert("Mise à jour de votre Compte effectuée.")</script>';
                                     }
-                                    $rep2->closeCursor();
                                 }
+                                $rep2->closeCursor();
                             }
                         }
+                        
+                        // Sinon on vérifie si on vient de la page de modification des Infos Utilisateur
+                        
                     }
                     
                     // On regarde si le bouton javascript de delete series tagguées a été appuyé et renvoie donc l'ID de la série tagguée à supprimer

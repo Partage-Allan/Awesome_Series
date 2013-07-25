@@ -1,60 +1,69 @@
 <?php
 
-if (isset($newEmail))
-{
-    $login = $_SESSION['login'];
-    // On vérifie s'il y a déjà une utilisateur avec le meme email en base
-    $verifEmail = ("SELECT COUNT(*) AS nbr2 FROM user WHERE email = '$email'");
-    $rep2 = executer_requete($verifEmail);
-    while ($donnees2 = $rep2->fetch())
-    {
-        // Si email déjà pris, affichage d'erreur
-        if($donnees2['nbr2'] > 0)
-            echo '<script type="text/javascript">alert("Cet Email est déjà utilisé!")</script>';
-        // Sinon, tout est bon, on modifie l'email
-        else
-        {
-            if ($_FILES['avatar']['error'] > 0)
-                $erreur = true;
-            else
-                $erreur = false;
+printf('<form method="post" action="cmpt_infos.php" class="cmpt_param_gauche">');
+                           printf('<p>Gestion de vos Informations :</p>');
+                            printf('<div class="form_gauche">');
+                                printf('<label>Nom :</label>');
+                                printf('<input name="newNom" type="text" id="newNom" />');
+                            printf('</div>');
+                            printf('<div class="form_gauche">');
+                                printf('<label>Prénom :</label>');
+                                printf('<input name="newPrenom" type="text" id="newPrenom" />');
+                            printf('</div>');
+                            printf('<div class="form_gauche">');
+                                printf('<label for="newAvatar">Avatar (max 1 Mo)</label>');
+                                printf('<input type="hidden" name="MAX_FILE_SIZE" value="1048576" />');
+                                printf('<input name="newAvatar" type="file" id="newAvatar" />');
+                            printf('</div>');
+                            printf('<input type="submit" value="Valider" id="submit_infos" class="boutton"/>');
+                        printf('</form>');
+                        
+                        if(!empty($_POST))
+                    {
+                        // On récupère les variables POST
+                        extract($_POST);
+                        
+                        if(isset($newNom) || isset($newPrenom) || isset($newAvatar))
+                        {
+                            if ($_FILES['newAvatar']['error'] > 0)
+                                $erreur = true;
+                            else
+                                $erreur = false;
 
-            $tailleMax = UPLOAD_ERR_FORM_SIZE;
-            if ($_FILES['avatar']['size'] > $tailleMax) 
-                $erreur2 = true;
-            else
-                $erreur2 = false;
+                            $tailleMax = UPLOAD_ERR_FORM_SIZE;
+                            if ($_FILES['newAvatar']['size'] > $tailleMax) 
+                                $erreur2 = true;
+                            else
+                                $erreur2 = false;
 
-            $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
-            $extension_upload = strtolower(  substr(  strrchr($_FILES['avatar']['name'], '.')  ,1)  );
-            if ( in_array($extension_upload,$extensions_valides) )
-            {
-                $erreur3 = true;
+                            $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
+                            $extension_upload = strtolower(  substr(  strrchr($_FILES['newAvatar']['name'], '.')  ,1)  );
+                            if ( in_array($extension_upload,$extensions_valides) )
+                            {
+                                $erreur3 = true;
 
-                $nameAvatar = strstr($_FILES['avatar']['name'], '.', true);
-                if ($erreur == false && !$erreur2 == false && $erreur3 == true)
-                    $avatarName = $nameAvatar . "-" . $login . "." . $extension_upload; 
-                $avatar = $nameAvatar . "-" . $login;
+                                $nameAvatar = strstr($_FILES['newAvatar']['name'], '.', true);
+                                if ($erreur == false && !$erreur2 == false && $erreur3 == true)
+                                    $avatarName = $nameAvatar . "-" . $login . "." . $extension_upload; 
+                                $avatar = $nameAvatar . "-" . $login;
 
-                $destination = "./avatar/$avatarName";
-                $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $destination);
-            }
-            else
-                $erreur3 = false;
+                                $destination = "./avatar/$avatarName";
+                                $resultat = move_uploaded_file($_FILES['newAvatar']['tmp_name'], $destination);
+                            }
+                            else
+                                $erreur3 = false;
 
-            $requeteMaj = "UPDATE user SET nom = '$nom', prenom = '$prenom', email = '$email'";
-            if ($erreur3 == true)
-                $requeteMaj.= ", avatar = '$avatar'";
-            $requeteMaj .= " WHERE login = '$login'";
-            $resultatMaj = executer_requete($requeteMaj);
-
-
-
-
-
-            echo '<script type="text/javascript">alert("Mise à jour de votre Compte effectuée.")</script>';
-        }
-    }
-    $rep2->closeCursor();
-}
+                            $requeteMaj = "UPDATE user SET ";
+                            if($newNom != '')
+                                $requeteMaj .= "nom = '$newNom' "; 
+                            
+                            if ($newPrenom != '')
+                                $requeteMaj .= ",prenom = '$newPrenom' ";
+                            
+                            if ($erreur3 == true)
+                                $requeteMaj.= ", avatar = '$newAvatar'";
+                            $requeteMaj .= " WHERE login = '" . $_SESSION['login'] . "'";
+                            $resultatMaj = executer_requete($requeteMaj);
+                        }
+                    }
 ?>

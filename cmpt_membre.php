@@ -68,23 +68,23 @@ if (!isset($_SESSION['login'])) {
                     // Si oui, c'est qu'on a cliqué sur le lien de modification des Infos Utilisateur, on affiche le formulaire
                     if(isset($_GET['modif']) && $_GET['modif'] == "true")
                     {
-                        printf('<form method="post" action="cmpt_membre.php" class="cmpt_param_gauche">');
-                           printf('<p>Gestion dde vos Informations :</p>');
-                            printf('<div class="form_gauche">');
-                                printf('<label>Nom :</label>');
-                                printf('<input name="nom" type="text" id="nom" />');
-                            printf('</div>');
-                            printf('<div class="form_gauche">');
-                                printf('<label>Prénom :</label>');
-                                printf('<input name="prenom" type="text" id="prenom" />');
-                            printf('</div>');
-                            printf('<div class="form_gauche">');
-                                printf('<label for="avatar">Avatar (max 1 Mo)</label>');
-                                printf('<input type="hidden" name="MAX_FILE_SIZE" value="1048576" />');
-                                printf('<input name="avatar" type="file" id="avatar" />');
-                            printf('</div>');
-                            printf('<input type="submit" value="Valider" id="submit_infos" class="boutton"/>');
-                        printf('</form>');
+                        echo('<form method="post" action="cmpt_membre.php" class="cmpt_param_gauche">');
+                           echo('<p>Gestion de vos Informations :</p>');
+                            echo('<div class="form_gauche">');
+                                echo('<label>Nom :</label>');
+                                echo('<input name="newNom" type="text" id="newNom" />');
+                            echo('</div>');
+                            echo('<div class="form_gauche">');
+                                echo('<label>Prénom :</label>');
+                                echo('<input name="newPrenom" type="text" id="newPrenom" />');
+                            echo('</div>');
+                            echo('<div class="form_gauche">');
+                                echo('<label for="newAvatar">Avatar (max 1 Mo)</label>');
+                                echo('<input type="hidden" name="MAX_FILE_SIZE" value="1048576" />');
+                                echo('<input name="newAvatar" type="file" id="newAvatar" />');
+                            echo('</div>');
+                            echo('<input type="submit" value="Valider" id="submit_infos" class="boutton"/>');
+                        echo('</form>');
                     }
                     
                     // Sinon, on affiche la page d'infos standard du compte
@@ -135,10 +135,10 @@ if (!isset($_SESSION['login'])) {
                         }
                         
                         // Sinon, on vérifie si on vient de la page de changement de l'email
-                        if (isset($newEmail))
+                        if(isset($newEmail))
                         {
                             // Si les 2 mail ne correspondent pas
-                            if ($newEmail != $checkNewEmail)
+                            if($newEmail != $checkNewEmail)
                                 echo '<script type="text/javascript">alert("Les adresses Mail ne correspondent pas")</script>';
                             else
                             {
@@ -166,7 +166,48 @@ if (!isset($_SESSION['login'])) {
                         }
                         
                         // Sinon on vérifie si on vient de la page de modification des Infos Utilisateur
-                        
+                        if(isset($newNom) || isset($newPrenom) || isset($newAvatar))
+                        {
+                            if ($_FILES['newAvatar']['error'] > 0)
+                                $erreur = true;
+                            else
+                                $erreur = false;
+
+                            $tailleMax = UPLOAD_ERR_FORM_SIZE;
+                            if ($_FILES['newAvatar']['size'] > $tailleMax) 
+                                $erreur2 = true;
+                            else
+                                $erreur2 = false;
+
+                            $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
+                            $extension_upload = strtolower(  substr(  strrchr($_FILES['newAvatar']['name'], '.')  ,1)  );
+                            if ( in_array($extension_upload,$extensions_valides) )
+                            {
+                                $erreur3 = true;
+
+                                $nameAvatar = strstr($_FILES['newAvatar']['name'], '.', true);
+                                if ($erreur == false && !$erreur2 == false && $erreur3 == true)
+                                    $avatarName = $nameAvatar . "-" . $login . "." . $extension_upload; 
+                                $avatar = $nameAvatar . "-" . $login;
+
+                                $destination = "./avatar/$avatarName";
+                                $resultat = move_uploaded_file($_FILES['newAvatar']['tmp_name'], $destination);
+                            }
+                            else
+                                $erreur3 = false;
+
+                            $requeteMaj = "UPDATE user SET ";
+                            if($newNom != '')
+                                $requeteMaj .= "nom = '$newNom' "; 
+                            
+                            if ($newPrenom != '')
+                                $requeteMaj .= ",prenom = '$newPrenom' ";
+                            
+                            if ($erreur3 == true)
+                                $requeteMaj.= ", avatar = '$newAvatar'";
+                            $requeteMaj .= " WHERE login = '" . $_SESSION['login'] . "'";
+                            $resultatMaj = executer_requete($requeteMaj);
+                        }
                     }
                     
                     // On regarde si le bouton javascript de delete series tagguées a été appuyé et renvoie donc l'ID de la série tagguée à supprimer

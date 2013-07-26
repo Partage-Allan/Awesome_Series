@@ -1,0 +1,847 @@
+/**********Général**********/
+a
+{
+    text-decoration: none;
+}
+
+html
+{
+    margin-left: auto;
+    margin-right: auto;
+    background: #000000;
+    background-color: #191919/*#121212 #4D4D4D*/;    
+}
+
+h1
+{
+    margin-left: 150px;
+    color: #D2D3D0;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+}
+/**********Fin Général**********/
+
+
+/****************************************/
+/**********Header**********/
+/****************************************/
+header
+{
+    height: 200px;
+    border-bottom: 2px solid #782408;
+    border-top: 2px solid #782408;
+    margin-top: 15px;
+    width: 1024px;
+}
+
+.logo
+{
+    height: 115px;
+}
+
+
+.titre_site
+{
+    margin: 0;
+    margin-bottom: 25px;
+    width: 350px;
+    text-align: left;
+    margin-left: 35px;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
+    float: left;
+    font-size: 50px;
+}
+
+.texte_titre
+{
+    margin: 0;
+    margin-bottom: 15px;
+    width: 300px;
+    margin-left: 35px;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
+    clear: both;
+    display: block;
+}
+
+input
+{ 
+    height: 25px;
+    width:  170px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+nav 
+{  
+    margin-left: 35px;  
+    border-bottom: 2px solid #782408;
+    border-top: 2px solid #782408;
+    max-height: 57px;
+    width: 950px;
+}  
+
+nav li 
+{  
+    display: inline;  
+    list-style: none;  
+}  
+
+nav a 
+{  
+    margin-left: 30px;
+    text-decoration: none;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
+}
+
+nav form
+{
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.login
+{
+    float: right;
+    margin-right: 25px;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #DDEEFF;
+    text-shadow: 2px 2px black;
+}
+
+.disconnect
+{
+    float: right;
+    clear: right;
+    margin-right: 25px;
+    text-decoration: none;
+    color: #d45252;
+    text-shadow: 2px 2px black;
+}
+
+/****************************************/
+/**********Fin Header**********/
+/****************************************/
+
+
+/********************Corps********************/
+/********************Général********************/
+body
+{
+    margin: auto;
+    background-image: url('../images/dégrade-gris.png');
+    background-size: cover;
+    max-width: 1024px;
+    /*border: 2px solid #782408;*/
+}
+
+#fil_d_ariane
+{
+    margin-left: 80px;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
+}
+
+#fil_d_ariane a
+{
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
+}
+
+section
+{
+    margin-top: 10px;
+    padding-top: 25px;
+    min-height: 500px;
+    height: auto;
+}
+
+/********************Fin Général********************/
+
+/********************Article********************/
+article
+{
+   /* border: 2px solid #782408 #5C5C5C;*/
+    height: auto;
+}
+
+article h1
+{
+    margin-left: 35px;
+    text-align: center;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
+}
+
+.search
+{
+    margin-left: 80px;
+    margin-bottom: 50px;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
+}
+
+.result_search
+{
+    margin-left: 80px;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
+}
+/********************Fin Article********************/
+
+/********************Section********************/
+
+.texte_accueil
+{
+    margin: auto;
+    width: 600px;
+    margin-bottom: 25px;
+    text-align: left;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
+}
+/********************Fin Section********************/
+
+/****************************************/
+/********************Fin Corps********************/
+/****************************************/
+
+/****************************************/
+/********************Footer********************/
+/****************************************/
+footer
+{
+    height: 100px;
+    border-bottom: 2px solid #782408;
+    border-top: 2px solid #782408;
+    margin-top: 15px;
+    width: 1024px;
+    margin-bottom: 15px;
+    /*border: 2px solid #7824085C5C5C;*/
+}
+#suivez_nous p
+{
+    margin-left: 80px;
+    margin-top: 25px;
+    width: 120px;
+    font-size: 13px;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
+    float: left;
+}
+
+a.infobulle
+{
+    position: relative; 
+}
+
+a.infobulle
+{
+    position: relative; 
+}
+
+a.infobulle span  
+{  
+    position: absolute;  
+    top:-2000em;  
+    left:-2000em;  
+    width:1px;  
+    height:1px;  
+    overflow:hidden;  
+    background:#DDEEFF;
+} 
+
+a.infobulle:hover span, a.infobulle:focus span, a.infobulle:active span  
+{  
+    text-align: center;
+    top:auto;  
+    left:auto;  
+    width:65px;  
+    height:auto;  
+    overflow:visible;  
+}
+
+.icone
+{
+    margin-top: 15px;
+    margin-left: 50px;
+    float: left;
+}
+/****************************************/
+/********************Footer********************/
+/****************************************/
+
+/*****************************************************************************************/
+/****************************** Styles Page de Contact **********************************/
+/***************************************************************************************/
+
+#ContainerForm
+{
+    margin-bottom: 25px;
+}
+
+#ContainerForm table 
+{
+    width: 100%;
+}
+
+#ContainerForm form label 
+{
+    padding-right: 10px;
+    width: 170px;
+    text-align: right;
+    display: block;
+    float: left;
+    color: #D2D3D0;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 80px;
+    margin-top: 20px;
+}
+
+#ContainerForm input, #ContainerForm textArea
+{
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding-left: 5px;
+    transition-duration: 0.5s;
+    border-color: #D2D3D0;
+    margin-top: 20px;
+}
+
+#ContainerForm form include 
+{
+    width: 500px;
+}
+
+#ContainerForm input:required  textarea:required 
+{
+    background: url(../images/red_asterisk.png) 98% center no-repeat white;
+}
+
+#ContainerForm input:focus:invalid, textArea:focus:invalid 
+{
+    background: url(../images/invalid.png) 98% center no-repeat white;
+}
+
+#ContainerForm input:focus:valid 
+{
+    background: url(../images/valid.png) 98% center no-repeat white;
+}
+
+#ContainerForm #nom:valid 
+{
+    background: url(../images/valid.png) 98% center no-repeat white;
+}
+
+#ContainerForm #email:valid 
+{
+    background: url(../images/valid.png) 98% center no-repeat white;
+}
+
+#ContainerForm textArea:focus:valid 
+{
+    background: url(../images/valid.png) 98% top no-repeat white;
+}
+
+#ContainerForm textArea:required 
+{
+    background: url(../images/red_asterisk.png) 99% 5% no-repeat white; 
+}
+
+#commentaires 
+{
+    height: 60px;
+    width: 406px;
+}
+
+#mySubmit 
+{
+    margin-top: 50px;
+    margin-left: 400px;
+}
+
+/*****************************************************************************************/
+/******************************Fin Styles Page de Contact **********************************/
+/***************************************************************************************/
+
+/*****************************************************************************************/
+/****************************** Style Fiche Séries **********************************/
+/***************************************************************************************/
+#affiche
+{
+    width: 800px;
+}
+
+#affiche img
+{
+    height: auto ;
+    max-width: 200px;  
+    float: left;
+    margin-right: 50px;
+    margin-left: 80px;
+    text-align: center;
+}
+
+#synopsis
+{
+    height: auto;
+    width: 500px;
+    float: left;
+    text-align: left;
+    color: #D2D3D0;
+  
+    margin-right: 100px;
+}
+
+.serie_check
+{
+	display: block;
+	cursor: pointer;
+        margin-left: 145px;
+        width: auto;
+        height: auto;
+	font-size: 14px;
+        padding-bottom: 3px;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+#cast
+{
+    margin-left: 80px;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
+}
+
+.casting
+{
+    clear: both;
+    display: inline-block;
+    width: 550px;
+    margin-bottom: 30px;
+    height: 646px;
+}
+
+.liste_acteur ul
+{
+    list-style: none;
+    text-align: center;
+    padding-left: 65px;
+}
+
+.liste_acteur li
+{
+    float: left;
+    width: 126px;
+}
+.liste_acteur ul li
+{
+    margin-right: 10px;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
+}
+
+.liste_acteur p
+{
+    margin-bottom: 10px;
+    width: 126px;
+    height: 40px;
+}
+
+.liste_acteur img
+{
+    width: 100px;
+    height: 141px;
+}
+.bloc_trailer
+{
+    float: right;
+    width: 450px;
+    height: 646px;
+}
+.texte_trailer
+{
+    margin: 0px;
+    margin-top: 16px;
+    width: 100px;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
+}
+
+.titre_infos
+{
+    float: left;
+    margin-top: 16px;
+    width: 400px;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
+}
+
+.texte_infos
+{
+    margin-top: 16px;
+    width: 400px;
+    color: #D2D3D0;
+    text-shadow: 2px 2px black;
+}
+
+iframe
+{
+    float: right;
+    width: 440px;
+    height: 260px;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+/*****************************************************************************************/
+/****************************** Fin Style Fiche Séries **********************************/
+/***************************************************************************************/
+
+/*****************************************************************************************/
+/****************************** formulaire **********************************/
+/***************************************************************************************/
+.content_form
+{
+    margin-left: 200px;
+    margin-top: 20px;
+    margin-bottom: 30px;   
+}
+
+.form_gauche
+{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.cmpt_param_gauche
+{
+    margin-left: 150px;
+}
+
+.cmpt_param_gauche p
+{
+    font-weight: bold;
+    color: #d45252;
+    text-shadow: 2px 2px black;
+    margin-left: 180px;
+}
+
+.form_gauche label
+{
+    width: 170px;
+    float: left;
+    color: #D2D3D0;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.cmpt_param_gauche #submit_pass, .cmpt_param_gauche #submit_email
+{
+    margin-left: 200px;
+}
+
+.form_droite
+{
+    margin-right: 200px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.form_droite label
+{
+    color: #D2D3D0;
+    font-size: 14px;
+    line-height: 30px; 
+}
+
+.form_droite .titre_serie
+{
+    color: midnightblue;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.delete_tag
+{
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+    margin-bottom: -2px;
+    margin-left: 5px;
+}
+
+.content_form label
+{
+    width: 170px;
+    float: left;
+    color: #D2D3D0;
+    font-size: 14px;
+    text-align: left;
+    margin-left: 55px;  
+    line-height: 30px;
+}
+
+.content_form input
+{
+    transition-duration: 0.5s;
+    border-color: #D2D3D0;
+    text-align: left;
+    padding-left: 5px;
+}
+
+input:required
+{
+    background:url(../images/red_asterisk.png) 98% center no-repeat white;
+}
+
+input:focus:invalid
+{
+    border-color: #FF0000;
+    background-image: none;
+    -webkit-box-shadow: #d45252,0,0,5px;
+    -moz-box-shadow: #d45252,0,0,5px;
+}
+
+input:focus:invalid + span
+{
+    margin-left: 255px;
+    display: block;
+    color:#FF0000;
+}
+
+input:focus:valid
+{
+    border-color: #56d93f;
+    background:url(../images/valid.png) 98% center no-repeat white;
+    -webkit-box-shadow: #d45252,0,0,5px;
+    -moz-box-shadow: #56d93f,0,0,5px;
+}
+
+.content_form #email:valid, #confirmemail:valid, #nom:valid, #prenom:valid, #login:valid, #password:valid, #confirmpassword:valid
+{
+    background: url(../images/valid.png) 98% center no-repeat white;
+}
+
+input[type=submit] 
+{
+    height: 25px;
+    width: 100px;
+    margin-bottom: 55px;
+    margin-left: 450px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.register
+{
+    color: #DDEEFF;
+    margin-left: 42%;
+}
+
+.register_yet
+{
+    color: #DDEEFF;
+    margin-left: 37%;
+}
+
+#avatar
+{
+    width: 250px;
+}
+/*****************************************************************************************/
+/****************************** formulaire **********************************/
+/***************************************************************************************/
+
+/*****************************************************************************************/
+/****************************** Mon compte **********************************/
+/***************************************************************************************/
+.bienvenue
+{
+    text-align: center;
+    font-size: 20px;
+    color: #000000;
+}
+
+.bienvenue b
+{
+    color: #d45252;
+    text-shadow: 2px 2px black;
+}
+
+.inscription
+{
+    margin-left: 450px;
+}
+
+#wrapper 
+{
+	width: 800px;
+        margin-left: 10%;
+}
+
+#nav 
+{
+	list-style: none;
+	padding: 0;
+	margin: 10px 0 20px 0;
+	display: block;
+	overflow: hidden;
+}
+
+#nav li 
+{
+	display: inline;
+}
+
+#nav li a 
+{
+	display: block;
+	float: left;
+	text-decoration: none;
+        width: 150px; 
+        height: 43px;
+        text-align: center;
+        padding: 0;
+        padding-top: 17px;
+        color: #000; 
+        background: #444;
+        background: -webkit-linear-gradient( #555, #2C2C2C); 
+        background: -moz-linear-gradient( #555, #2C2C2C); 
+        background: -ms-linear-gradient( #555, #2C2C2C); 
+        background: -o-linear-gradient( #555, #2C2C2C); 
+        background: linear-gradient( #555, #2C2C2C);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        font-size: 18px;
+        box-shadow: 0 0 5px rgba( 0, 0, 0, 0.5), 0 -1px 0 rgba( 255, 255, 255, 0.4);
+        margin-right: 10px;
+}
+
+#nav li a:hover
+{ 
+    color: #222; 
+    background: #555; 
+    background: -webkit-linear-gradient( #777, #333); 
+    background: -moz-linear-gradient( #777, #333); 
+    background: -ms-linear-gradient( #777, #333); 
+    background: -o-linear-gradient( #777, #333); 
+    background: linear-gradient( #777, #333); 
+}
+
+#nav li a:active
+{ 
+    color: #000; 
+    background: #444; 
+    background: -webkit-linear-gradient( #555, #2C2C2C); 
+    background: -moz-linear-gradient( #555, #2C2C2C); 
+    background: -ms-linear-gradient( #555, #2C2C2C); 
+    background: -o-linear-gradient( #555, #2C2C2C); 
+    background: linear-gradient( #555, #2C2C2C); 
+    box-shadow: 1px 1px 10px black inset, 0 1px 0 rgba( 255, 255, 255, 0.4); 
+}
+
+.etoile
+{
+    color: #d45252;
+    clear: both;
+    padding-left: 320px;
+    text-shadow: 2px 2px black;
+}
+
+.texte_mon_compte
+{
+    color : #D2D3D0;
+}
+/*****************************************************************************************/
+/****************************** Fin Mon compte **********************************/
+/***************************************************************************************/
+
+/*****************************************************************************************/
+/****************************** Accueil **********************************/
+/***************************************************************************************/
+
+.titre_news
+{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+    color: #D2D3D0;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.contenu_news
+{
+    color: #D2D3D0;
+    width: 900px;
+    text-align: left;
+    margin-left: 55px;
+    margin-bottom: 50px;
+}
+
+
+
+/*****************************************************************************************/
+/******************************Fin Accueil **********************************/
+/***************************************************************************************/
+
+
+/*****************************************************************************************/
+/****************************** Cinéma **********************************/
+/***************************************************************************************/
+
+.cinema
+{
+    color: #D2D3D0;
+    text-align: center;
+    margin-bottom: 50px;
+    
+}
+
+/*****************************************************************************************/
+/****************************** Fin Cinéma **********************************/
+/***************************************************************************************/
+
+/*****************************************************************************************/
+/****************************** Dossiers **********************************/
+/***************************************************************************************/
+
+.dossiers
+{
+    color: #D2D3D0;
+    text-align: center;
+    margin-bottom: 50px;
+    
+}
+
+/*****************************************************************************************/
+/****************************** Fin Dossiers **********************************/
+/***************************************************************************************/
+
+/*****************************************************************************************/
+/****************************** A venir **********************************/
+/***************************************************************************************/
+
+.a_venir
+{
+    color: #D2D3D0;
+    text-align: center;
+    margin-bottom: 50px;
+    
+}
+
+/*****************************************************************************************/
+/****************************** Fin a venir **********************************/
+/***************************************************************************************/

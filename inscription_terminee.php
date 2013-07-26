@@ -21,12 +21,29 @@
             $password = $_GET['password'];
             $avatar = $_GET['avatar'];
             
-            // On créer l'utilisateur en base de données
-            $requete = "INSERT INTO user VALUES ('','$login','$nom','$prenom','$email','$password', '$avatar')";
-            $resultat = executer_requete($requete);
-            echo "Bienvenue sur Awesome Séries!<br>";
-            echo "Nous vous remercions pour la validation de votre compte.<br>";
-            echo"<a href='https://localhost:8080/awesome/index.php'>Retour acceuil</a>"; 
+            // On check que le lien soit pas ouvert plusieurs fois ou rafraichit.
+            $requeteCheck = "SELECT COUNT(*) as nbr FROM user WHERE login ='" . $login . "'";
+            $resultatCheck = executer_requete($requeteCheck);
+            while($donnees = $resultatCheck->fetch())
+            {
+                $nbr = $donnees['nbr'];
+            }
+            $resultatCheck->closeCursor();
+            
+            // Si c'est good
+            if($nbr == 0)
+            {
+                // On créer l'utilisateur en base de données
+                $requete = "INSERT INTO user VALUES ('','$login','$nom','$prenom','$email','$password', '$avatar')";
+                $resultat = executer_requete($requete);
+                echo "Bienvenue sur Awesome Séries!<br>";
+                echo "Nous vous remercions pour la validation de votre compte.<br>";
+                echo"<a href='https://localhost:8080/awesome/index.php'>Retour acceuil</a>";
+            }
+            
+            // Sinon
+            else
+                echo '<script type="text/javascript">alert("Vous avez déjà validé votre compte.")</script>';
         ?>      
     </body>
     <?php afficher_footer();?>

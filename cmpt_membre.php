@@ -57,8 +57,8 @@ if (!isset($_SESSION['login'])) {
         <div id="wrapper">  
             <ul id="nav">  
                 <li><a href="cmpt_membre.php">Mon profil</a></li>  
-                <li><a href="cmpt_password.php">Mon Password</a></li>
-                <li><a href="cmpt_email.php">Mon email</a></li> 
+                <li><a href="cmpt_securite.php?modif=password">Mon Password</a></li>
+                <li><a href="cmpt_securite.php?modif=email">Mon email</a></li> 
                 <li><a href="cmpt_mes_series.php">Mes Séries</a></li>  
                 <li><a href="cmpt_commentaires.php">Mes Commentaires</a></li>   
             </ul>  
@@ -68,23 +68,23 @@ if (!isset($_SESSION['login'])) {
                     // Si oui, c'est qu'on a cliqué sur le lien de modification des Infos Utilisateur, on affiche le formulaire
                     if(isset($_GET['modif']) && $_GET['modif'] == "true")
                     {
-                        echo('<form method="post" action="cmpt_membre.php" class="cmpt_param_gauche">');
-                           echo('<p>Gestion de vos Informations :</p>');
-                            echo('<div class="form_gauche">');
-                                echo('<label>Nom :</label>');
-                                echo('<input name="newNom" type="text" id="newNom" />');
-                            echo('</div>');
-                            echo('<div class="form_gauche">');
-                                echo('<label>Prénom :</label>');
-                                echo('<input name="newPrenom" type="text" id="newPrenom" />');
-                            echo('</div>');
-                            echo('<div class="form_gauche">');
-                                echo('<label for="newAvatar">Avatar (max 1 Mo)</label>');
-                                echo('<input type="hidden" name="MAX_FILE_SIZE" value="1048576" />');
-                                echo('<input name="newAvatar" type="file" id="newAvatar" />');
-                            echo('</div>');
-                            echo('<input type="submit" value="Valider" id="submit_infos" class="boutton"/>');
-                        echo('</form>');
+                        printf('<form method="post" action="cmpt_membre.php" class="cmpt_param_gauche">');
+                           printf('<p>Gestion de vos Informations :</p>');
+                            printf('<div class="form_gauche">');
+                                printf('<label>Nom :</label>');
+                                printf('<input name="newNom" type="text" id="newNom" />');
+                            printf('</div>');
+                            printf('<div class="form_gauche">');
+                                printf('<label>Prénom :</label>');
+                                printf('<input name="newPrenom" type="text" id="newPrenom" />');
+                            printf('</div>');
+                            printf('<div class="form_gauche">');
+                                printf('<label for="newAvatar">Avatar (max 1 Mo)</label>');
+                                printf('<input type="hidden" name="MAX_FILE_SIZE" value="1048576" />');
+                                printf('<input name="newAvatar" type="file" id="newAvatar" />');
+                            printf('</div>');
+                            printf('<input type="submit" value="Valider" id="submit_infos" class="boutton"/>');
+                        printf('</form>');
                     }
                     
                     // Sinon, on affiche la page d'infos standard du compte

@@ -1,29 +1,16 @@
 <?php
-
-printf('<form method="post" action="cmpt_infos.php" class="cmpt_param_gauche">');
-                           printf('<p>Gestion de vos Informations :</p>');
-                            printf('<div class="form_gauche">');
-                                printf('<label>Nom :</label>');
-                                printf('<input name="newNom" type="text" id="newNom" />');
-                            printf('</div>');
-                            printf('<div class="form_gauche">');
-                                printf('<label>Prénom :</label>');
-                                printf('<input name="newPrenom" type="text" id="newPrenom" />');
-                            printf('</div>');
-                            printf('<div class="form_gauche">');
-                                printf('<label for="newAvatar">Avatar (max 1 Mo)</label>');
-                                printf('<input type="hidden" name="MAX_FILE_SIZE" value="1048576" />');
-                                printf('<input name="newAvatar" type="file" id="newAvatar" />');
-                            printf('</div>');
-                            printf('<input type="submit" value="Valider" id="submit_infos" class="boutton"/>');
-                        printf('</form>');
-                        
-                        if(!empty($_POST))
-                    {
-                        // On récupère les variables POST
-                        extract($_POST);
-                        
-                        if(isset($newNom) || isset($newPrenom) || isset($newAvatar))
+session_start();
+if (!isset($_SESSION['login'])) {
+    header ('Location: index.php');
+    exit();
+}
+?>
+<?php
+        if(!empty($_POST))
+        {
+            extract($_POST);
+            
+            if(isset($newNom) | isset($newPrenom))
                         {
                             if ($_FILES['newAvatar']['error'] > 0)
                                 $erreur = true;
@@ -65,5 +52,45 @@ printf('<form method="post" action="cmpt_infos.php" class="cmpt_param_gauche">')
                             $requeteMaj .= " WHERE login = '" . $_SESSION['login'] . "'";
                             $resultatMaj = executer_requete($requeteMaj);
                         }
-                    }
-?>
+        }
+        ?>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+        <link rel="stylesheet" href="./css/awesome_series.css"/>
+        <script type="text/javascript" src="./commun/javascript/function.js"></script>
+        <script type="text/javascript" src="./commun/javascript/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="./commun/javascript/menu_mon_compte.js"></script>
+         <?php
+            require ('./commun/include/template.php');
+            require ('./commun/include/sql.inc.php');
+         ?>
+        <title>Aw3s0me Séries</title>
+    </head>
+
+    <body>
+        <?php afficher_header();?>
+            <div id="contenu">          
+                <form method="post" action="cmpt_infos.php" class="cmpt_param_gauche">
+                    <p>Gestion dde vos Informations:</p>
+                    <div class="form_gauche">
+                        <label>Nom: </label>
+                        <input name="newNom" type="text" id="newNom" />
+                    </div>
+                    <div class="form_gauche">
+                        <label>Prénom :</label>
+                        <input name="newPrenom" type="text" id="newPrenom" />
+                    </div>
+                    <div class="form_gauche">
+                        <label for="newAvatar">Avatar (max 1 Mo)</label>
+                        <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+                        <input name="newAvatar" type="file" id="newAvatar" />
+                    </div>
+                    <input type="submit" value="Valider" id="submit_infos" class="boutton"/>
+                </form>
+                <p class="etoile">* Champs obligatoire</p>
+            </div>
+        <?php afficher_footer();?>
+        
+    </body>
+</html>

@@ -6,6 +6,7 @@
          <?php 
             require ('./commun/include/template.php');
             require ('./commun/include/sql.inc.php');
+            require ('commun/include/param.php');
          ?>
         <title>Aw3s0me Séries</title>
     </head>
@@ -26,7 +27,9 @@
             $resultat = executer_requete($requete);
             echo "Bienvenue sur Awesome Séries!<br>";
             echo "Nous vous remercions pour la validation de votre compte.<br>";
-            echo"<a href='https://localhost:8080/awesome/index.php'>Retour acceuil</a>"; 
+            echo"<a href='$myBeginUrl/index.php'>Retour acceuil</a>"; 
+
+
         ?>      
     </body>
     <?php afficher_footer();?>

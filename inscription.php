@@ -146,7 +146,5 @@
     <?php
 }
 
-
-
 afficher_footer();
 ?>

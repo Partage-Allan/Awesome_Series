@@ -23,33 +23,13 @@ if (!isset($_SESSION['login'])) {
     <body>
         <?php 
             afficher_header();
-            if(!isset($_SESSION['nom']))
-            {
-                $requeteInfo = "SELECT * FROM user WHERE login = '" . $_SESSION['login'] . "'";
-                $repRequeteInfo = executer_requete($requeteInfo);
-                while ($donneesInfo = $repRequeteInfo->fetch())
-                {
-                    // Récupération des infos utilisateurs + création des variables sessions 
-                    $_SESSION['id_user'] = $id_user = $donneesInfo['id_user'];
-                    $_SESSION['nom'] = $nom = $donneesInfo['nom'];
-                    $_SESSION['prenom'] = $prenom = $donneesInfo['prenom'];
-                    $_SESSION['email'] = $email = $donneesInfo['email'];
-                    $_SESSION['avatar'] = $avatar = $donneesInfo['avatar'];
-                    $_SESSION['password'] = $password = $donneesInfo['password'];
-                    $pseudo = $_SESSION['login'];
-                }
-                $repRequeteInfo->closeCursor();
-            }
-            else
-            {
-               $id_user = $_SESSION['id_user'];
-               $nom = $_SESSION['nom'];
-               $prenom = $_SESSION['prenom'];
-               $email = $_SESSION['email'];
-               $avatar = $_SESSION['avatar'];
-               $pseudo = $_SESSION['login'];
-               $password = $_SESSION['password'];
-            }
+            $id_user = $_SESSION['id_user'];
+            $nom = $_SESSION['nom'];
+            $prenom = $_SESSION['prenom'];
+            $email = $_SESSION['email'];
+            $avatar = $_SESSION['avatar'];
+            $pseudo = $_SESSION['login'];
+            $password = $_SESSION['password'];
         ?>
         <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="cmpt_membre.php">Mon compte</a></p>
         <p class="bienvenue">Bienvenue <b><?php echo trim($pseudo); ?>!</b></p>
@@ -90,14 +70,13 @@ if (!isset($_SESSION['login'])) {
                     // Sinon, on affiche la page d'infos standard du compte
                     else
                     {
-                        printf('<p class="texte_mon_compte">');
-                        printf("Affichage Pseudo, Prénom, E-mail, Avatar, nbre séries/nbre comms ... pas de champs puisque c'est juste une page d'infos générales sur le compte.<br/><br/>");
-                        printf("Nom            : $nom <br/><br/>");
-                        printf("Prénom         : $prenom <br/><br/>");
-                        printf("Pseudo         : $pseudo <br/><br/>");
+                        printf("<p class='texte_mon_compte'>Affichage Pseudo, Prénom, E-mail, Avatar, nbre séries/nbre comms ... pas de champs puisque c'est juste une page d'infos générales sur le compte.<br/><br/>");
+                        printf("Avatar : <img class='img_avatar' src='./avatar/$avatar' /><br/><br/>");
+                        printf("Nom : $nom <br/><br/>");
+                        printf("Prénom : $prenom <br/><br/>");
+                        printf("Pseudo : $pseudo <br/><br/>");
                         printf("Adresse e-mail : $email <br/><br/>");
-                        printf("Avatar         : $avatar <br/><br/>");
-                        printf("Nombre de séries marquées :  X séries marquées<br/><br/>");
+                        printf('Nombre de séries marquées :  X séries marquées<br/><br/>');
                         printf("Nombre de commentaires : X commentaires<br/></p>");
                         printf('<a href="cmpt_membre.php?modif=true">Modifier mes Infos</a>');
                     }

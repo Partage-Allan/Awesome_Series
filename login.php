@@ -19,8 +19,7 @@
             // On récupère le login et le passe entré par l'utilisateur
             extract($_POST);
             // On chiffre le mot de passe
-            $password = $_POST['password'];
-            $login = $_POST['login'];
+            $password = md5($password);
             // On cherche le mot de passe correspondant au login en base
             $requete = ("SELECT * FROM user WHERE login ='$login'");
             $reponse = executer_requete($requete);
@@ -36,6 +35,7 @@
                 // Sinon, on démarre une session avec le login, et on redirige l'utilisateur vers la page d'accueil connecté.
                 else {
                     $affFormulaire = 0;
+                    $_SESSION['id_user'] = $donnees['id_user'];
                     $_SESSION['login'] = $donnees['login'];
                     $_SESSION['nom'] = $donnees['nom'];
                     $_SESSION['prenom'] = $donnees['prenom'];
@@ -49,7 +49,7 @@
             }
         }
         if (empty($_POST) || $affFormulaire == 1) {
-            ?>
+        ?>
             <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="login.php">Connexion</a></p>
             <form method="POST" action="login.php">
                 <div class="content_form">

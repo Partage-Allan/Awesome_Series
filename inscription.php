@@ -64,9 +64,9 @@
 
                         $nameAvatar = strstr($_FILES['avatar']['name'], '.', true);
                         if ($erreur == false && !$erreur2 == false && $erreur3 == true)
-                            $avatarName = $nameAvatar . "-" . $login . "." . $extension_upload;
-                        $avatar = $nameAvatar . "-" . $login;
-                        //$password = md5($password);
+                            $avatar = $nameAvatar . "-" . $login . "." . $extension_upload;
+
+                        $password = md5($password);
                         if ($afficherFormulaire != 1) {
                             $to = $email;
                             $sujet = "Demande d'inscription Awesome Series";
@@ -88,12 +88,12 @@
                             $entete .= "'>Cliquez ici!</a> <br>";
                             echo $entete;
 
-                            //mail($to, $sujet, $entete, "Content-type: text/html");
+                            mail($to, $sujet, $entete, "Content-type: text/html");
 
-                            $destination = "./avatar/$avatarName";
+                            $destination = "./avatar/$avatar";
                             $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $destination);
 
-                            //echo '<script type="text/javascript">alert("Votre compte est en attente de validation. \n Cliquez sur le lien dans votre email pour valider celui-ci.")</script>';
+                            echo '<script type="text/javascript">alert("Votre compte est en attente de validation. \n Cliquez sur le lien dans votre email pour valider celui-ci.")</script>';
                         }
                     }
                 }

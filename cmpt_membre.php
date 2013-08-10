@@ -23,6 +23,10 @@ if (!isset($_SESSION['login'])) {
     <body>
         <?php 
             afficher_header();
+            
+            //TODO Rafraichissement des données SESSION quand l'utilisateur fai des modif de son compte.
+            //TODO Affichage d'une erreur pour avatar invalide.
+            
             $id_user = $_SESSION['id_user'];
             $login = $_SESSION['login'];
             $nom = $_SESSION['nom'];

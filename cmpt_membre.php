@@ -24,6 +24,7 @@ if (!isset($_SESSION['login'])) {
         <?php 
             afficher_header();
             $id_user = $_SESSION['id_user'];
+            $login = $_SESSION['login'];
             $nom = $_SESSION['nom'];
             $prenom = $_SESSION['prenom'];
             $email = $_SESSION['email'];
@@ -48,7 +49,7 @@ if (!isset($_SESSION['login'])) {
                     // Si oui, c'est qu'on a cliqué sur le lien de modification des Infos Utilisateur, on affiche le formulaire
                     if(isset($_GET['modif']) && $_GET['modif'] == "true")
                     {
-                        printf('<form method="post" action="cmpt_membre.php" class="cmpt_param_gauche">');
+                        printf('<form method="post" action="cmpt_membre.php" class="cmpt_param_gauche" enctype = "multipart/form-data">');
                            printf('<p>Gestion de vos Informations :</p>');
                             printf('<div class="form_gauche">');
                                 printf('<label>Nom :</label>');
@@ -183,7 +184,7 @@ if (!isset($_SESSION['login'])) {
                                 $requeteMaj .= ",prenom = '$newPrenom' ";
                             
                             if ($erreur3 == true)
-                                $requeteMaj.= ", avatar = '$newAvatar'";
+                                $requeteMaj.= ", avatar = '$avatarName'";
                             $requeteMaj .= " WHERE login = '" . $_SESSION['login'] . "'";
                             $resultatMaj = executer_requete($requeteMaj);
                         }

@@ -23,10 +23,7 @@ if (!isset($_SESSION['login'])) {
     <body>
         <?php 
             afficher_header();
-            
-            //TODO Rafraichissement des données SESSION quand l'utilisateur fai des modif de son compte.
-            //TODO Affichage d'une erreur pour avatar invalide.
-            
+
             $id_user = $_SESSION['id_user'];
             $login = $_SESSION['login'];
             $nom = $_SESSION['nom'];
@@ -35,6 +32,8 @@ if (!isset($_SESSION['login'])) {
             $avatar = $_SESSION['avatar'];
             $pseudo = $_SESSION['login'];
             $password = $_SESSION['password'];
+            $nbSeriesVues = $_SESSION['nbSeriesVues'];
+            $nbCommentaires = $_SESSION['nbCommentaires'];
         ?>
         <p id="fil_d_ariane"><a href="index.php">Accueil</a> > <a href="cmpt_membre.php">Mon compte</a></p>
         <p class="bienvenue">Bienvenue <b><?php echo trim($pseudo); ?>!</b></p>
@@ -81,8 +80,8 @@ if (!isset($_SESSION['login'])) {
                         printf("Prénom : $prenom <br/><br/>");
                         printf("Pseudo : $pseudo <br/><br/>");
                         printf("Adresse e-mail : $email <br/><br/>");
-                        printf('Nombre de séries marquées :  X séries marquées<br/><br/>');
-                        printf("Nombre de commentaires : X commentaires<br/></p>");
+                        printf("Nombre de séries marquées :  $nbSeriesVues séries marquées<br/><br/>");
+                        printf("Nombre de commentaires : $nbCommentaires commentaires<br/></p>");
                         printf('<a href="cmpt_membre.php?modif=true">Modifier mes Infos</a>');
                     }
 
@@ -150,7 +149,24 @@ if (!isset($_SESSION['login'])) {
                         }
                         
                         // Sinon on vérifie si on vient de la page de modification des Infos Utilisateur
-                        if(isset($newNom) || isset($newPrenom) || isset($newAvatar))
+                        if($newNom != '')
+                        {
+                            $requeteMajNom = "UPDATE user SET nom = '$newNom' WHERE login = '" . $_SESSION['login'] . "'";
+                            $resultatMajNom = executer_requete($requeteMajNom);
+                            $_SESSION['nom'] = $newNom;
+                            $message = 'Nom';
+                        }
+                        if($newPrenom != '')
+                        {
+                            $requeteMajPrenom = "UPDATE user SET prenom = '$newPrenom' WHERE login = '" . $_SESSION['login'] . "'";
+                            $resultatMajPrenom = executer_requete($requeteMajPrenom);
+                            $_SESSION['prenom'] = $newPrenom;
+                            if(isset($message))
+                                $message .= ', Prénom';
+                            else
+                                $message = 'Prénom';
+                        }
+                        if($_FILES['newAvatar']['error'] == 0)
                         {
                             if ($_FILES['newAvatar']['error'] > 0)
                                 $erreur = true;
@@ -179,19 +195,30 @@ if (!isset($_SESSION['login'])) {
                             }
                             else
                                 $erreur3 = false;
-
-                            $requeteMaj = "UPDATE user SET ";
-                            if($newNom != '')
-                                $requeteMaj .= "nom = '$newNom' "; 
                             
-                            if ($newPrenom != '')
-                                $requeteMaj .= ",prenom = '$newPrenom' ";
+                            if($erreur == true || $erreur2 == false || $erreur3 == false)
+                            {
+                                echo '<script type="text/javascript">alert("Désolé, votre Avatar est invalide.")</script>';
+                            }
                             
-                            if ($erreur3 == true)
-                                $requeteMaj.= ", avatar = '$avatarName'";
-                            $requeteMaj .= " WHERE login = '" . $_SESSION['login'] . "'";
-                            $resultatMaj = executer_requete($requeteMaj);
+                            else
+                            {
+                                $requeteMajAvatar = "UPDATE user SET ";
+                                if ($erreur3 == true)
+                                    $requeteMajAvatar.= "avatar = '$avatarName'";
+                                $requeteMajAvatar .= " WHERE login = '" . $_SESSION['login'] . "'";
+                                $resultatMajAvatar = executer_requete($requeteMajAvatar);
+                                $_SESSION['avatar'] = $avatarName;
+                                
+                                if(isset($message))
+                                    $message .= ', Avatar';
+                                else
+                                    $message = 'Avatar';
+                                
+                            }
                         }
+                        if(isset($message))
+                            echo '<script type="text/javascript">alert("' . $message . ' mis à jour.")</script>';
                     }
                     
                     // On regarde si le bouton javascript de delete series tagguées a été appuyé et renvoie donc l'ID de la série tagguée à supprimer
@@ -201,6 +228,8 @@ if (!isset($_SESSION['login'])) {
                         // On delete le tagg de la série cliquée
                         $requeteDeleteTagg = "DELETE FROM series_vues WHERE id_series_vues = '" . $id_serie_tagg . "'"; 
                         $execRequeteDelete = executer_requete($requeteDeleteTagg);
+                        // On réduit le nombre de séries vues de 1
+                        $_SESSION['nbSeriesVues'] -= 1;
                         // On redirige sur la page de compte sans variable URL
                         header ('Location: cmpt_membre.php');
                     }
